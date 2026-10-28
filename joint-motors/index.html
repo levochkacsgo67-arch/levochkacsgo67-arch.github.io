@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кузовной ремонт</title>
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<script src="data.js"></script>
+<script src="common.js"></script>
+<!-- Вариант 8 «Кино»: фото во весь экран, кадры как в фильме, тонкий широкий шрифт -->
+<style>
+  :root { --bg: #0a0a0a; --ink: #f2f0eb; --muted: #8d8a84; --line: rgba(242,240,235,.14); --acc: #f2f0eb; --rec: #ff3b30; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: clip; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.6 'Golos Text', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .disp { font-family: Unbounded, system-ui, sans-serif; font-weight: 300; letter-spacing: -.02em; }
+  .tc { font: 500 11.5px/1 Unbounded, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; height: 54px; padding: 0 30px; border-radius: 999px; font: 400 14px/1 Unbounded, sans-serif; letter-spacing: .02em; transition: background .3s, color .3s, border-color .3s; border: 1px solid rgba(242,240,235,.4); }
+  .btn:hover { border-color: var(--ink); }
+  .btn-w { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn-w:hover { background: transparent; color: var(--ink); }
+
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; transition: background .4s, backdrop-filter .4s; }
+  header.solid { background: rgba(10,10,10,.72); backdrop-filter: blur(16px); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
+  .logo { font: 400 15px/1 Unbounded, sans-serif; letter-spacing: .06em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 36px; width: auto; }
+  .nav nav { display: flex; gap: 30px; font-size: 14px; color: rgba(242,240,235,.75); }
+  .nav nav a:hover { color: var(--ink); }
+  .nav .btn { height: 42px; padding: 0 20px; font-size: 12.5px; }
+
+  /* первый экран — кадр во весь экран */
+  .hero { position: relative; min-height: min(100vh, 1000px); min-height: min(100svh, 1000px); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+  .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); animation: push 14s cubic-bezier(.2,.6,.3,1) forwards; }
+  @keyframes push { to { transform: scale(1); } }
+  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,0) 26%, rgba(10,10,10,.2) 55%, rgba(10,10,10,.92) 100%); }
+  .hero .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 54px; }
+  .rec { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; }
+  .rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--rec); animation: blink 1.6s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: .2; } }
+  h1 { font-size: clamp(36px, 6.4vw, 96px); line-height: 1.02; margin: 22px 0 26px; max-width: 15ch; }
+  .h-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+  .h-row .lead { max-width: 480px; color: rgba(242,240,235,.78); font-size: 17px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .h-meta { position: relative; z-index: 2; border-top: 1px solid var(--line); }
+  .h-meta .wrap { display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 18px; padding-bottom: 22px; gap: 20px; }
+  .h-meta b { display: block; font: 300 22px/1.2 Unbounded, sans-serif; letter-spacing: -.02em; margin-top: 8px; color: var(--ink); text-transform: none; }
+
+  section { padding: 140px 0; }
+  .s-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 64px; flex-wrap: wrap; }
+  h2 { font-size: clamp(30px, 4.4vw, 64px); line-height: 1.05; max-width: 16ch; margin-top: 18px; }
+  .s-head p { color: var(--muted); max-width: 420px; }
+
+  /* манифест */
+  .manifest { font-size: clamp(26px, 3.6vw, 52px); line-height: 1.22; max-width: 22ch; }
+  .manifest span { color: var(--muted); }
+  .adv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 90px; border-top: 1px solid var(--line); padding-top: 30px; }
+  .adv b { display: block; font: 300 clamp(40px, 4.6vw, 68px)/1 Unbounded, sans-serif; letter-spacing: -.04em; margin: 16px 0 10px; }
+  .adv span { color: var(--muted); }
+
+  /* услуги */
+  .svc { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid var(--line); align-items: baseline; transition: opacity .3s; }
+  .svc-list:hover .svc { opacity: .45; }
+  .svc-list .svc:hover { opacity: 1; }
+  .svc h3 { font: 300 clamp(20px, 2.2vw, 30px)/1.15 Unbounded, sans-serif; letter-spacing: -.02em; }
+  .svc p { color: var(--muted); }
+
+  /* работы — кадры с горизонтальной прокруткой */
+  .reel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 40px 20px; scrollbar-width: none; cursor: grab; }
+  .reel::-webkit-scrollbar { display: none; }
+  .reel figure { flex: 0 0 min(78vw, 620px); scroll-snap-align: center; position: relative; }
+  .reel figure:nth-child(even) { flex-basis: min(60vw, 420px); }
+  .reel img { width: 100%; height: min(70vh, 620px); object-fit: cover; border-radius: 6px; cursor: zoom-in; }
+  .reel figcaption { display: flex; justify-content: space-between; padding-top: 14px; }
+  .reel-nav { display: flex; gap: 10px; }
+  .reel-nav button { width: 54px; height: 54px; border-radius: 50%; border: 1px solid rgba(242,240,235,.4); background: none; color: var(--ink); font-size: 20px; cursor: pointer; transition: background .3s, color .3s; }
+  .reel-nav button:hover { background: var(--ink); color: var(--bg); }
+
+  /* шаги */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .step { border-top: 1px solid var(--line); padding-top: 24px; }
+  .step h3 { font: 300 22px/1.2 Unbounded, sans-serif; letter-spacing: -.02em; margin: 40px 0 10px; }
+  .step p { color: var(--muted); font-size: 15px; }
+
+  /* отзывы — цитата */
+  .quote { max-width: 1000px; }
+  .quote p { font: 300 clamp(22px, 2.8vw, 40px)/1.32 Unbounded, sans-serif; letter-spacing: -.02em; transition: opacity .5s; min-height: 5.4em; }
+  .quote .who { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .quote .who b { font-weight: 500; }
+  .quote .who small { color: var(--muted); display: block; }
+  .score { display: flex; align-items: baseline; gap: 20px; margin-bottom: 60px; }
+  .score b { font: 300 clamp(80px, 11vw, 170px)/.9 Unbounded, sans-serif; letter-spacing: -.06em; }
+  .score span { color: var(--muted); max-width: 200px; }
+
+  /* вопросы */
+  .faq { max-width: 980px; }
+  details { border-top: 1px solid var(--line); }
+  details:last-child { border-bottom: 1px solid var(--line); }
+  summary { list-style: none; cursor: pointer; padding: 28px 60px 28px 0; font: 300 clamp(18px, 1.8vw, 24px)/1.3 Unbounded, sans-serif; letter-spacing: -.015em; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ''; position: absolute; right: 4px; top: 50%; width: 14px; height: 14px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: translateY(-70%) rotate(45deg); transition: transform .35s; }
+  details[open] summary::after { transform: translateY(-20%) rotate(-135deg); }
+  details p { color: var(--muted); padding-bottom: 28px; max-width: 640px; }
+
+  /* финал + контакты */
+  .final { position: relative; min-height: min(86vh, 860px); display: flex; align-items: flex-end; overflow: hidden; padding: 0; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .final::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.3), rgba(10,10,10,.94)); }
+  .final .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 70px; }
+  .final .phone { display: block; font: 300 clamp(36px, 6.4vw, 100px)/1 Unbounded, sans-serif; letter-spacing: -.05em; margin: 22px 0 40px; }
+  .c-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .c-grid div span { display: block; margin-top: 10px; color: rgba(242,240,235,.85); }
+  .map { height: 460px; filter: grayscale(1) invert(.92) contrast(.9); }
+  .map iframe { width: 100%; height: 100%; border: 0; }
+
+  footer { padding: 28px 0 110px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+  .bar { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 30; display: none; gap: 8px; }
+  .bar .btn { flex: 1; height: 52px; background: rgba(10,10,10,.7); backdrop-filter: blur(14px); }
+  .bar .btn-w { background: var(--ink); }
+
+  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,10,10,.96); display: none; place-items: center; padding: 20px; cursor: zoom-out; }
+  .lightbox.on { display: grid; }
+  .lightbox img { max-height: 90vh; border-radius: 6px; }
+
+  /* доступность: видимый фокус с клавиатуры, курсор на всём кликабельном */
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  summary, button, [data-href], .lightbox { cursor: pointer; }
+  .lightbox { cursor: zoom-out; }
+  .reveal { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity 1.2s cubic-bezier(.2,.7,.2,1), transform 1.2s cubic-bezier(.2,.7,.2,1), filter 1.2s; }
+  .reveal.in { opacity: 1; transform: none; filter: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; filter: none; } .hero > img { animation: none; transform: none; } .rec i { animation: none; } }
+
+  @media (max-width: 960px) {
+    .nav nav { display: none; }
+    .h-meta .wrap { grid-template-columns: 1fr 1fr; }
+    .svc { grid-template-columns: 60px 1fr; }
+    .svc p { grid-column: 2; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .c-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px; }
+    .nav { height: 64px; }
+    .nav .btn { display: none; }
+    section { padding: 96px 0; }
+    .hero .wrap { padding-bottom: 34px; }
+    .h-meta b { font-size: 17px; }
+    .h-meta .wrap:has(+ *), .h-meta .wrap { padding-bottom: 96px; }
+    .cta .btn { flex: 1; padding: 0 16px; white-space: nowrap; font-size: 12.5px; }
+    .hero .rec .hc { display: none; }
+    .adv { grid-template-columns: 1fr; gap: 26px; margin-top: 60px; }
+    .svc { grid-template-columns: 1fr; gap: 6px; padding: 24px 0; }
+    .svc p { grid-column: auto; }
+    .reel { padding: 0 18px 20px; }
+    .reel figure, .reel figure:nth-child(even) { flex-basis: 82vw; }
+    .reel img { height: 58vh; }
+    .reel-nav { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .step h3 { margin-top: 22px; }
+    .quote p { min-height: 8em; }
+    .c-grid { grid-template-columns: 1fr; gap: 20px; }
+    .final .wrap { padding-bottom: 50px; }
+    .map { height: 340px; }
+    .bar { display: flex; }
+  }
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#" class="logo"><img id="logoI" alt="" hidden><span data-f="name"></span></a>
+    <nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#how">Этапы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn" data-href="tel">Позвонить</a>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <img id="heroImg" alt="">
+  <div class="wrap">
+    <div class="tc rec"><i></i><span data-f="tagline"></span><span class="hc">· <span data-f="city"></span></span></div>
+    <h1 class="disp" data-f="heroTitle"></h1>
+    <div class="h-row">
+      <p class="lead" data-f="heroText"></p>
+      <div class="cta">
+        <a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">Оценить по фото</a>
+        <a class="btn" data-href="tel">Позвонить</a>
+      </div>
+    </div>
+  </div>
+  <div class="h-meta">
+    <div class="wrap tc">
+      <div id="hRate">Оценка 2ГИС<b id="rt"></b></div>
+      <div>Отзывы<b id="rc"></b></div>
+      <div>Режим<b id="hours1"></b></div>
+      <div>Адрес<b id="addr1"></b></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tc">Сцена 01</div>
+    <p class="manifest disp reveal" style="margin-top:26px" id="manifest"></p>
+    <div class="adv" id="adv"></div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head"><div><div class="tc">Сцена 02 · Услуги</div><h2 class="disp reveal">Что делаем</h2></div><p class="reveal" data-f="servicesText"></p></div>
+    <div class="svc-list" id="svc"></div>
+  </div>
+</section>
+
+<section id="works" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head"><div><div class="tc">Сцена 03 · Работы</div><h2 class="disp reveal">Кадры из нашего бокса</h2></div>
+      <div class="reel-nav"><button type="button" id="prev" aria-label="Назад">←</button><button type="button" id="next" aria-label="Вперёд">→</button></div></div>
+  </div>
+  <div class="reel" id="grid"></div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head"><div><div class="tc">Сцена 04 · Этапы</div><h2 class="disp reveal">Как всё проходит</h2></div></div>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head"><div><div class="tc">Сцена 05 · Отзывы</div></div></div>
+    <div class="score reveal" id="score"><b id="rt2"></b><span id="rc2"></span></div>
+    <div class="quote reveal">
+      <p id="qText"></p>
+      <div class="who"><div><b id="qName"></b><small id="qDate"></small></div>
+        <div class="cta"><div class="reel-nav"><button type="button" id="qPrev" aria-label="Предыдущий отзыв">←</button><button type="button" id="qNext" aria-label="Следующий отзыв">→</button></div>
+        <a class="btn" data-href="gis" target="_blank" rel="noopener">Все отзывы в 2ГИС</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="s-head"><div><div class="tc">Сцена 06 · Вопросы</div><h2 class="disp reveal">Частые вопросы</h2></div></div>
+    <div class="faq" id="faq"></div>
+  </div>
+</section>
+
+<section class="final" id="contacts">
+  <img id="finalImg" alt="" loading="lazy">
+  <div class="wrap">
+    <div class="tc rec"><i></i>Финальная сцена · Ваша машина</div>
+    <a class="phone reveal" data-href="tel" data-phone></a>
+    <div class="cta" style="margin-bottom:56px">
+      <a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn" data-href="route" target="_blank" rel="noopener">Построить маршрут</a>
+    </div>
+    <div class="c-grid tc">
+      <div>Адрес<span id="addr" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
+      <div>Режим работы<span id="hours" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
+      <div>Оплата<span id="pay" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
+    </div>
+  </div>
+</section>
+<div class="map"><iframe data-map loading="lazy" title="Карта"></iframe></div>
+
+<footer><div class="wrap tc"><span>© <span data-year></span> <span data-f="name"></span></span><span><span data-f="footerText"></span> · <span data-f="city"></span></span></div></footer>
+
+<div class="bar"><a class="btn" data-href="tel">Позвонить</a><a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">WhatsApp</a></div>
+<div class="lightbox" id="lb" role="dialog" aria-label="Фото работы" onclick="this.classList.remove('on')"><img id="lbImg" alt="Фото работы"></div>
+
+<script>
+  const S = SITE, C = S.data, $ = id => document.getElementById(id);
+  S.fill();
+  $('manifest').innerHTML = C.manifest;
+  if (C.logo) { $('logoI').src = C.logo; $('logoI').hidden = false; }
+  $('heroImg').src = C.hero;
+  $('finalImg').src = C.finalPhoto || C.gallery[C.gallery.length > 3 ? 3 : 0] || C.hero;
+  $('hours1').textContent = C.schedule[0] ? C.schedule[0].time : '';
+  $('addr1').textContent = (C.address || '').split(',').slice(0, 2).join(',');
+  if (C.rating) {
+    $('rt').textContent = `${S.rating} из 5`; $('rt2').textContent = S.rating;
+    $('rc').textContent = `${C.reviewsCount}`;
+    $('rc2').textContent = `средняя оценка по ${C.reviewsCount} ${S.reviewsWord(C.reviewsCount)} в 2ГИС`;
+  } else { $('hRate').remove(); $('rc').parentElement.remove(); $('score').remove(); }
+  $('adv').innerHTML = C.advantages.map((a, i) => `<div class="reveal"><span class="tc">0${i + 1}</span><b>${S.esc(a.n)}</b><span>${S.esc(a.t)}</span></div>`).join('');
+  $('svc').innerHTML = C.services.map((s, i) => `<div class="svc reveal"><span class="tc">${String(i + 1).padStart(2, '0')}</span><h3>${S.esc(s.t)}</h3><p>${S.esc(s.d)}</p></div>`).join('');
+  $('steps').innerHTML = C.steps.map((s, i) => `<div class="step reveal"><span class="tc">Шаг ${i + 1}</span><h3>${S.esc(s.t)}</h3><p>${S.esc(s.d)}</p></div>`).join('');
+  const pics = C.gallery.slice(0, C.galleryMax || 12);
+  $('grid').innerHTML = pics.map((src, i) => `<figure><img src="${src}" alt="Работа ${S.esc(C.name)}" loading="lazy"><figcaption class="tc"><span>Кадр ${String(i + 1).padStart(2, '0')}</span><span>${String(i + 1).padStart(2, '0')} / ${String(pics.length).padStart(2, '0')}</span></figcaption></figure>`).join('');
+  $('grid').addEventListener('click', e => { if (e.target.tagName === 'IMG') { $('lbImg').src = e.target.src; $('lb').classList.add('on'); } });
+  const step = () => Math.min(innerWidth * .6, 640);
+  $('prev').onclick = () => $('grid').scrollBy({ left: -step(), behavior: 'smooth' });
+  $('next').onclick = () => $('grid').scrollBy({ left: step(), behavior: 'smooth' });
+
+  // Отзывы — по одному, как титры
+  const R = (C.reviews || []).slice(0, 10); let qi = 0, timer;
+  const showQ = i => {
+    qi = (i + R.length) % R.length; const r = R[qi]; $('qText').style.opacity = 0;
+    setTimeout(() => { $('qText').textContent = `«${r.text.length > 260 ? r.text.slice(0, 257).replace(/\s+\S*$/, '') + '…' : r.text}»`; $('qName').textContent = r.name; $('qDate').textContent = `${S.stars(r.rating)} · ${S.date(r.date)}`; $('qText').style.opacity = 1; }, 300);
+  };
+  if (R.length) {
+    showQ(0);
+    const auto = () => { clearInterval(timer); timer = setInterval(() => showQ(qi + 1), 8000); };
+    $('qPrev').onclick = () => { showQ(qi - 1); auto(); }; $('qNext').onclick = () => { showQ(qi + 1); auto(); }; auto();
+    const q = document.querySelector('.quote'); q.addEventListener('mouseenter', () => clearInterval(timer)); q.addEventListener('mouseleave', auto);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) clearInterval(timer);
+  }
+  $('faq').innerHTML = C.faq.map(f => `<details><summary>${S.esc(f.q)}</summary><p>${S.esc(f.a)}</p></details>`).join('');
+  $('addr').textContent = C.address + (C.addressNote ? `, ${C.addressNote}` : '');
+  $('hours').innerHTML = C.schedule.map(s => `${S.esc(s.days)}: ${S.esc(s.time)}`).join('<br>');
+  if ((C.payment || []).length) $('pay').textContent = C.payment.join(', '); else $('pay').parentElement.remove();
+  addEventListener('scroll', () => $('hdr').classList.toggle('solid', scrollY > 60), { passive: true });
+  S.prune();
+  (C.hide || []).forEach(id => { const el = $(id); if (el) el.remove(); document.querySelectorAll(`a[href="#${id}"]`).forEach(a => a.remove()); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') $('lb').classList.remove('on'); });
+  S.reveal();
+</script>
+</body>
+</html>
