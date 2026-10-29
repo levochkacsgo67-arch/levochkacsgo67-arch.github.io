@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001078730739",
  "name": "Свои Detailing",
- "tagline": "кузовной ремонт",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "Харьковская улица, 2а ст5",
  "addressNote": "1 этаж",

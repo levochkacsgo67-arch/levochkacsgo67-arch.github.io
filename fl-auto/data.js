@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001114825179",
  "name": "FL Auto detail",
- "tagline": "кузовной ремонт",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "улица Добровольского, 5а ст5",
  "addressNote": "",

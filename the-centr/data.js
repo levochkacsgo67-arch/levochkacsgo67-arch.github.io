@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001090441492",
  "name": "the CENTR",
- "tagline": "кузовной ремонт",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "Садовая улица, 25Б",
  "addressNote": "1 этаж",

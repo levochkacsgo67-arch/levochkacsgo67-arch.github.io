@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001105114697",
  "name": "Hudson Garage",
- "tagline": "кузовной ремонт",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "1-я Морская улица, 10а ст2",
  "addressNote": "",

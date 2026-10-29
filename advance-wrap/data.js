@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001114042157",
  "name": "Advance Wrap",
- "tagline": "компания по услугам оклейки авто",
+ "tagline": "студия оклейки",
  "city": "Владивосток",
  "address": "Выселковая улица, 167",
  "addressNote": "1 этаж",

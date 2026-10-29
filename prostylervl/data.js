@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001048931365",
  "name": "ProStylerVL",
- "tagline": "студия",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "Днепровская улица, 29 ст4",
  "addressNote": "",

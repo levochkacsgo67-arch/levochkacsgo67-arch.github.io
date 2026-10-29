@@ -1,7 +1,7 @@
 window.COMPANY = {
  "id": "70000001081870918",
  "name": "Magic Lab",
- "tagline": "кузовной ремонт",
+ "tagline": "студия детейлинга",
  "city": "Владивосток",
  "address": "Отлогая улица, 10",
  "addressNote": "1 этаж",
