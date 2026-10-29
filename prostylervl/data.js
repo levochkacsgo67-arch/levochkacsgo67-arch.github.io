@@ -1,6 +1,6 @@
 window.COMPANY = {
  "id": "70000001048931365",
- "name": "Prostylervl",
+ "name": "ProStylerVL",
  "tagline": "студия",
  "city": "Владивосток",
  "address": "Днепровская улица, 29 ст4",
@@ -451,7 +451,7 @@ window.COMPANY = {
   "photos/12.jpg",
   "photos/15.jpg"
  ],
- "pageTitle": "Prostylervl — детейлинг и полировка во Владивостоке",
+ "pageTitle": "ProStylerVL — детейлинг и полировка во Владивостоке",
  "heroTitle": "Машина как из салона — снаружи и внутри",
  "heroTitle7": "Блеск <em>как новый</em>",
  "heroText": "Полировка, керамика, защитная плёнка и химчистка салона. Напишите — подберём уход под вашу машину.",

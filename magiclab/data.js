@@ -1,6 +1,6 @@
 window.COMPANY = {
  "id": "70000001081870918",
- "name": "Magiclab detailing",
+ "name": "Magic Lab",
  "tagline": "кузовной ремонт",
  "city": "Владивосток",
  "address": "Отлогая улица, 10",
@@ -463,7 +463,7 @@ window.COMPANY = {
   "photos/24.jpg",
   "photos/10.jpg"
  ],
- "pageTitle": "Magiclab detailing — детейлинг и полировка во Владивостоке",
+ "pageTitle": "Magic Lab — детейлинг и полировка во Владивостоке",
  "heroTitle": "Машина как из салона — снаружи и внутри",
  "heroTitle7": "Блеск <em>как новый</em>",
  "heroText": "Полировка, керамика, защитная плёнка и химчистка салона. Напишите — подберём уход под вашу машину.",

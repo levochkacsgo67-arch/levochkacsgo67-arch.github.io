@@ -1,6 +1,6 @@
 window.COMPANY = {
  "id": "70000001090441492",
- "name": "the Centr detailing",
+ "name": "the CENTR",
  "tagline": "кузовной ремонт",
  "city": "Владивосток",
  "address": "Садовая улица, 25Б",
@@ -468,7 +468,7 @@ window.COMPANY = {
   "photos/02.jpg",
   "photos/09.jpg"
  ],
- "pageTitle": "the Centr detailing — детейлинг и полировка во Владивостоке",
+ "pageTitle": "the CENTR — детейлинг и полировка во Владивостоке",
  "heroTitle": "Машина как из салона — снаружи и внутри",
  "heroTitle7": "Блеск <em>как новый</em>",
  "heroText": "Полировка, керамика, защитная плёнка и химчистка салона. Напишите — подберём уход под вашу машину.",
