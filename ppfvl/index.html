@@ -169,7 +169,10 @@
   }
   @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
-    .nav { grid-template-columns: 1fr auto; }
+    .nav { grid-template-columns: minmax(0, 1fr) auto; gap: 16px; }
+    .logo { font-size: 17px; min-width: 0; }
+    .logo span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logo i { flex: none; }
     h1 { padding: 28px 0 24px; letter-spacing: -.04em; }
     .h-bot .cta, .c-info .cta { grid-template-columns: 1fr; }
     .h-photo { aspect-ratio: 4/3; margin: 0 -16px; }
