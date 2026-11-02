@@ -40,7 +40,7 @@
   .hero { position: relative; min-height: min(100vh, 1000px); min-height: min(100svh, 1000px); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
   .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); animation: push 14s cubic-bezier(.2,.6,.3,1) forwards; }
   @keyframes push { to { transform: scale(1); } }
-  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,0) 26%, rgba(10,10,10,.2) 55%, rgba(10,10,10,.92) 100%); }
+  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,0) 26%, rgba(10,10,10,.35) 55%, rgba(10,10,10,.92) 100%); }
   .hero .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 54px; }
   .rec { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; }
   .rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--rec); animation: blink 1.6s steps(1) infinite; }
@@ -153,6 +153,7 @@
     .nav .btn { display: none; }
     section { padding: 96px 0; }
     .hero .wrap { padding-bottom: 34px; }
+    .hero::after { background: linear-gradient(180deg, rgba(10,10,10,.62) 0%, rgba(10,10,10,.5) 30%, rgba(10,10,10,.68) 60%, rgba(10,10,10,.94) 100%); }  /* на телефоне текст на всём фото - затемняем сильнее */
     .h-meta b { font-size: 17px; }
     .h-meta .wrap:has(+ *), .h-meta .wrap { padding-bottom: 96px; }
     .cta .btn { flex: 1; padding: 0 16px; white-space: nowrap; font-size: 12.5px; }
