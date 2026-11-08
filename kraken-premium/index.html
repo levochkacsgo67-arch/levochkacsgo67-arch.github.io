@@ -4,15 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Kraken - бронирование авто плёнкой, Артём</title>
-<meta name="description" content="Детейлинг-студия Kraken в Артёме. Полиуретановая плёнка на кузов, фары и лобовое стекло, трёхфазная мойка, химчистка. 4,9 в 2ГИС.">
+<meta name="description" content="Детейлинг-студия Kraken в Артёме. Защитная плёнка на кузов, фары и лобовое стекло, трёхфазная мойка, химчистка. 4,9 в 2ГИС.">
 <meta property="og:title" content="Kraken - бронирование авто плёнкой">
 <meta property="og:description" content="Гравий на 130 км/ч. Лобовое целое. Случай из отзыва клиента, декабрь 2024. Детейлинг-студия в Артёме.">
 <meta property="og:image" content="https://levochkacsgo67-arch.github.io/kraken-premium/img/06.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://levochkacsgo67-arch.github.io/kraken-premium/">
 <meta name="theme-color" content="#07090a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2307090a' d='M0 0h32v32H0z'/%3E%3Cpath fill='none' stroke='%2374dcd4' stroke-width='2.5' d='M16 5l9.5 5.5v11L16 27l-9.5-5.5v-11z'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Unbounded:wght@200;300;400&subset=cyrillic&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js"</script>
 <style>
 :root{--bg:#07090a;--bg2:#0d1112;--ink:#eef2f1;--mute:#93a09e;--teal:#74dcd4;--line:rgba(238,242,241,.13);--r:22px;--pad:clamp(16px,5vw,72px)}
 *{box-sizing:border-box;margin:0}
@@ -60,8 +63,8 @@ nav .pill:hover{border-color:var(--teal);color:var(--teal)}
 .speed small{display:block;font:400 clamp(16px,1.6vw,22px) Manrope;letter-spacing:0;color:var(--teal);margin:14px 0 0 .3em}
 .story blockquote{font-size:clamp(22px,2.5vw,34px);line-height:1.28;letter-spacing:-.015em;margin:30px 0 20px}
 .story cite{font-style:normal;color:var(--mute);font-size:15px}
-.frame{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
-.frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 18px 16px;font-size:14px;color:#eef2f1;background:linear-gradient(0deg,rgba(7,9,10,.86),transparent)}
+.frame{border-radius:var(--r);overflow:hidden;aspect-ratio:1/1;max-width:none;position:relative}
+.frame img{transform:none}
 .tent{position:absolute;right:0;top:-40px;width:min(44vw,520px);height:calc(100% + 80px);pointer-events:none;opacity:.5}
 .tent path{fill:none;stroke:var(--teal);stroke-width:1.2}
 
@@ -69,7 +72,7 @@ nav .pill:hover{border-color:var(--teal);color:var(--teal)}
 .cfg{background:var(--bg2);border-block:1px solid var(--line)}
 .cfg-head{margin-bottom:clamp(36px,5vw,70px)}
 .cfg-head h2{margin-top:14px}
-.cfg-grid{display:grid;grid-template-columns:minmax(240px,380px) minmax(0,1fr);gap:clamp(30px,7vw,120px);align-items:center}
+.cfg-grid{display:grid;grid-template-columns:minmax(240px,380px) minmax(0,1fr);gap:clamp(30px,7vw,120px);align-items:start}
 .car{max-height:640px;width:100%}
 .car .z{fill:#2c373a;stroke:var(--bg2);stroke-width:3.2;stroke-linejoin:round;transition:fill .45s;cursor:pointer}
 .car .z.on{fill:#62c4bc}
@@ -107,7 +110,7 @@ nav .pill:hover{border-color:var(--teal);color:var(--teal)}
 /* бокс */
 .box{min-height:92vh;display:flex;align-items:flex-end;padding:0;overflow:hidden}
 .box>img{position:absolute;inset:0}
-@media(min-width:861px){.box>img{left:26%;width:74%}}
+
 .box:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07090a 26%,rgba(7,9,10,.55) 44%,rgba(7,9,10,0) 74%),linear-gradient(0deg,#07090a 0,transparent 26%)}
 .box .in{position:relative;z-index:2;padding:0 var(--pad) clamp(46px,8vw,110px);max-width:760px}
 .box p{margin-top:20px;font-size:19px;color:#d3dbd9}
@@ -127,8 +130,6 @@ nav .pill:hover{border-color:var(--teal);color:var(--teal)}
 .card:hover{border-color:rgba(116,220,212,.55)}
 .card b{font:300 clamp(30px,3vw,44px)/1.1 Unbounded,sans-serif;letter-spacing:-.04em;display:block;margin-bottom:18px}
 .card small{font-size:14px;color:var(--mute)}
-.honest{margin-top:clamp(50px,7vw,100px);max-width:24em;font-size:clamp(26px,3.4vw,46px);line-height:1.18;letter-spacing:-.025em}
-.honest+small{display:block;margin-top:16px;font-size:15px;color:var(--mute)}
 
 /* люди и ожидание */
 .people{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;align-items:stretch}
@@ -151,13 +152,12 @@ nav .pill:hover{border-color:var(--teal);color:var(--teal)}
 footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
 .bar{display:none}
 
-.r{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
-.r.in-view{opacity:1;transform:none}
+.js .r{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .r.in-view{opacity:1;transform:none}
 
 @media(max-width:860px){
  body{font-size:16px}
  .logo{height:38px}
- nav .right a:not(.pill){display:none}
  .hero .in{grid-template-columns:1fr}
  .hero .pic{top:-11%;bottom:auto;height:77%}
  .hero .pic img{object-position:50% 62%}
@@ -169,7 +169,6 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
  .hero .acts .btn{flex:1 1 100%}
  .story,.serv,.cfg-grid{grid-template-columns:minmax(0,1fr)}
  .tent{display:none}
- .frame{aspect-ratio:4/3}
  .car{max-height:280px}
  .end-cta{width:100%}
  .end{display:block;min-height:0}
@@ -190,16 +189,191 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
  .bar .btn{background:rgba(13,17,18,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
  .bar .btn.solid{background:var(--ink)}
 }
-@media(prefers-reduced-motion:reduce){.hero .pic{animation:none}.r{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.hero .pic{animation:none}#lines{animation:none}.js .r{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* v2 */
+:root{--line-ctl:rgba(238,242,241,.42)}
+section{padding:clamp(56px,7vw,104px) var(--pad)}
+h2{font-size:clamp(34px,4.8vw,66px)}
+.eyebrow,.group{font-size:14px}
+#lines{position:absolute;left:0;top:0;z-index:3;pointer-events:none}
+#lines{animation:sway 70s ease-in-out infinite alternate;will-change:transform}
+@keyframes sway{from{transform:translate3d(-9px,0,0)}to{transform:translate3d(9px,0,0)}}
+#lines path{fill-opacity:.34}
+section>*,footer{position:relative;z-index:1}
+.hero .pic,.hero:after,.box:after,.end:after{z-index:1}
+.btn,.zone-btn,.rail-nav button{border-color:var(--line-ctl)}
+nav{background:linear-gradient(180deg,rgba(7,9,10,.94) 0,rgba(7,9,10,.78) 62%,rgba(7,9,10,0) 100%);padding-bottom:26px;z-index:20}
+nav.on{background:rgba(7,9,10,.94);padding-bottom:14px}
+nav .right{font-size:17px;font-weight:600;gap:30px;color:#fff}
+nav .pill{border-color:var(--line-ctl);background:rgba(238,242,241,.14);padding:11px 22px}
+.logo{height:56px}
+.demo{z-index:21;top:30px;font-size:13px;letter-spacing:0;background:rgba(7,9,10,.8);border-color:var(--line-ctl);color:#eef2f1}
+.hero:after{background:linear-gradient(180deg,rgba(7,9,10,0) 70%,#07090a 100%),linear-gradient(90deg,#07090a 0,rgba(7,9,10,.82) 36%,rgba(7,9,10,.1) 68%)}
+.hero h1{font-size:clamp(46px,5.8vw,88px);margin:0 0 20px}
+.hero h1 .ln{display:block}
+.studio{color:var(--teal);font-size:clamp(19px,1.7vw,24px);font-weight:600;letter-spacing:-.01em}
+.hero p.lead{margin-top:10px;color:#cdd6d4}
+.score b{font-size:clamp(44px,4.6vw,66px)}
+.speed{margin-left:0}
+#spd{display:inline-block;margin-left:-.09em}
+.speed small{margin-left:0}
+.story blockquote{margin-top:22px}
+.rail figcaption{background:linear-gradient(0deg,rgba(7,9,10,.96) 0,rgba(7,9,10,.9) 55%,transparent 100%)}
+.car .z{fill:#232c2f;stroke:rgba(238,242,241,.5);stroke-width:1}
+.car .z.on{fill:rgba(116,220,212,.4);stroke:#74dcd4}
+@media(hover:hover){.car .z:not(.on):hover{fill:#303b3f}}
+.zone-btn[aria-pressed=true]{background:rgba(116,220,212,.12);border:1.5px solid var(--teal);color:var(--teal);font-weight:600}
+.cfg{border:0;background:none;--bg2:#07090a}
+.rail-side{display:flex;align-items:center;gap:18px}
+#cnt{color:var(--mute);font-size:15px;font-variant-numeric:tabular-nums}
+.box{min-height:clamp(340px,44vw,620px)}
+.box>img{object-position:50% 62%}
+.box:after{inset:0 0 -1px;background:linear-gradient(180deg,#07090a 0,rgba(7,9,10,.72) 7%,rgba(7,9,10,.3) 20%,rgba(7,9,10,.06) 36%,rgba(7,9,10,.1) 56%,rgba(7,9,10,.35) 82%,rgba(7,9,10,.85) 95%,#07090a 100%),linear-gradient(90deg,rgba(7,9,10,.6) 0,rgba(7,9,10,.18) 42%,transparent 66%)}
+.serv-top{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
+.serv-top p{color:var(--mute);font-size:18px}
+.panels{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:14px}
+.panel{position:relative;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;background:#07090a}
+.panel:before{content:"";position:absolute;inset:0;z-index:3;border:1px solid var(--line);border-radius:inherit;pointer-events:none;-webkit-mask:linear-gradient(180deg,transparent calc(clamp(200px,20vw,300px) - 60px),#000 clamp(200px,20vw,300px));mask:linear-gradient(180deg,transparent calc(clamp(200px,20vw,300px) - 60px),#000 clamp(200px,20vw,300px))}
+.ph{position:relative;flex:none;height:clamp(200px,20vw,300px);overflow:hidden}
+.ph img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.panel:hover .ph img{transform:scale(1.03)}
+.panel.care .ph img{transform:scale(1.35);transform-origin:18% 42%}
+.panel.care:hover .ph img{transform:scale(1.39)}
+.ph:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:61px;background:linear-gradient(180deg,rgba(7,9,10,0),#07090a 90%)}
+.tx{position:relative;z-index:2;margin-top:-2px;background:#07090a;flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(24px,3vw,44px);padding-top:clamp(14px,1.4vw,20px)}
+.panel h3{font-weight:500;font-size:clamp(30px,3.2vw,46px);letter-spacing:-.03em;margin-bottom:12px}
+.panel ul{list-style:none;padding:0;width:100%;margin-bottom:auto}
+.panel li{padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(18px,1.5vw,21px)}
+.panel .btn{margin-top:28px}
+.back{padding-bottom:0}
+.people{padding-top:76px}
+.stack-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start}
+.stack-side{position:sticky;top:104px}
+.stack-side h2{margin-bottom:clamp(20px,2.4vw,32px)}
+.stack-side figure{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
+.stack-side img{object-position:60% 60%}
+.stack{display:flex;flex-direction:column;gap:14px}
+.sc{background:#11171a;border:1px solid var(--line);border-radius:28px;padding:clamp(26px,3.2vw,48px);display:flex;flex-direction:column;gap:16px;transition:border-color .5s}
+.sc b{font:300 clamp(36px,4.3vw,62px)/1.05 Unbounded,sans-serif;letter-spacing:-.05em}
+.sc p{font-size:clamp(20px,1.8vw,26px);line-height:1.3;letter-spacing:-.015em}
+.sc small{color:var(--mute);font-size:15px}
+@media(min-width:861px){.stack.live .sc>*{opacity:.86}.stack.live .sc.on>*{opacity:1}.stack.live .sc.on{border-color:rgba(116,220,212,.55)}}
+.people{display:block}
+.p-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(24px,3vw,40px)}
+.p-top p{color:#cdd6d4;font-size:20px}
+.p-top p+p{margin-top:8px}
+.p-ph{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.p-ph img{aspect-ratio:16/9;border-radius:var(--r);height:auto}
+.end{min-height:0;padding-top:clamp(240px,30vw,420px)}
+.end>img{height:100%;object-position:40% 30%}
+.end:after{inset:-1px 0 -1px;background:linear-gradient(180deg,#07090a 0,rgba(7,9,10,.45) 10%,rgba(7,9,10,.12) 26%,rgba(7,9,10,.3) 40%,rgba(7,9,10,.82) 58%,rgba(7,9,10,.96) 72%,#07090a 100%)}
+.end .in{padding-bottom:28px}
+.end h2{font-size:clamp(38px,5.6vw,84px);margin-bottom:14px;max-width:14em}
+.where{font-size:20px;color:#cdd6d4;margin-bottom:26px}
+.links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.big{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:104px;padding:16px 24px;border-radius:22px;border:1px solid var(--line-ctl);font-size:clamp(19px,1.6vw,23px);font-weight:600;transition:background .35s,color .35s,border-color .35s,transform .35s;background:rgba(13,17,18,.7)}
+.big small{font-size:14px;font-weight:400;color:var(--mute)}
+.big:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+.big.solid{background:var(--ink);color:#07090a;border-color:var(--ink)}
+.big.solid small{color:#46524f}
+.big.solid:hover{background:var(--teal);color:#07090a;border-color:var(--teal)}
+footer{padding:0 var(--pad) calc(24px + env(safe-area-inset-bottom))}
+@media(max-width:860px){
+ .logo{height:44px}
+ .demo{top:23px;right:calc(var(--pad) + 58px);left:auto;transform:none;font-size:13px;padding:3px 10px;white-space:nowrap}
+ .hero .pic{top:0;height:62%}
+ .hero .pic img{object-position:50% 12%}
+ .hero:after{background:linear-gradient(180deg,rgba(7,9,10,.2) 0,rgba(7,9,10,.05) 16%,rgba(7,9,10,.62) 30%,rgba(7,9,10,.9) 42%,#07090a 58%)}
+ .hero h1{font-size:clamp(42px,10.2vw,84px)}
+ .car{max-height:420px}
+ .panels,.p-top,.stack-grid{grid-template-columns:minmax(0,1fr)}
+ .stack-side{position:static}
+ .stack-side figure{aspect-ratio:16/10}
+ .box{min-height:66vw}
+ .box:after{background:linear-gradient(180deg,#07090a 0,rgba(7,9,10,.5) 9%,rgba(7,9,10,.05) 28%,rgba(7,9,10,.08) 50%,rgba(7,9,10,.66) 74%,#07090a 100%)}
+ .p-ph{grid-template-columns:1fr}
+ .end{padding-top:0}
+ .end>img{height:62.5vw;object-position:40% 40%}
+ .end:after{top:-1px;bottom:auto;height:calc(62.5vw + 2px);background:linear-gradient(180deg,#07090a 0,transparent 34%,transparent 68%,#07090a 100%)}
+ #cnt{display:inline}
+ .rail-side{margin-left:auto}
+ .bar{left:var(--pad);right:var(--pad)}
+ .bar .btn{padding:0 12px;white-space:nowrap}
+}
+@media(max-width:600px){.car{max-height:300px}}
+.btn,.zone-btn,.rail-nav button,.big,nav .pill{-webkit-tap-highlight-color:transparent}
+.btn:active,.zone-btn:active,.rail-nav button:active,.big:active,nav .pill:active{transform:scale(.97);transition-duration:.12s}
+.btn,.zone-btn,.rail-nav button,nav .pill{transition-property:background-color,color,border-color,transform}
+.zone-btn,.rail-nav button,nav .pill{transition-duration:.3s}
+.rail-nav button:focus-visible,.big:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.panel:hover .ph img,.rail figure:hover img{transform:none}.panel.care:hover .ph img{transform:scale(1.35)}.sc{transition:none}.btn:active,.zone-btn:active,.big:active,.rail-nav button:active,nav .pill:active{transform:none}.big:hover{transform:none}.bar{transition:none}}
+
+/* v3 */
+.logo{margin-left:-2px}
+nav.on:after{content:"";position:absolute;left:0;right:0;top:100%;height:28px;background:linear-gradient(180deg,rgba(7,9,10,.94),transparent);pointer-events:none}
+.field{padding-inline:0}
+.cfg-head h2{margin-top:0}
+.hint{font-size:14px;color:var(--mute);margin-bottom:12px}
+.big.ic{white-space:nowrap}
+.big.ic .nm{display:flex;align-items:center;gap:10px}
+.big.ic svg{width:22px;height:22px;flex:none;fill:currentColor}
+@media(min-width:861px){
+ .demo{top:27px;left:calc(var(--pad) + 173px);transform:none}
+ .hero h1,.source,.studio,.hero p.lead,.score{text-shadow:0 1px 16px rgba(7,9,10,.85),0 0 3px rgba(7,9,10,.45)}
+ .cfg-grid{align-items:center}
+ .car{max-height:520px}
+ .cfg{padding-bottom:48px}
+}
+@media(max-width:1180px){
+ nav .pill{font-size:0;padding:0;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+ nav .pill:before{content:"";width:20px;height:20px;background:#fff;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z'/%3E%3C/svg%3E") center/contain no-repeat}
+ .links{grid-template-columns:1fr 1fr}
+ .big.solid,.big:last-child{grid-column:1/-1}
+}
+@media(max-width:860px){
+ #lines{animation:none}
+ html{scroll-padding-top:32px}
+ .frame{aspect-ratio:16/10}
+}
+@media(min-width:640px) and (max-width:860px){
+ nav .right{font-size:15px;gap:16px}
+ .demo{left:calc(var(--pad) + 130px);right:auto;font-size:12px;padding:3px 8px}
+}
+@media(min-width:640px) and (max-width:720px){nav .right{gap:8px}}
+@media(max-width:639px){nav .right a:not(.pill){display:none}}
+@media(max-width:600px){
+ .hero .pic{top:56px}
+ .hero:after{background:linear-gradient(180deg,#07090a 0 56px,rgba(7,9,10,.05) 104px,rgba(7,9,10,.75) 27%,rgba(7,9,10,.9) 42%,#07090a 52%)}
+ .cfg .acts .btn{flex:1}
+ .cfg .acts .btn.solid{flex:1 1 100%}
+ .works .head{flex-wrap:nowrap}
+ .rail-side{flex:none}
+ #cnt{white-space:nowrap}
+ .big.ic{grid-column:1/-1}
+}
+
+/* v4 */
+.source{font-size:16px;line-height:1.35;color:#c3cdcb;margin:-10px 0 14px}
+.box:before,.end:before{content:"";position:absolute;left:0;right:0;height:3px;background:#07090a;z-index:2}
+.box:before{bottom:0}
+.end:before{top:0}
+.rail-nav button:disabled{opacity:.35;cursor:default}
+.rail-nav button:disabled:hover{border-color:var(--line-ctl);color:inherit}
+@media(max-width:860px){.speed{font-size:clamp(110px,30vw,230px)}}
+@media(min-width:640px) and (max-width:860px){.cfg-grid{grid-template-columns:220px minmax(0,1fr);align-items:start}}
 </style>
 </head>
 <body>
 
+<svg id="lines" aria-hidden="true"></svg>
 <nav id="nav">
   <a href="#top" aria-label="Kraken, наверх"><img class="logo" src="img/logo.png" alt="Kraken" style="width:auto"></a>
   <div class="right">
-    <a href="#bron">Выбрать зоны</a>
+    <a href="#serv">Услуги</a>
     <a href="#works">Работы</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
     <a class="pill" href="tel:+79146681041">+7 914 668-10-41</a>
   </div>
 </nav>
@@ -209,45 +383,43 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
   <div class="pic"><img src="img/06.jpg" alt="Автомобиль под защитной плёнкой в боксе Kraken, шестигранный свет" fetchpriority="high"></div>
   <div class="in">
     <div>
-      <div class="eyebrow">Детейлинг-студия Kraken, Артём</div>
-      <h1>Гравий на <span style="white-space:nowrap">130 км/ч.</span> Лобовое целое.</h1>
-      <p class="lead">Полиуретановая плёнка на кузов, фары и лобовое. Артём, рядом с Владивостоком. Запись по телефону и в Telegram. Случай из отзыва клиента, декабрь 2024.</p>
+      <h1><span class="ln">Гравий на <span style="white-space:nowrap">130 км/ч.</span></span> <span class="ln">Лобовое целое.</span></h1>
+      <p class="source">Случай из отзыва в&nbsp;2ГИС, декабрь 2024</p>
+      <div class="studio">Детейлинг-студия Kraken в&nbsp;Артёме, рядом с&nbsp;Владивостоком</div>
+      <p class="lead">Защищаем плёнкой кузов, фары и&nbsp;лобовое.</p>
       <div class="acts">
-        <a class="btn solid" href="#bron">Отметить, что защитить</a>
-        <a class="btn" href="https://t.me/+79146681041" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn solid" href="#bron">Выбрать зоны на&nbsp;схеме</a>
+        <a class="btn" href="https://t.me/+79146681041" target="_blank" rel="noopener">Написать в&nbsp;Telegram</a>
       </div>
     </div>
-    <div class="score"><b>4,9</b><span>в 2ГИС, больше 110 отзывов</span></div>
+    <div class="score"><b>4,9</b><span>в&nbsp;2ГИС, больше 100 отзывов</span></div>
   </div>
 </header>
 
 <section class="story" id="story">
-  <svg class="tent" viewBox="0 0 400 900" aria-hidden="true"><path id="tent" d="M400 10C250 90 330 230 210 290S60 430 170 520s190 90 120 210-190 60-150 170"/></svg>
   <div class="r">
-    <div class="speed"><span id="spd">0</span><small>км/ч</small></div>
-    <blockquote>«…мне в лобовое прилетел гранитный гравий размером с грецкий орех. Отскочил как от металла! … На плёнке крупный след, на стекле под ним ни царапинки.»</blockquote>
-    <cite>Алексей Ц., забрал машину и поехал домой. Отзыв в 2ГИС, декабрь 2024. По его словам, такое лобовое стоит под 100 тысяч рублей.</cite>
+    <div class="speed"><span id="spd">130</span><small>км/ч</small></div>
+    <blockquote>«…мне в&nbsp;лобовое прилетел гранитный гравий размером с&nbsp;грецкий орех. Отскочил как от металла! … На плёнке крупный след, на стекле под ним ни царапинки.»</blockquote>
+    <cite>Алексей Ц. забрал машину и&nbsp;ехал домой. Стекло, по его словам, стоит под 100 тысяч рублей. Отзыв в&nbsp;2ГИС, декабрь 2024.</cite>
   </div>
-  <figure class="frame r"><img src="img/11.jpg" alt="Защитная плёнка на лобовом стекле во время установки" loading="lazy"><figcaption>Плёнка на лобовом стекле, момент установки</figcaption></figure>
+  <figure class="frame r"><img src="img/11.jpg" alt="Защитная плёнка на лобовом стекле во время установки" loading="lazy"></figure>
 </section>
 
 <section class="cfg" id="bron">
   <div class="cfg-head r">
-    <div class="eyebrow">Схема машины</div>
     <h2>Отметьте, что хотите защитить</h2>
   </div>
   <div class="cfg-grid">
     <svg class="car r" viewBox="0 0 320 640" role="img" aria-label="Схема автомобиля сверху с зонами защиты">
     <defs><clipPath id="carBody"><path d="M160 36C206 36 244 40 260 62C270 78 272 104 273 140C274 200 270 250 270 310C270 370 274 420 274 480C274 530 270 566 258 584C242 602 200 604 160 604C120 604 78 602 62 584C50 566 46 530 46 480C46 420 50 370 50 310C50 250 46 200 47 140C48 104 50 78 60 62C76 40 114 36 160 36Z"/></clipPath></defs>
-    <path class="axis" d="M160 6V28M160 612V634"/>
     <path class="z" data-z="mirror" d="M43 232L33 225C21 220 9 224 9 233C9 242 19 245 33 244L43 241Z"/>
     <path class="z" data-z="mirror" d="M277 232L287 225C299 220 311 224 311 233C311 242 301 245 287 244L277 241Z"/>
     <g clip-path="url(#carBody)">
       <path class="z" data-z="rear" d="M30 436Q160 428 290 436L290 650L30 650Z"/>
       <path class="z" data-z="rear" d="M82 498Q160 482 238 498C242 520 244 545 248 600L72 600C76 545 78 520 82 498Z"/>
       <path class="z" data-z="rear" d="M30 546Q160 592 290 546L290 650L30 650Z"/>
-      <path class="z" data-z="door" d="M160 214L30 214L30 326L160 326Z"/>
-      <path class="z" data-z="door" d="M160 214L290 214L290 326L160 326Z"/>
+      <path class="z" data-z="door" d="M160 208L30 208L30 326L160 326Z"/>
+      <path class="z" data-z="door" d="M160 208L290 208L290 326L160 326Z"/>
       <path class="z" data-z="door" d="M160 326L30 326L30 436L160 436Z"/>
       <path class="z" data-z="door" d="M160 326L290 326L290 436L160 436Z"/>
       <path class="z" data-z="sill" d="M60 222Q59 216 54 216L30 216L30 432L54 432Q59 432 60 426Z"/>
@@ -260,11 +432,7 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
       <path class="z" data-z="lights" d="M224 83C244 78 266 82 290 94L290 130C272 118 248 106 232 104C228 98 226 90 224 83Z"/>
       <path class="z" data-z="roof" d="M76 206Q160 184 244 206C248 270 246 390 238 462C232 492 228 500 220 506Q160 494 100 506C92 500 88 492 82 462C74 390 72 270 76 206Z"/>
       <path class="z" data-z="glass" d="M76 206Q160 184 244 206L226 276Q160 258 94 276Z"/>
-      <path class="pass roof" d="M94 276Q160 258 226 276C229 330 229 390 224 446Q160 434 96 446C91 390 91 330 94 276Z"/>
-      <path class="seam" d="M94 340L72 338"/>
-      <path class="seam" d="M226 340L248 338"/>
-      <path class="seam" d="M96 446L82 462"/>
-      <path class="seam" d="M224 446L238 462"/>
+      <path class="z" data-z="roof" d="M94 276Q160 258 226 276C229 330 229 390 224 446Q160 434 96 446C91 390 91 330 94 276Z"/>
     </g>
     <path class="edge" d="M160 36C206 36 244 40 260 62C270 78 272 104 273 140C274 200 270 250 270 310C270 370 274 420 274 480C274 530 270 566 258 584C242 602 200 604 160 604C120 604 78 602 62 584C50 566 46 530 46 480C46 420 50 370 50 310C50 250 46 200 47 140C48 104 50 78 60 62C76 40 114 36 160 36Z"/>
     </svg>
@@ -272,7 +440,7 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
       <span class="lbl">Быстрый выбор</span>
       <div class="presets" id="presets">
         <button class="zone-btn" data-p="lights" aria-pressed="false">Только фары</button>
-        <button class="zone-btn" data-p="glass,lights" aria-pressed="false">Лобовое и оптика</button>
+        <button class="zone-btn" data-p="glass,lights" aria-pressed="false">Лобовое и&nbsp;оптика</button>
         <button class="zone-btn" data-p="bumper,hood,lights,wing,mirror" aria-pressed="false">Зоны риска</button>
         <button class="zone-btn" data-p="bumper,hood,lights,wing,glass,mirror,sill,door,rear,roof" aria-pressed="false">Полный комплект</button>
       </div>
@@ -289,11 +457,12 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
         <button class="zone-btn" data-z="rear" aria-pressed="false">Задняя часть</button>
         <button class="zone-btn" data-z="roof" aria-pressed="false">Крыша</button>
       </div>
-      <label class="lbl" for="model">Марка и модель</label>
+      <label class="lbl" for="model">Марка и&nbsp;модель</label>
       <input class="field" id="model" placeholder="Например, Toyota Harrier" autocomplete="off">
       <p class="sum" id="sum">Выберите зоны на схеме или кнопками.</p>
+      <p class="hint">Заявка скопируется, останется вставить её в&nbsp;чат</p>
       <div class="acts">
-        <a class="btn solid" id="send" href="https://t.me/+79146681041" target="_blank" rel="noopener">Узнать цену в Telegram</a>
+        <a class="btn solid" id="send" href="https://t.me/+79146681041" target="_blank" rel="noopener">Узнать цену в&nbsp;Telegram</a>
         <a class="btn" id="wa" href="https://wa.me/79146681041" target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn" href="tel:+79146681041">Позвонить</a>
       </div>
@@ -303,92 +472,64 @@ footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
 
 <section class="works" id="works">
   <div class="head r">
-    <h2>Работы Kraken</h2>
-    <div class="rail-nav"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Вперёд">→</button></div>
+    <h2>Машины в&nbsp;нашем боксе</h2>
+    <div class="rail-side"><span id="cnt">1 / 4</span><div class="rail-nav"><button id="prev" aria-label="Назад" disabled>←</button><button id="next" aria-label="Вперёд">→</button></div></div>
   </div>
   <div class="rail" id="rail">
+    <figure><img src="img/22.jpg" alt="Белый кроссовер в боксе Kraken, вид спереди" loading="lazy"></figure>
     <figure class="wide"><img src="img/08.jpg" alt="Белый внедорожник, передняя часть крупно" loading="lazy"></figure>
-    <figure><img src="img/04.jpg" alt="Белый внедорожник после работ" loading="lazy"></figure>
-    <figure><img src="img/22.jpg" alt="Белый кроссовер в боксе Kraken" loading="lazy"></figure>
-    <figure><img src="img/10.jpg" alt="Полировка гидроцикла, кромки закрыты малярным скотчем" loading="lazy"><figcaption>Полировка гидроцикла</figcaption></figure>
-    <figure><img src="img/02.jpg" alt="Чёрный кроссовер, отражения света на кузове" loading="lazy"></figure>
     <figure><img src="img/23.jpg" alt="Чёрный внедорожник в боксе Kraken" loading="lazy"></figure>
-    <figure><img src="img/03.jpg" alt="Белый внедорожник в боксе" loading="lazy"></figure>
-    <figure><img src="img/24.jpg" alt="Кроссовер на фоне граффити" loading="lazy"></figure>
+    <figure><img src="img/04.jpg" alt="Белый внедорожник после работ" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="serv2" id="serv">
+  <div class="serv-top r"><h2>Плёнка, мойка, химчистка, полировка</h2><p>Цену назовём, когда узнаем марку и&nbsp;что нужно сделать.</p></div>
+  <div class="panels">
+    <article class="panel r"><div class="ph"><img src="img/03.jpg" alt="" loading="lazy"></div><div class="tx"><h3>Защита плёнкой</h3><ul><li>Кузов, полный комплект</li><li>Зоны риска</li><li>Капот</li><li>Крыша в&nbsp;чёрный</li><li>Фары и&nbsp;туманки</li><li>Лобовое стекло</li></ul><a class="btn solid" href="#bron">Выбрать зоны</a></div></article>
+    <article class="panel care r"><div class="ph"><img src="img/10.jpg" alt="" loading="lazy"></div><div class="tx"><h3>Уход</h3><ul><li>Трёхфазная мойка</li><li>Комплексная мойка</li><li>Мойка паром</li><li>Мойка двигателя</li><li>Химчистка салона</li><li>Полировка кузова</li></ul><a class="btn" href="tel:+79146681041">Записаться по&nbsp;телефону</a></div></article>
   </div>
 </section>
 
 <section class="box">
   <img src="img/05.jpg" alt="Чёрный внедорожник в боксе Kraken под световыми рамами" loading="lazy">
-  <div class="in r">
-    <div class="eyebrow">Бокс</div>
-    <h2>Бокс под световыми рамами</h2>
-  </div>
 </section>
 
-<section class="serv">
-  <div class="r">
-    <h2>Что делаем</h2>
-    <p class="mute" style="margin-top:20px;max-width:24em">Цена зависит от машины и объёма. Назовём её, когда узнаем марку и что нужно защитить.</p>
+<section class="back" id="reviews">
+  <div class="stack-grid">
+    <div class="stack-side r"><h2>Сюда возвращаются</h2><figure><img src="img/24.jpg" alt="Серый кроссовер на фоне граффити" loading="lazy"></figure></div>
+    <div class="stack" id="stack">
+      <article class="sc on"><b>3&#8209;я машина</b><p>«Бронирую полиуретановой плёнкой у&nbsp;ребят … всегда всё чётенько и&nbsp;в&nbsp;срок…»</p><small>Павел Л., апрель 2025</small></article>
+      <article class="sc"><b>Новый Genesis</b><p>«Обращаемся во второй раз и&nbsp;снова довольны! … В&nbsp;этот раз заказали полный комплект брони, включая лобовое стекло.»</p><small>Наталья Т., апрель 2025</small></article>
+      <article class="sc"><b>5 лет</b><p>«…обращаюсь за детейлинг услугами и&nbsp;мойкой только сюда.»</p><small>Павел В., декабрь 2024</small></article>
+      <article class="sc"><b>Под запрос</b><p>«Владельцы подсказали, какая именно пленка подойдёт … подобрали удобное для меня время.»</p><small>Михаил Е., май 2026</small></article>
+    </div>
   </div>
-  <div class="r">
-    <div class="group">Защита плёнкой</div>
-    <ul>
-      <li>Кузов, полный комплект</li>
-      <li>Зоны риска</li>
-      <li>Фары и туманки</li>
-      <li>Лобовое стекло</li>
-    </ul>
-    <div class="group">Уход</div>
-    <ul>
-      <li>Трёхфазная мойка</li>
-      <li>Комплексная мойка<span>1 400-2 000 ₽</span></li>
-      <li>Мойка паром и мойка двигателя</li>
-      <li>Химчистка салона</li>
-      <li>Полировка кузова</li>
-    </ul>
-  </div>
-</section>
-
-<section class="back">
-  <h2 class="r">Сюда возвращаются</h2>
-  <div class="cards">
-    <article class="card r"><div><b>3-я машина</b><p>«Бронирую полиуретановой плёнкой у ребят уже 3-й свой автомобиль, всегда всё чётенько и в срок…»</p></div><small>Павел Л., апрель 2025</small></article>
-    <article class="card r"><div><b>Новый Genesis</b><p>«Обращаемся во второй раз и снова довольны! … забронировали новый Genesis без сомнений. В этот раз заказали полный комплект брони, включая лобовое стекло.»</p></div><small>Наталья Т., апрель 2025</small></article>
-    <article class="card r"><div><b>5 лет</b><p>«5 лет обращаюсь за детейлинг услугами и мойкой только сюда.»</p></div><small>Павел В., декабрь 2024</small></article>
-  </div>
-  <p class="honest r">«Владельцы подсказали какая именно пленка подойдёт под мой запрос, подобрали удобное для меня время.»</p>
-  <small>Михаил Е., отзыв в 2ГИС, май 2026</small>
 </section>
 
 <section class="people">
-  <div class="txt r">
-    <div class="eyebrow">Кто работает</div>
-    <h2 style="margin-top:14px;font-size:clamp(32px,4.2vw,58px)">Юрий и&nbsp;Анастасия</h2>
-    <p>Клиенты зовут их Юра и Настя. Настя подскажет, что сделать с машиной.</p>
-    <p>Пока моют машину, можно посидеть в зале ожидания, там кофейный автомат.</p>
-  </div>
-  <div class="a r"><img src="img/07.jpg" alt="Зона ожидания с кофейным автоматом" loading="lazy"></div>
-  <div class="b r"><img src="img/01.jpg" alt="Кресла у окна в зоне ожидания" loading="lazy"></div>
+  <div class="p-top r"><h2>Пока моют машину, можно выпить кофе</h2><p>Администратор Настя подскажет, что нужно машине.</p></div>
+  <div class="p-ph r"><img src="img/07.jpg" alt="Зал ожидания с кофейным автоматом" loading="lazy"><img src="img/01.jpg" alt="Кресла у окна в зале ожидания" loading="lazy"></div>
 </section>
 
 <section class="end" id="contacts">
   <img src="img/15.jpg" alt="Здание Kraken вечером, светящаяся вывеска" loading="lazy">
   <div class="in r">
-    <h2>Артём, Фрунзе&nbsp;41.<br>Записывайтесь заранее</h2>
-    <a class="btn solid end-cta" href="https://t.me/+79146681041" target="_blank" rel="noopener">Написать в Telegram</a>
-    <div class="cols">
-      <div><small>Адрес</small>Артём, улица Фрунзе, 41 стр. 1<br><a href="https://2gis.ru/artem/firm/70000001033884194" target="_blank" rel="noopener" style="color:var(--teal)">Открыть в 2ГИС</a></div>
-      <div><small>Когда</small>По предварительному звонку</div>
-      <div><small>Связь</small><a href="tel:+79146681041">+7 914 668-10-41</a><br><a data-wa href="https://wa.me/79146681041" target="_blank" rel="noopener">WhatsApp</a> &nbsp; <a href="https://t.me/+79146681041" target="_blank" rel="noopener">Telegram</a></div>
+    <h2>Артём, Фрунзе 41, стр.&nbsp;1.<br>Работаем по&nbsp;записи</h2>
+    <p class="where">Открываемся в&nbsp;10:00, время подберём по&nbsp;телефону.</p>
+    <div class="links">
+      <a class="big solid" href="tel:+79146681041"><small>Позвонить</small>+7 914 668-10-41</a>
+      <a class="big ic" href="https://t.me/+79146681041" target="_blank" rel="noopener"><small>Написать</small><span class="nm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.300-1.800.8l-4.800-3.600-2.300 2.200c-.3.300-.5.500-1 .5l.3-4.900 8.900-8c.4-.3-.1-.5-.6-.2L6.400 13.200l-4.700-1.500c-1-.3-1-1 .2-1.500l18.500-7.100c.9-.3 1.700.2 1.500 1.200z"/></svg>Telegram</span></a>
+      <a class="big ic" href="https://wa.me/79146681041" target="_blank" rel="noopener"><small>Написать</small><span class="nm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15L2 22l5.100-1.300A10 10 0 1 0 12 2zm0 1.800a8.200 8.200 0 1 1-4.300 15.200l-.3-.2-3 .8.800-2.900-.2-.3A8.200 8.200 0 0 1 12 3.800zM8.500 7.300c-.2 0-.5.100-.7.400-.3.300-1 1-1 2.300s1 2.700 1.100 2.900c.1.200 1.900 3 4.700 4.100 2.300.9 2.800.700 3.300.7.500-.1 1.600-.700 1.800-1.300.2-.6.200-1.200.200-1.300-.1-.1-.3-.2-.6-.3l-1.900-.9c-.3-.1-.5-.1-.6.100l-.9 1.100c-.2.2-.3.200-.6.100-.3-.2-1.200-.4-2.200-1.400-.8-.7-1.400-1.600-1.500-1.900-.2-.3 0-.4.100-.6l.4-.5.300-.5v-.5l-.9-2c-.2-.5-.4-.5-.6-.5z"/></svg>WhatsApp</span></a>
+      <a class="big" href="https://2gis.ru/artem/firm/70000001033884194" target="_blank" rel="noopener"><small>Маршрут</small>Открыть в&nbsp;2ГИС</a>
     </div>
   </div>
 </section>
-<footer>Kraken, детейлинг-студия. Артём, Приморский край.</footer>
+<footer>Kraken, Артём, Приморский край.</footer>
 
 <div class="bar">
   <a class="btn" href="tel:+79146681041">Позвонить</a>
-  <a class="btn solid" href="#bron">Выбрать зоны</a>
+  <a class="btn solid" href="https://t.me/+79146681041" target="_blank" rel="noopener" aria-label="Написать в Telegram">Написать</a>
 </div>
 
 <script>
@@ -411,20 +552,52 @@ function tog(z){sel.has(z)?sel.delete(z):sel.add(z);paint()}
 q('.car .z').forEach(function(e){e.addEventListener('click',function(){tog(e.dataset.z)})});
 q('#zones .zone-btn').forEach(function(b){b.addEventListener('click',function(){tog(b.dataset.z)})});
 q('#presets .zone-btn').forEach(function(b){b.addEventListener('click',function(){var same=b.getAttribute('aria-pressed')==='true';sel=new Set(same?[]:b.dataset.p.split(','));paint()})});
-model.addEventListener('input',paint);send.addEventListener('click',function(){try{navigator.clipboard.writeText(msg).then(function(){sum.textContent='Текст заявки скопирован, вставьте его в чат.'}).catch(function(){})}catch(e){}});paint();
+model.addEventListener('input',paint);send.addEventListener('click',function(e){
+  e.preventDefault();
+  /* вкладку открываем сразу, иначе браузер посчитает отложенное открытие всплывающим окном */
+  var w=null;try{w=window.open('about:blank','_blank');if(w)w.opener=null}catch(x){}
+  function fail(){sum.textContent='Скопировать не получилось, напишите зоны в чате сами.'}
+  try{navigator.clipboard.writeText(msg).then(function(){sum.textContent='Текст заявки скопирован, вставьте его в чат.'}).catch(fail)}catch(x){fail()}
+  setTimeout(function(){if(w)w.location.href=send.href;else location.href=send.href},700);
+});paint();
 
 var nav=document.getElementById('nav');
 var spd=document.getElementById('spd'),ran=false,reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function count(){if(ran)return;ran=true;if(reduced){spd.textContent=130;return}var t0=performance.now();(function f(t){var k=Math.min((t-t0)/1700,1);spd.textContent=Math.round(130*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');if(e.target.querySelector&&e.target.querySelector('#spd'))count();io.unobserve(e.target)}})},{threshold:.12});
-q('.r').forEach(function(e){io.observe(e)});
-var tent=document.getElementById('tent'),story=document.getElementById('story'),L=tent.getTotalLength();
-tent.style.strokeDasharray=L;tent.style.strokeDashoffset=L;
-var bron=document.getElementById('bron'),bar=document.querySelector('.bar');function onS(){nav.classList.toggle('on',scrollY>40);var b=bron.getBoundingClientRect();bar.classList.toggle('show',document.getElementById('contacts').getBoundingClientRect().top>innerHeight*.7&&scrollY>innerHeight*.8&&!(b.top<innerHeight*.7&&b.bottom>innerHeight*.2));var r=story.getBoundingClientRect(),h=innerHeight,k=Math.max(0,Math.min(1,(h-r.top)/(r.height+h*.5)));tent.style.strokeDashoffset=L*(1-k)}
-addEventListener('scroll',onS,{passive:true});onS();
+function count(){if(ran)return;ran=true;if(reduced){spd.textContent=130;return}spd.textContent=0;var t0=performance.now();(function f(t){var k=Math.min((t-t0)/1700,1);spd.textContent=Math.round(130*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
+if(!window.IntersectionObserver){q('.r').forEach(function(e){e.classList.add('in-view')});count()}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');if(e.target.querySelector&&e.target.querySelector('#spd'))count();io.unobserve(e.target)}})},{threshold:.12});
+q('.r').forEach(function(e){io.observe(e)});}
+var svgL=document.getElementById('lines');
+var lineW=0,lineH=0;
+function spline(p){var d='';for(var k=0;k<p.length-1;k++){var a=p[Math.max(k-1,0)],b=p[k],c=p[k+1],e=p[Math.min(k+2,p.length-1)];d+='C'+(b[0]+(c[0]-a[0])/6).toFixed(2)+' '+(b[1]+(c[1]-a[1])/6).toFixed(2)+' '+(c[0]-(e[0]-b[0])/6).toFixed(2)+' '+(c[1]-(e[1]-b[1])/6).toFixed(2)+' '+c[0].toFixed(2)+' '+c[1].toFixed(2)}return d}
+function buildLines(force){
+  var W=document.documentElement.clientWidth;svgL.style.height=0;var H=document.body.scrollHeight;svgL.style.height=H+'px';
+  if(!force&&W===lineW&&H===lineH)return;lineW=W;lineH=H;
+  svgL.setAttribute('width',W);svgL.setAttribute('viewBox','0 0 '+W+' '+H);
+  var pad=parseFloat(getComputedStyle(nav).paddingLeft),narrow=W<=600,n=2,lam=190,A=pad*(narrow?.18:.2),edge=pad*(narrow?.4:.5);
+  var out='<g>';
+  for(var i=0;i<n;i++){
+    var x0=i?W-edge:edge,ph=i*1.7+.4,pts=[],ws=[];
+    for(var t=-400;t<=H+400;t+=46){var u=t/lam+ph;pts.push([x0+Math.sin(u)*A*.8+Math.sin(u*2.3+ph)*A*.2,t+Math.sin(u*2+ph*.7)*lam*.3]);ws.push(2+Math.sin(t/(lam*2.1)+ph*1.3))}
+    /* толщина меняется от 1 до 3: контур из двух смещённых краёв */
+    var L=[],Rt=[];
+    pts.forEach(function(p,k){var a=pts[Math.max(k-1,0)],c=pts[Math.min(k+1,pts.length-1)],dx=c[0]-a[0],dy=c[1]-a[1],l=Math.sqrt(dx*dx+dy*dy)||1,nx=dy/l,ny=-dx/l,h=ws[k]/2;L.push([p[0]+nx*h,p[1]+ny*h]);Rt.push([p[0]-nx*h,p[1]-ny*h])});
+    Rt.reverse();
+    out+='<path fill="#74dcd4" d="M'+L[0][0].toFixed(2)+' '+L[0][1].toFixed(2)+spline(L)+'L'+Rt[0][0].toFixed(2)+' '+Rt[0][1].toFixed(2)+spline(Rt)+'Z"/>'}
+  svgL.innerHTML=out+'</g>'}
+buildLines(1);addEventListener('resize',function(){buildLines()});addEventListener('load',function(){buildLines(1)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){buildLines(1)});
+if(window.ResizeObserver)new ResizeObserver(function(){requestAnimationFrame(function(){buildLines()})}).observe(document.body);
+var stack=document.getElementById('stack'),cards=q('.sc');stack.classList.add('live');
+function markCard(){var mid=innerHeight/2,best=cards[0],m=1e9;cards.forEach(function(c){var r=c.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-mid);if(d<m){m=d;best=c}});cards.forEach(function(c){c.classList.toggle('on',c===best)})}
+var bron=document.getElementById('bron'),bar=document.querySelector('.bar');function onS(){markCard();nav.classList.toggle('on',scrollY>40);var b=bron.getBoundingClientRect();bar.classList.toggle('show',document.getElementById('contacts').getBoundingClientRect().top>innerHeight*.7&&scrollY>innerHeight*.8&&!(b.top<innerHeight*.7&&b.bottom>innerHeight*.2));}
+var tick=false;addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;onS()})},{passive:true});onS();
 var rail=document.getElementById('rail');
 function go(d){rail.scrollBy({left:d*Math.min(innerWidth*.7,780),behavior:reduced?'auto':'smooth'})}
-document.getElementById('prev').onclick=function(){go(-1)};document.getElementById('next').onclick=function(){go(1)};
+var prev=document.getElementById('prev'),next=document.getElementById('next');
+function arrows(){var x=rail.scrollLeft;prev.disabled=x<=4;next.disabled=x+rail.clientWidth>=rail.scrollWidth-4}
+var cnt=document.getElementById('cnt'),figs=rail.querySelectorAll('figure');rail.addEventListener('scroll',function(){var x=rail.scrollLeft,b=0,m=1e9;figs.forEach(function(f,i){var d=Math.abs(f.offsetLeft-rail.offsetLeft-x-parseFloat(getComputedStyle(rail).paddingLeft));if(d<m){m=d;b=i}});if(x+rail.clientWidth>=rail.scrollWidth-4)b=figs.length-1;cnt.textContent=(b+1)+' / '+figs.length;arrows()},{passive:true});
+prev.onclick=function(){go(-1)};next.onclick=function(){go(1)};
+arrows();addEventListener('resize',arrows);addEventListener('load',arrows);
 })();
 </script>
 </body>
