@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Кузовной ремонт</title>
+<title>Михсервис - Владивосток</title>
 <meta name="theme-color" content="#f4f3ef">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,7 @@
   .h-photo:hover img { filter: none; }
   .h-photo .mono { position: absolute; left: 0; bottom: 0; background: var(--bg); padding: 8px 12px 0 0; }
 
-  /* рейтинг — бегущая строка */
+  /* рейтинг - бегущая строка */
   .ticker { border-bottom: 1.5px solid var(--line); overflow: hidden; white-space: nowrap; padding: 14px 0; background: var(--ink); color: var(--bg); }
   .ticker div { display: inline-flex; gap: 48px; animation: tick 40s linear infinite; font-weight: 800; font-size: 22px; letter-spacing: -.02em; text-transform: uppercase; padding-left: 48px; }
   .ticker i { color: var(--acc); font-style: normal; }
@@ -75,7 +75,7 @@
   .adv b { display: block; font-size: clamp(48px, 6vw, 92px); font-weight: 900; letter-spacing: -.06em; line-height: 1; }
   .adv span { font-size: 17px; font-weight: 500; }
 
-  /* услуги — таблица */
+  /* услуги - таблица */
   .svc { display: grid; grid-template-columns: 3fr 4fr 5fr; gap: 32px; padding: 22px 0; border-top: 1px solid var(--hair); align-items: baseline; transition: color .2s, padding .3s; cursor: default; }
   .svc:hover { color: var(--acc); padding-left: 10px; }
   .svc h3 { font-size: clamp(22px, 2.2vw, 32px); font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
@@ -92,7 +92,7 @@
   .step h3 { font-size: 22px; font-weight: 800; letter-spacing: -.03em; margin: 30px 0 6px; }
   .step p { color: var(--muted); font-size: 15px; padding-bottom: 24px; }
 
-  /* работы — лента с прокруткой */
+  /* работы - лента с прокруткой */
   .works { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--line); border-top: 1.5px solid var(--line); }
   .works figure { position: relative; background: var(--bg); aspect-ratio: 1; overflow: hidden; cursor: zoom-in; }
   .works figure:nth-child(5n+1) { grid-column: span 2; grid-row: span 2; }
@@ -227,33 +227,33 @@
 
 <section>
   <div class="wrap">
-    <div class="s-head"><span class="mono">01 — Принцип</span><div><h2 class="reveal">Быстро.<br>Аккуратно.<br>Честно.</h2></div></div>
+    <div class="s-head"><span class="mono">01 - Принцип</span><div><h2 class="reveal">Быстро.<br>Аккуратно.<br>Честно.</h2></div></div>
     <div class="adv" id="adv"></div>
   </div>
 </section>
 
 <section id="services">
   <div class="wrap">
-    <div class="s-head"><span class="mono">02 — Услуги</span><div><h2 class="reveal">Что делаем</h2><p class="reveal" data-f="servicesText"></p></div></div>
+    <div class="s-head"><span class="mono">02 - Услуги</span><div><h2 class="reveal">Что делаем</h2><p class="reveal" data-f="servicesText"></p></div></div>
     <div id="svc"></div>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
-    <div class="s-head"><span class="mono">03 — Этапы</span><div><h2 class="reveal">Как проходит ремонт</h2></div></div>
+    <div class="s-head"><span class="mono">03 - Этапы</span><div><h2 class="reveal">Как проходит ремонт</h2></div></div>
     <div class="steps" id="steps"></div>
   </div>
 </section>
 
 <section id="works">
-  <div class="wrap"><div class="s-head"><span class="mono">04 — Работы</span><div><h2 class="reveal">Из нашего бокса</h2></div></div></div>
+  <div class="wrap"><div class="s-head"><span class="mono">04 - Работы</span><div><h2 class="reveal">Из нашего бокса</h2></div></div></div>
   <div class="works" id="grid"></div>
 </section>
 
 <section id="reviews">
   <div class="wrap">
-    <div class="s-head"><span class="mono">05 — Отзывы</span><div><h2 class="reveal">Что говорят клиенты</h2></div></div>
+    <div class="s-head"><span class="mono">05 - Отзывы</span><div><h2 class="reveal">Что говорят клиенты</h2></div></div>
     <div class="rev-wrap">
       <div class="rev-score reveal" id="revScore"><b id="rt2"></b><p id="rc2"></p><a class="btn btn-line" data-href="gis" target="_blank" rel="noopener"><span>Все отзывы в 2ГИС</span><span>→</span></a></div>
       <div class="rev-list" id="rev"></div>
@@ -263,13 +263,13 @@
 
 <section>
   <div class="wrap">
-    <div class="s-head"><span class="mono">06 — Вопросы</span><div><h2 class="reveal">Частые вопросы</h2></div></div>
+    <div class="s-head"><span class="mono">06 - Вопросы</span><div><h2 class="reveal">Частые вопросы</h2></div></div>
     <div class="faq" id="faq"></div>
   </div>
 </section>
 
 <section id="contacts" style="border-bottom:0">
-  <div class="wrap"><div class="s-head"><span class="mono">07 — Контакты</span><div><h2 class="reveal">Приезжайте</h2></div></div></div>
+  <div class="wrap"><div class="s-head"><span class="mono">07 - Контакты</span><div><h2 class="reveal">Приезжайте</h2></div></div></div>
   <div class="wrap contacts">
     <div class="c-info">
       <span class="mono">Телефон</span>
@@ -295,7 +295,7 @@
   S.fill();
   if (C.colors && C.colors.acc) document.documentElement.style.setProperty('--acc', C.colors.acc);
   if (C.logo) $('logoI').outerHTML = `<img src="${C.logo}" alt="${S.esc(C.name)}">`;
-  // Заголовок: своё из site.json (heroTitle7, слово в <em> — красное) или из heroTitle с красным последним словом
+  // Заголовок: своё из site.json (heroTitle7, слово в <em> - красное) или из heroTitle с красным последним словом
   $('h1').innerHTML = C.heroTitle7 || S.esc(C.heroTitle).replace(/(\S+)$/, '<em>$1</em>');
   $('heroImg').src = C.hero;
   $('heroCap').textContent = (C.address || '').split(',')[0];
