@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kraken - бронирование авто плёнкой, Артём</title>
+<meta name="description" content="Детейлинг-студия Kraken в Артёме. Полиуретановая плёнка на кузов, фары и лобовое стекло, трёхфазная мойка, химчистка. 4,9 в 2ГИС.">
+<meta property="og:title" content="Kraken - бронирование авто плёнкой">
+<meta property="og:description" content="Гравий на 130 км/ч. Лобовое целое. Случай из отзыва клиента, декабрь 2024. Детейлинг-студия в Артёме.">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/kraken-premium/img/06.jpg">
+<meta name="theme-color" content="#07090a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2307090a' d='M0 0h32v32H0z'/%3E%3Cpath fill='none' stroke='%2374dcd4' stroke-width='2.5' d='M16 5l9.5 5.5v11L16 27l-9.5-5.5v-11z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Unbounded:wght@200;300;400&subset=cyrillic&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090a;--bg2:#0d1112;--ink:#eef2f1;--mute:#93a09e;--teal:#74dcd4;--line:rgba(238,242,241,.13);--r:22px;--pad:clamp(16px,5vw,72px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,-apple-system,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+h1,h2{font-weight:500;letter-spacing:-.03em;line-height:1.04}
+h2{font-size:clamp(34px,5.4vw,72px)}
+section{padding:clamp(80px,12vw,170px) var(--pad);position:relative}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.mute{color:var(--mute)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;border:1px solid var(--line);transition:background .35s,color .35s,border-color .35s;cursor:pointer;background:none}
+.btn.solid{background:var(--ink);color:#07090a;border-color:var(--ink)}
+.btn.solid:hover{background:var(--teal);border-color:var(--teal)}
+.btn:not(.solid):hover{border-color:var(--teal);color:var(--teal)}
+.btn:focus-visible,.zone-btn:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+/* шапка */
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);transition:background .4s,backdrop-filter .4s}
+nav.on{background:rgba(7,9,10,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.logo{height:46px;width:auto}
+nav .right{display:flex;align-items:center;gap:26px;font-size:15px}
+nav .pill{padding:9px 20px;border:1px solid var(--line);border-radius:99px;transition:.3s}
+nav .pill:hover{border-color:var(--teal);color:var(--teal)}
+
+/* первый экран */
+.hero{position:relative;min-height:100svh;padding:0;display:flex;align-items:flex-end;overflow:hidden}
+.hero .pic{position:absolute;inset:0;animation:drift 26s ease-out both}
+.hero .pic img{object-position:50% 40%}
+@keyframes drift{from{transform:scale(1.09)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,10,.55) 0,rgba(7,9,10,.08) 26%,rgba(7,9,10,.74) 56%,#07090a 100%)}
+.hero .in{position:relative;z-index:2;width:100%;padding:0 var(--pad) clamp(30px,6vh,64px);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+.hero h1{font-size:clamp(46px,8.6vw,128px);margin:16px 0 22px;max-width:11em}
+.hero p.lead{font-size:clamp(17px,1.6vw,21px);max-width:31em;color:#d3dbd9}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.score{text-align:right;white-space:nowrap}
+.score b{font:300 clamp(44px,5vw,72px)/1 Unbounded,sans-serif;display:block}
+.score span{font-size:14px;color:#c3cdcb}
+
+/* история */
+.story{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(36px,6vw,100px);align-items:center}
+.speed{white-space:nowrap;font:200 clamp(110px,15.5vw,236px)/.9 Unbounded,sans-serif;letter-spacing:-.06em;color:var(--ink);font-variant-numeric:tabular-nums}
+.speed small{display:block;font:400 clamp(16px,1.6vw,22px) Manrope;letter-spacing:0;color:var(--teal);margin:14px 0 0 .3em}
+.story blockquote{font-size:clamp(22px,2.5vw,34px);line-height:1.28;letter-spacing:-.015em;margin:30px 0 20px}
+.story cite{font-style:normal;color:var(--mute);font-size:15px}
+.frame{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 18px 16px;font-size:14px;color:#eef2f1;background:linear-gradient(0deg,rgba(7,9,10,.86),transparent)}
+.tent{position:absolute;right:0;top:-40px;width:min(44vw,520px);height:calc(100% + 80px);pointer-events:none;opacity:.5}
+.tent path{fill:none;stroke:var(--teal);stroke-width:1.2}
+
+/* схема брони */
+.cfg{background:var(--bg2);border-block:1px solid var(--line)}
+.cfg-head{margin-bottom:clamp(36px,5vw,70px)}
+.cfg-head h2{margin-top:14px}
+.cfg-grid{display:grid;grid-template-columns:minmax(240px,380px) minmax(0,1fr);gap:clamp(30px,7vw,120px);align-items:center}
+.car{max-height:640px;width:100%}
+.car .z{fill:#2c373a;stroke:var(--bg2);stroke-width:3.2;stroke-linejoin:round;transition:fill .45s;cursor:pointer}
+.car .z.on{fill:#62c4bc}
+.car .pass{fill:#0a0e0f;stroke:var(--bg2);stroke-width:3.2;stroke-linejoin:round}
+.car .roof{fill:#171d1f}
+.car .seam{fill:none;stroke:var(--bg2);stroke-width:3.2}
+.car .edge{fill:none;stroke:rgba(238,242,241,.42);stroke-width:1;pointer-events:none}
+.car .axis{fill:none;stroke:rgba(238,242,241,.22);stroke-width:1;stroke-dasharray:5 4}
+@media(hover:hover){.car .z:not(.on):hover{fill:#3c494c}}
+.presets,.zones{display:flex;flex-wrap:wrap;gap:9px}
+.zones{margin:14px 0 30px}
+.zone-btn{min-height:46px;padding:0 19px;border-radius:99px;border:1px solid var(--line);background:none;cursor:pointer;font-size:15px;transition:.3s}
+.zone-btn:hover{border-color:var(--teal)}
+.zone-btn[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#07090a;font-weight:600}
+.lbl{font-size:14px;color:var(--mute);margin-bottom:10px;display:block}
+.field{width:100%;min-height:56px;background:none;border:0;border-bottom:1px solid var(--line);font-size:20px;outline-offset:6px;margin-bottom:26px;border-radius:0}
+.field::placeholder{color:#7f8b89}
+.sum{min-height:1.6em;margin-bottom:22px;color:#c9d3d1}
+.cfg .acts{display:flex;flex-wrap:wrap;gap:12px}
+
+/* работы */
+.works{padding-inline:0}
+.works .head{padding-inline:var(--pad);display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,56px)}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-inline:var(--pad);scrollbar-width:none;scroll-padding-inline:var(--pad)}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:0 0 min(78vw,860px);aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;scroll-snap-align:start;position:relative}
+.rail figure.wide{flex-basis:min(88vw,1080px)}
+.rail img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.rail figure:hover img{transform:scale(1.03)}
+.rail figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 16px;font-size:15px;background:linear-gradient(0deg,rgba(7,9,10,.86),transparent)}
+.rail-nav{display:flex;gap:8px}
+.rail-nav button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;transition:.3s;font-size:18px}
+.rail-nav button:hover{border-color:var(--teal);color:var(--teal)}
+
+/* бокс */
+.box{min-height:92vh;display:flex;align-items:flex-end;padding:0;overflow:hidden}
+.box>img{position:absolute;inset:0}
+@media(min-width:861px){.box>img{left:26%;width:74%}}
+.box:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07090a 26%,rgba(7,9,10,.55) 44%,rgba(7,9,10,0) 74%),linear-gradient(0deg,#07090a 0,transparent 26%)}
+.box .in{position:relative;z-index:2;padding:0 var(--pad) clamp(46px,8vw,110px);max-width:760px}
+.box p{margin-top:20px;font-size:19px;color:#d3dbd9}
+
+/* услуги */
+.serv{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,6vw,100px)}
+.serv ul{list-style:none;padding:0}
+.serv li{display:flex;justify-content:space-between;gap:20px;padding:21px 0;border-bottom:1px solid var(--line);font-size:clamp(19px,1.9vw,25px);letter-spacing:-.01em}
+.serv li span{color:var(--mute);font-size:15px;letter-spacing:0;text-align:right;align-self:center}
+.group{color:var(--teal);font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:0 0 10px;margin-top:34px}
+.group:first-child{margin-top:0}
+
+/* возвращаются */
+.back h2{max-width:13em;margin-bottom:clamp(36px,5vw,70px)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-height:310px;transition:border-color .4s}
+.card:hover{border-color:rgba(116,220,212,.55)}
+.card b{font:300 clamp(30px,3vw,44px)/1.1 Unbounded,sans-serif;letter-spacing:-.04em;display:block;margin-bottom:18px}
+.card small{font-size:14px;color:var(--mute)}
+.honest{margin-top:clamp(50px,7vw,100px);max-width:24em;font-size:clamp(26px,3.4vw,46px);line-height:1.18;letter-spacing:-.025em}
+.honest+small{display:block;margin-top:16px;font-size:15px;color:var(--mute)}
+
+/* люди и ожидание */
+.people{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;align-items:stretch}
+.people .txt{grid-column:span 5;padding-right:clamp(0px,3vw,50px);align-self:center}
+.people p{margin-top:20px;color:#c9d3d1;font-size:19px}
+.people .a{grid-column:span 4;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.people .b{grid-column:span 3;border-radius:var(--r);overflow:hidden;aspect-ratio:3/5}
+
+/* контакты */
+.end{padding:0;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.end>img{position:absolute;inset:0 0 auto;height:72%;object-position:40% 46%}
+.end:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#07090a 34%,rgba(7,9,10,.45) 60%,rgba(7,9,10,.2) 100%)}
+.end .in{position:relative;z-index:2;width:100%;padding:0 var(--pad) clamp(100px,9vw,110px)}
+.end h2{font-size:clamp(34px,5.4vw,80px);margin-bottom:30px}
+.end-cta{min-height:62px;padding:0 40px;font-size:18px;margin-bottom:38px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-bottom:30px}
+.cols small{display:block;color:var(--mute);font-size:14px;margin-bottom:6px}
+.cols a:hover{color:var(--teal)}
+.demo{position:fixed;left:50%;transform:translateX(-50%);top:24px;z-index:19;font-size:11px;letter-spacing:.06em;padding:4px 10px;border-radius:99px;background:rgba(7,9,10,.6);border:1px solid var(--line);color:#c3cdcb;backdrop-filter:blur(8px)}
+footer{padding:22px var(--pad) 90px;color:var(--mute);font-size:14px}
+.bar{display:none}
+
+.r{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.r.in-view{opacity:1;transform:none}
+
+@media(max-width:860px){
+ body{font-size:16px}
+ .logo{height:38px}
+ nav .right a:not(.pill){display:none}
+ .hero .in{grid-template-columns:1fr}
+ .hero .pic{top:-11%;bottom:auto;height:77%}
+ .hero .pic img{object-position:50% 62%}
+ .demo{left:auto;right:12px;transform:none;top:68px}
+ .hero:after{background:linear-gradient(180deg,rgba(7,9,10,.88) 0,rgba(7,9,10,.1) 15%,rgba(7,9,10,.72) 32%,rgba(7,9,10,.94) 44%,#07090a 60%)}
+ .hero h1{font-size:clamp(42px,11.6vw,84px)}
+ .score{text-align:left}
+ .score b{display:inline;font-size:30px;margin-right:8px}
+ .hero .acts .btn{flex:1 1 100%}
+ .story,.serv,.cfg-grid{grid-template-columns:minmax(0,1fr)}
+ .tent{display:none}
+ .frame{aspect-ratio:4/3}
+ .car{max-height:280px}
+ .end-cta{width:100%}
+ .end{display:block;min-height:0}
+ .end>img{position:relative;height:auto;aspect-ratio:16/10;object-position:40% 40%}
+ .end:after{bottom:auto;height:62.5vw;background:linear-gradient(0deg,#07090a 0,rgba(7,9,10,0) 42%)}
+ .end .in{padding-top:30px}
+ .cards{grid-template-columns:minmax(0,1fr)}
+ .card{min-height:0}
+ .people .txt{grid-column:span 12}
+ .people .a{grid-column:span 7;aspect-ratio:4/5}
+ .people .b{grid-column:span 5;aspect-ratio:auto}
+ .box{min-height:80vh}
+ .box:after{background:linear-gradient(0deg,#07090a 8%,rgba(7,9,10,.45) 70%,rgba(7,9,10,.2))}
+ .rail-nav{display:none}
+ .cols{grid-template-columns:minmax(0,1fr)}
+ .bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;opacity:0;pointer-events:none;transform:translateY(12px);transition:.4s}
+ .bar.show{opacity:1;pointer-events:auto;transform:none}
+ .bar .btn{background:rgba(13,17,18,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+ .bar .btn.solid{background:var(--ink)}
+}
+@media(prefers-reduced-motion:reduce){.hero .pic{animation:none}.r{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" aria-label="Kraken, наверх"><img class="logo" src="img/logo.png" alt="Kraken" style="width:auto"></a>
+  <div class="right">
+    <a href="#bron">Выбрать зоны</a>
+    <a href="#works">Работы</a>
+    <a class="pill" href="tel:+79146681041">+7 914 668-10-41</a>
+  </div>
+</nav>
+<div class="demo">Демо-версия сайта</div>
+
+<header class="hero" id="top">
+  <div class="pic"><img src="img/06.jpg" alt="Автомобиль под защитной плёнкой в боксе Kraken, шестигранный свет" fetchpriority="high"></div>
+  <div class="in">
+    <div>
+      <div class="eyebrow">Детейлинг-студия Kraken, Артём</div>
+      <h1>Гравий на <span style="white-space:nowrap">130 км/ч.</span> Лобовое целое.</h1>
+      <p class="lead">Полиуретановая плёнка на кузов, фары и лобовое. Артём, рядом с Владивостоком. Запись по телефону и в Telegram. Случай из отзыва клиента, декабрь 2024.</p>
+      <div class="acts">
+        <a class="btn solid" href="#bron">Отметить, что защитить</a>
+        <a class="btn" href="https://t.me/+79146681041" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+    </div>
+    <div class="score"><b>4,9</b><span>в 2ГИС, больше 110 отзывов</span></div>
+  </div>
+</header>
+
+<section class="story" id="story">
+  <svg class="tent" viewBox="0 0 400 900" aria-hidden="true"><path id="tent" d="M400 10C250 90 330 230 210 290S60 430 170 520s190 90 120 210-190 60-150 170"/></svg>
+  <div class="r">
+    <div class="speed"><span id="spd">0</span><small>км/ч</small></div>
+    <blockquote>«…мне в лобовое прилетел гранитный гравий размером с грецкий орех. Отскочил как от металла! … На плёнке крупный след, на стекле под ним ни царапинки.»</blockquote>
+    <cite>Алексей Ц., забрал машину и поехал домой. Отзыв в 2ГИС, декабрь 2024. По его словам, такое лобовое стоит под 100 тысяч рублей.</cite>
+  </div>
+  <figure class="frame r"><img src="img/11.jpg" alt="Защитная плёнка на лобовом стекле во время установки" loading="lazy"><figcaption>Плёнка на лобовом стекле, момент установки</figcaption></figure>
+</section>
+
+<section class="cfg" id="bron">
+  <div class="cfg-head r">
+    <div class="eyebrow">Схема машины</div>
+    <h2>Отметьте, что хотите защитить</h2>
+  </div>
+  <div class="cfg-grid">
+    <svg class="car r" viewBox="0 0 320 640" role="img" aria-label="Схема автомобиля сверху с зонами защиты">
+    <defs><clipPath id="carBody"><path d="M160 36C206 36 244 40 260 62C270 78 272 104 273 140C274 200 270 250 270 310C270 370 274 420 274 480C274 530 270 566 258 584C242 602 200 604 160 604C120 604 78 602 62 584C50 566 46 530 46 480C46 420 50 370 50 310C50 250 46 200 47 140C48 104 50 78 60 62C76 40 114 36 160 36Z"/></clipPath></defs>
+    <path class="axis" d="M160 6V28M160 612V634"/>
+    <path class="z" data-z="mirror" d="M43 232L33 225C21 220 9 224 9 233C9 242 19 245 33 244L43 241Z"/>
+    <path class="z" data-z="mirror" d="M277 232L287 225C299 220 311 224 311 233C311 242 301 245 287 244L277 241Z"/>
+    <g clip-path="url(#carBody)">
+      <path class="z" data-z="rear" d="M30 436Q160 428 290 436L290 650L30 650Z"/>
+      <path class="z" data-z="rear" d="M82 498Q160 482 238 498C242 520 244 545 248 600L72 600C76 545 78 520 82 498Z"/>
+      <path class="z" data-z="rear" d="M30 546Q160 592 290 546L290 650L30 650Z"/>
+      <path class="z" data-z="door" d="M160 214L30 214L30 326L160 326Z"/>
+      <path class="z" data-z="door" d="M160 214L290 214L290 326L160 326Z"/>
+      <path class="z" data-z="door" d="M160 326L30 326L30 436L160 436Z"/>
+      <path class="z" data-z="door" d="M160 326L290 326L290 436L160 436Z"/>
+      <path class="z" data-z="sill" d="M60 222Q59 216 54 216L30 216L30 432L54 432Q59 432 60 426Z"/>
+      <path class="z" data-z="sill" d="M260 222Q261 216 266 216L290 216L290 432L266 432Q261 432 260 426Z"/>
+      <path class="z" data-z="wing" d="M160 60L30 60L30 214Q42 208 80 208L160 208Z"/>
+      <path class="z" data-z="wing" d="M160 60L290 60L290 214Q278 208 240 208L160 208Z"/>
+      <path class="z" data-z="hood" d="M94 60L226 60C234 112 240 160 244 206Q160 184 76 206C80 160 86 112 94 60Z"/>
+      <path class="z" data-z="bumper" d="M30 10L290 10L290 100Q160 44 30 100Z"/>
+      <path class="z" data-z="lights" d="M96 83C76 78 54 82 30 94L30 130C48 118 72 106 88 104C92 98 94 90 96 83Z"/>
+      <path class="z" data-z="lights" d="M224 83C244 78 266 82 290 94L290 130C272 118 248 106 232 104C228 98 226 90 224 83Z"/>
+      <path class="z" data-z="roof" d="M76 206Q160 184 244 206C248 270 246 390 238 462C232 492 228 500 220 506Q160 494 100 506C92 500 88 492 82 462C74 390 72 270 76 206Z"/>
+      <path class="z" data-z="glass" d="M76 206Q160 184 244 206L226 276Q160 258 94 276Z"/>
+      <path class="pass roof" d="M94 276Q160 258 226 276C229 330 229 390 224 446Q160 434 96 446C91 390 91 330 94 276Z"/>
+      <path class="seam" d="M94 340L72 338"/>
+      <path class="seam" d="M226 340L248 338"/>
+      <path class="seam" d="M96 446L82 462"/>
+      <path class="seam" d="M224 446L238 462"/>
+    </g>
+    <path class="edge" d="M160 36C206 36 244 40 260 62C270 78 272 104 273 140C274 200 270 250 270 310C270 370 274 420 274 480C274 530 270 566 258 584C242 602 200 604 160 604C120 604 78 602 62 584C50 566 46 530 46 480C46 420 50 370 50 310C50 250 46 200 47 140C48 104 50 78 60 62C76 40 114 36 160 36Z"/>
+    </svg>
+    <div class="r">
+      <span class="lbl">Быстрый выбор</span>
+      <div class="presets" id="presets">
+        <button class="zone-btn" data-p="lights" aria-pressed="false">Только фары</button>
+        <button class="zone-btn" data-p="glass,lights" aria-pressed="false">Лобовое и оптика</button>
+        <button class="zone-btn" data-p="bumper,hood,lights,wing,mirror" aria-pressed="false">Зоны риска</button>
+        <button class="zone-btn" data-p="bumper,hood,lights,wing,glass,mirror,sill,door,rear,roof" aria-pressed="false">Полный комплект</button>
+      </div>
+      <span class="lbl" style="margin-top:26px">Или по отдельности</span>
+      <div class="zones" id="zones">
+        <button class="zone-btn" data-z="bumper" aria-pressed="false">Бампер</button>
+        <button class="zone-btn" data-z="lights" aria-pressed="false">Фары</button>
+        <button class="zone-btn" data-z="hood" aria-pressed="false">Капот</button>
+        <button class="zone-btn" data-z="wing" aria-pressed="false">Крылья</button>
+        <button class="zone-btn" data-z="glass" aria-pressed="false">Лобовое</button>
+        <button class="zone-btn" data-z="mirror" aria-pressed="false">Зеркала</button>
+        <button class="zone-btn" data-z="sill" aria-pressed="false">Пороги</button>
+        <button class="zone-btn" data-z="door" aria-pressed="false">Двери</button>
+        <button class="zone-btn" data-z="rear" aria-pressed="false">Задняя часть</button>
+        <button class="zone-btn" data-z="roof" aria-pressed="false">Крыша</button>
+      </div>
+      <label class="lbl" for="model">Марка и модель</label>
+      <input class="field" id="model" placeholder="Например, Toyota Harrier" autocomplete="off">
+      <p class="sum" id="sum">Выберите зоны на схеме или кнопками.</p>
+      <div class="acts">
+        <a class="btn solid" id="send" href="https://t.me/+79146681041" target="_blank" rel="noopener">Узнать цену в Telegram</a>
+        <a class="btn" id="wa" href="https://wa.me/79146681041" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="tel:+79146681041">Позвонить</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="head r">
+    <h2>Работы Kraken</h2>
+    <div class="rail-nav"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Вперёд">→</button></div>
+  </div>
+  <div class="rail" id="rail">
+    <figure class="wide"><img src="img/08.jpg" alt="Белый внедорожник, передняя часть крупно" loading="lazy"></figure>
+    <figure><img src="img/04.jpg" alt="Белый внедорожник после работ" loading="lazy"></figure>
+    <figure><img src="img/22.jpg" alt="Белый кроссовер в боксе Kraken" loading="lazy"></figure>
+    <figure><img src="img/10.jpg" alt="Полировка гидроцикла, кромки закрыты малярным скотчем" loading="lazy"><figcaption>Полировка гидроцикла</figcaption></figure>
+    <figure><img src="img/02.jpg" alt="Чёрный кроссовер, отражения света на кузове" loading="lazy"></figure>
+    <figure><img src="img/23.jpg" alt="Чёрный внедорожник в боксе Kraken" loading="lazy"></figure>
+    <figure><img src="img/03.jpg" alt="Белый внедорожник в боксе" loading="lazy"></figure>
+    <figure><img src="img/24.jpg" alt="Кроссовер на фоне граффити" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="box">
+  <img src="img/05.jpg" alt="Чёрный внедорожник в боксе Kraken под световыми рамами" loading="lazy">
+  <div class="in r">
+    <div class="eyebrow">Бокс</div>
+    <h2>Бокс под световыми рамами</h2>
+  </div>
+</section>
+
+<section class="serv">
+  <div class="r">
+    <h2>Что делаем</h2>
+    <p class="mute" style="margin-top:20px;max-width:24em">Цена зависит от машины и объёма. Назовём её, когда узнаем марку и что нужно защитить.</p>
+  </div>
+  <div class="r">
+    <div class="group">Защита плёнкой</div>
+    <ul>
+      <li>Кузов, полный комплект</li>
+      <li>Зоны риска</li>
+      <li>Фары и туманки</li>
+      <li>Лобовое стекло</li>
+    </ul>
+    <div class="group">Уход</div>
+    <ul>
+      <li>Трёхфазная мойка</li>
+      <li>Комплексная мойка<span>1 400-2 000 ₽</span></li>
+      <li>Мойка паром и мойка двигателя</li>
+      <li>Химчистка салона</li>
+      <li>Полировка кузова</li>
+    </ul>
+  </div>
+</section>
+
+<section class="back">
+  <h2 class="r">Сюда возвращаются</h2>
+  <div class="cards">
+    <article class="card r"><div><b>3-я машина</b><p>«Бронирую полиуретановой плёнкой у ребят уже 3-й свой автомобиль, всегда всё чётенько и в срок…»</p></div><small>Павел Л., апрель 2025</small></article>
+    <article class="card r"><div><b>Новый Genesis</b><p>«Обращаемся во второй раз и снова довольны! … забронировали новый Genesis без сомнений. В этот раз заказали полный комплект брони, включая лобовое стекло.»</p></div><small>Наталья Т., апрель 2025</small></article>
+    <article class="card r"><div><b>5 лет</b><p>«5 лет обращаюсь за детейлинг услугами и мойкой только сюда.»</p></div><small>Павел В., декабрь 2024</small></article>
+  </div>
+  <p class="honest r">«Владельцы подсказали какая именно пленка подойдёт под мой запрос, подобрали удобное для меня время.»</p>
+  <small>Михаил Е., отзыв в 2ГИС, май 2026</small>
+</section>
+
+<section class="people">
+  <div class="txt r">
+    <div class="eyebrow">Кто работает</div>
+    <h2 style="margin-top:14px;font-size:clamp(32px,4.2vw,58px)">Юрий и&nbsp;Анастасия</h2>
+    <p>Клиенты зовут их Юра и Настя. Настя подскажет, что сделать с машиной.</p>
+    <p>Пока моют машину, можно посидеть в зале ожидания, там кофейный автомат.</p>
+  </div>
+  <div class="a r"><img src="img/07.jpg" alt="Зона ожидания с кофейным автоматом" loading="lazy"></div>
+  <div class="b r"><img src="img/01.jpg" alt="Кресла у окна в зоне ожидания" loading="lazy"></div>
+</section>
+
+<section class="end" id="contacts">
+  <img src="img/15.jpg" alt="Здание Kraken вечером, светящаяся вывеска" loading="lazy">
+  <div class="in r">
+    <h2>Артём, Фрунзе&nbsp;41.<br>Записывайтесь заранее</h2>
+    <a class="btn solid end-cta" href="https://t.me/+79146681041" target="_blank" rel="noopener">Написать в Telegram</a>
+    <div class="cols">
+      <div><small>Адрес</small>Артём, улица Фрунзе, 41 стр. 1<br><a href="https://2gis.ru/artem/firm/70000001033884194" target="_blank" rel="noopener" style="color:var(--teal)">Открыть в 2ГИС</a></div>
+      <div><small>Когда</small>По предварительному звонку</div>
+      <div><small>Связь</small><a href="tel:+79146681041">+7 914 668-10-41</a><br><a data-wa href="https://wa.me/79146681041" target="_blank" rel="noopener">WhatsApp</a> &nbsp; <a href="https://t.me/+79146681041" target="_blank" rel="noopener">Telegram</a></div>
+    </div>
+  </div>
+</section>
+<footer>Kraken, детейлинг-студия. Артём, Приморский край.</footer>
+
+<div class="bar">
+  <a class="btn" href="tel:+79146681041">Позвонить</a>
+  <a class="btn solid" href="#bron">Выбрать зоны</a>
+</div>
+
+<script>
+(function(){
+var names={bumper:'бампер',lights:'фары',hood:'капот',wing:'крылья',glass:'лобовое стекло',mirror:'зеркала',sill:'пороги',door:'двери',rear:'задняя часть',roof:'крыша'};
+var order=Object.keys(names),sel=new Set();
+var q=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var msg='';var model=document.getElementById('model'),sum=document.getElementById('sum'),send=document.getElementById('send');
+function paint(){
+  q('.car .z').forEach(function(e){e.classList.toggle('on',sel.has(e.dataset.z))});
+  q('#zones .zone-btn').forEach(function(b){b.setAttribute('aria-pressed',sel.has(b.dataset.z))});
+  q('#presets .zone-btn').forEach(function(b){var p=b.dataset.p.split(',');b.setAttribute('aria-pressed',p.length===sel.size&&p.every(function(z){return sel.has(z)}))});
+  var list=order.filter(function(z){return sel.has(z)}).map(function(z){return names[z]});
+  sum.textContent=list.length?'Вы выбрали: '+list.join(', ')+'.':'Выберите зоны на схеме или кнопками.';
+  var m=model.value.trim();
+  var t='Здравствуйте! Хочу узнать цену на бронирование плёнкой.'+(list.length?'\nЧто защитить: '+list.join(', ')+'.':'')+(m?'\nМашина: '+m+'.':'');
+  document.getElementById('wa').href='https://wa.me/79146681041?text='+encodeURIComponent(t);msg=t;
+}
+function tog(z){sel.has(z)?sel.delete(z):sel.add(z);paint()}
+q('.car .z').forEach(function(e){e.addEventListener('click',function(){tog(e.dataset.z)})});
+q('#zones .zone-btn').forEach(function(b){b.addEventListener('click',function(){tog(b.dataset.z)})});
+q('#presets .zone-btn').forEach(function(b){b.addEventListener('click',function(){var same=b.getAttribute('aria-pressed')==='true';sel=new Set(same?[]:b.dataset.p.split(','));paint()})});
+model.addEventListener('input',paint);send.addEventListener('click',function(){try{navigator.clipboard.writeText(msg).then(function(){sum.textContent='Текст заявки скопирован, вставьте его в чат.'}).catch(function(){})}catch(e){}});paint();
+
+var nav=document.getElementById('nav');
+var spd=document.getElementById('spd'),ran=false,reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function count(){if(ran)return;ran=true;if(reduced){spd.textContent=130;return}var t0=performance.now();(function f(t){var k=Math.min((t-t0)/1700,1);spd.textContent=Math.round(130*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');if(e.target.querySelector&&e.target.querySelector('#spd'))count();io.unobserve(e.target)}})},{threshold:.12});
+q('.r').forEach(function(e){io.observe(e)});
+var tent=document.getElementById('tent'),story=document.getElementById('story'),L=tent.getTotalLength();
+tent.style.strokeDasharray=L;tent.style.strokeDashoffset=L;
+var bron=document.getElementById('bron'),bar=document.querySelector('.bar');function onS(){nav.classList.toggle('on',scrollY>40);var b=bron.getBoundingClientRect();bar.classList.toggle('show',document.getElementById('contacts').getBoundingClientRect().top>innerHeight*.7&&scrollY>innerHeight*.8&&!(b.top<innerHeight*.7&&b.bottom>innerHeight*.2));var r=story.getBoundingClientRect(),h=innerHeight,k=Math.max(0,Math.min(1,(h-r.top)/(r.height+h*.5)));tent.style.strokeDashoffset=L*(1-k)}
+addEventListener('scroll',onS,{passive:true});onS();
+var rail=document.getElementById('rail');
+function go(d){rail.scrollBy({left:d*Math.min(innerWidth*.7,780),behavior:reduced?'auto':'smooth'})}
+document.getElementById('prev').onclick=function(){go(-1)};document.getElementById('next').onclick=function(){go(1)};
+})();
+</script>
+</body>
+</html>
