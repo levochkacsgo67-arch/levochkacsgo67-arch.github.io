@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zerkalo store - шоурум женской одежды, Владивосток</title>
+<meta name="description" content="Костюмы, платья, джинсы, обувь и сумки на Адмирала Фокина, 27. Каждый день с 10 до 20. Оценка 5 в 2ГИС.">
+<meta property="og:title" content="Zerkalo store - шоурум женской одежды во Владивостоке">
+<meta property="og:description" content="Адмирала Фокина, 27. Розовое зеркало у двери, примерочные за арками. 5 в 2ГИС.">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/zerkalo-store/img/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://levochkacsgo67-arch.github.io/zerkalo-store/">
+<meta name="theme-color" content="#0b0a0a">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600&subset=cyrillic&display=swap" rel="stylesheet">
+<link rel="modulepreload" href="js/three.module.min.js">
+<link rel="preload" as="image" href="img/03.jpg">
+<script>document.documentElement.className+=" js"</script>
+<style>
+:root{--bg:#0b0a0a;--bg2:#141212;--ink:#f5f0ea;--mute:#b3aaa3;--rose:#f3bdd3;--gold:#e8d3a8;--line:rgba(245,240,234,.14);--pad:clamp(16px,5vw,76px);--serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,-apple-system,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;position:relative}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.018em;line-height:1}
+h2{font-size:clamp(44px,6.4vw,96px)}
+section{padding:clamp(56px,7vw,100px) var(--pad);position:relative;z-index:auto}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+.mute{color:var(--mute)}
+.arch{border-radius:999px 999px 28px 28px;overflow:hidden}
+.ct{container-type:inline-size}
+.ct>.arch{border-radius:50cqw 50cqw 28px 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border-radius:999px;font-weight:600;font-size:16px;border:1px solid rgba(245,240,234,.34);transition:background .35s,color .35s,border-color .35s,transform .35s}
+.btn:hover{border-color:var(--rose);color:var(--rose)}
+.btn:active{transform:scale(.98);transition-duration:.12s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--rose);color:#1a1013;border-color:var(--rose)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:#1a1013}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* неоновая линия как на потолке шоурума: над фоном секций, под их содержимым */
+#neon{position:absolute;left:0;top:0;width:100%;z-index:1;pointer-events:none}
+#neon path{fill:none;stroke-linecap:round}
+#neon .g{stroke:url(#nfg)}
+#neon .g1{stroke-width:18;opacity:.03}
+#neon .g2{stroke-width:10;opacity:.05}
+#neon .g3{stroke-width:5;opacity:.09}
+#neon .core{stroke:url(#nf);stroke-width:1.7;opacity:.72}
+section>*,footer>*,.brandline>*{position:relative;z-index:2}
+section[id]{scroll-margin-top:40px}
+
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);transition:background .4s}
+nav.on{background:rgba(11,10,10,.78);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.logo{height:50px;width:auto;object-fit:contain}
+nav .right{display:flex;align-items:center;gap:30px;font-size:15px}
+nav .right a:not(.pill):hover{color:var(--rose)}
+nav .pill{padding:10px 22px;border:1px solid rgba(245,240,234,.34);border-radius:99px;transition:border-color .35s,color .35s}
+nav .pill:hover{border-color:var(--rose);color:var(--rose)}
+.chips{display:none}
+.demo{position:fixed;right:0;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;z-index:30;background:rgba(20,18,18,.86);border:1px solid var(--line);border-right:0;color:var(--ink);font-size:11px;line-height:1.1;letter-spacing:.04em;padding:12px 5px;border-radius:99px 0 0 99px;white-space:nowrap}
+
+/* первый экран */
+.hero{min-height:100svh;padding:112px var(--pad) 34px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:end;gap:24px;overflow:hidden}
+.hero .txt{align-self:center;padding-bottom:0}
+.hero h1{font-size:clamp(56px,6.6vw,112px);margin:18px 0 24px;max-width:9em;line-height:.95}
+.hero h1 i{color:var(--rose);font-style:italic}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);max-width:29em;color:#ddd5ce}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stage{height:min(92svh,860px);margin-bottom:-34px;align-self:end}
+/* запасной кадр точно по размеру и месту 3D-арки: верх 5 %, высота 74,7 %, пропорция рамы 2,01 : 3,51 */
+.stage .still{position:absolute;left:50%;top:5%;transform:translateX(-50%);height:77%;aspect-ratio:2.12/3.62;border-radius:999px 999px 0 0;overflow:hidden}
+.js .still{visibility:hidden}.js .still.show{visibility:visible}
+#mirror{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .9s ease}
+#mirror.on{opacity:1}
+.score{position:absolute;right:0;top:4%;text-align:right;z-index:3}
+.score b{font:400 clamp(58px,6.2vw,96px)/.9 var(--serif);display:block}
+.score span{display:block;margin-top:10px;font-size:14px;color:var(--mute)}
+.bigword{display:block;width:100%;height:auto;margin:0 auto}
+.brandline{padding:0 var(--pad) 0;position:relative;overflow:hidden}
+.brandline .wrap{position:relative}
+.brandline .refl{transform:scaleY(-1);filter:blur(clamp(2px,.4vw,5px));opacity:.33;margin-top:-3px;will-change:opacity;-webkit-mask-image:linear-gradient(0deg,#000,transparent 72%),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(0deg,#000,transparent 72%),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
+
+/* история */
+.story{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,7vw,110px);align-items:center;padding-top:clamp(40px,5vw,72px)}
+.story .pic{aspect-ratio:.74}
+.story .pic img{object-position:50% 30%}
+.story blockquote{font:400 clamp(48px,6.8vw,104px)/1 var(--serif);letter-spacing:-.018em;margin:20px 0 30px}
+.story p{max-width:34em;color:#ddd5ce}
+.who{display:block;font-size:15px;color:var(--mute);margin-top:16px}
+
+/* что можно примерить: аркада из пяти арок */
+.cat h2{margin:14px 0 clamp(28px,4vw,52px)}
+.arcade{display:flex;gap:14px;align-items:flex-start}
+.ac{flex:var(--w,1) 1 0;min-width:0;transition:opacity .5s}
+.ac .ph{position:relative;height:460px;border-radius:999px 999px 14px 14px;overflow:hidden;background:#1b1818}
+.ct>.ph{border-radius:50cqw 50cqw 14px 14px}
+.ac .ph img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.ac .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,10,0) 48%,rgba(11,10,10,.86) 100%)}
+.ac h3{position:absolute;left:0;right:0;bottom:22px;z-index:2;text-align:center;padding:0 10px;font:400 clamp(26px,3.05vw,44px)/1.02 var(--serif);transition:color .5s}
+.ac q{display:block;quotes:none;margin-top:14px;padding:0 6px;color:#d8d0c9;font-size:15.5px;line-height:1.45}
+.ac q:before{content:"\00ab"}.ac q:after{content:"\00bb"}
+@media (hover:hover){.arcade:hover .ac:not(:hover){opacity:.5}.ac:hover h3{color:var(--rose)}.ac:hover .ph img{transform:scale(1.05)}}
+.two{margin-top:clamp(28px,4vw,52px);max-width:34em;font:italic 400 clamp(28px,3vw,40px)/1.15 var(--serif);color:var(--ink)}
+
+/* кто */
+.fit{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,48px);align-items:start;background:var(--bg2)}
+.fit ul{list-style:none;padding:0}
+.fit li{padding:clamp(24px,3vw,40px) 0;border-top:1px solid var(--line);font:400 clamp(40px,5.2vw,76px)/1.06 var(--serif);letter-spacing:-.015em}
+.fit li:last-child{border-bottom:1px solid var(--line)}
+.fit li small{display:block;font:400 15px/1.5 Manrope,sans-serif;color:var(--mute);margin-top:8px}
+
+/* примерочные */
+.room{padding-bottom:clamp(48px,6vw,80px)}
+.room .pic{height:clamp(420px,54vw,780px);border-radius:32px;overflow:hidden;position:relative}
+.room .pic img{object-position:50% 47%}
+.rw{position:relative}
+.room .cap{position:absolute;left:auto;right:clamp(20px,4vw,52px);width:min(560px,46%);bottom:clamp(22px,4vw,48px);z-index:2;padding:24px 28px;border-radius:24px;background:rgba(11,10,10,.76);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.room .cap h2{margin-bottom:12px}
+.room .cap p{max-width:33em;color:#ece6df}
+.arches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,26px);margin-top:clamp(20px,3vw,34px)}
+.ar>.arch{background:#161414;border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.28);transition:border-color .6s;height:100%;display:flex;flex-direction:column}
+.ar:hover>.arch{border-color:rgba(243,189,211,.6)}
+.ar .ph{aspect-ratio:1.18;flex:none;position:relative}
+.ar .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,20,20,0) 45%,#161414 100%)}
+.ar .in{padding:22px clamp(18px,2.4vw,34px) clamp(26px,3vw,36px);display:flex;flex-direction:column;justify-content:flex-start;flex:1}
+.ar .who{margin-top:auto;padding-top:16px}
+.ar p{font:400 clamp(20px,2.7vw,40px)/1.12 var(--serif)}
+
+/* контакты */
+.go{background:var(--bg2);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(36px,6vw,90px);align-items:end;padding-bottom:clamp(44px,5vw,64px)}
+.go h2{font-size:clamp(58px,9vw,140px);margin:14px 0 26px}
+.go .payline{font-size:17px;margin-top:10px}
+.go .acts{display:flex;flex-direction:column;gap:12px;max-width:440px;margin-top:32px}
+.go .acts .btn{min-height:68px;justify-content:space-between;padding:0 30px;font-size:18px}
+.go .pic{aspect-ratio:.76}
+.go .pic img{object-position:60% 55%}
+footer{padding:32px var(--pad) 40px;display:flex;justify-content:space-between;gap:24px;align-items:center;font-size:15px;color:var(--mute);position:relative;z-index:auto}
+footer .fl{display:flex;align-items:center;gap:22px}
+footer img{height:56px;width:auto;object-fit:contain}
+footer .fa{display:flex;gap:10px;flex-wrap:wrap}
+footer .fa a{padding:10px 20px;border:1px solid rgba(245,240,234,.28);border-radius:99px;color:var(--ink);font-size:15px;transition:border-color .35s,color .35s}
+footer .fa a:hover{border-color:var(--rose);color:var(--rose)}
+
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}#mirror{display:none}}
+
+@media (max-width:1100px){
+ .arcade{overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad)*-1);padding:0 var(--pad) 6px;scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .arcade::-webkit-scrollbar{display:none}
+ .ac{flex:0 0 calc(min(78vw,330px)*var(--k,1));scroll-snap-align:start}
+ .ac h3{font-size:44px}
+}
+@media (max-width:860px){
+ body{font-size:16px}
+ section{padding:56px var(--pad)}
+ .room{padding-bottom:56px}
+ .go{padding-bottom:44px}
+ section[id]{scroll-margin-top:96px}
+ nav{flex-wrap:wrap;row-gap:8px;padding-top:10px;padding-bottom:10px}
+ nav .right a:not(.pill){display:none}
+ nav .pill{padding:0 18px;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+ .logo{height:38px}
+ .chips{display:flex;order:3;flex:1 0 100%;gap:2px;padding:3px;max-height:56px;transition:opacity .3s,transform .35s,max-height .35s,margin .35s,padding .35s,border-width .35s;border:1px solid var(--line);border-radius:99px;background:rgba(20,18,18,.66);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+ nav.noc .chips{opacity:0;pointer-events:none;transform:translateY(-10px);max-height:0;padding-top:0;padding-bottom:0;margin-top:-8px;border-width:0}
+ .chips a{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:0 4px;border-radius:99px;font-size:13px;white-space:nowrap;transition:background .3s,color .3s}
+ .chips a:active{background:rgba(243,189,211,.16);color:var(--rose)}
+ .hero{grid-template-columns:1fr;padding-top:130px;gap:0;min-height:0}
+ .stage{order:-1;height:34svh;min-height:260px;margin-bottom:0}
+ .hero .eyebrow{font-size:12px;margin-top:20px}
+ .hero h1{font-size:clamp(48px,12.8vw,84px);margin:10px 0 14px}
+ .hero .lead{font-size:16px}
+ .hero .acts{margin-top:20px}
+ .hero .acts .btn{flex:1 1 150px}
+ .score{right:auto;left:0;top:0;text-align:left;max-width:74px;line-height:1.2}
+ .score b{font-size:46px}
+ #neon .core{stroke-width:1.2;opacity:.5}
+ .room .pic{height:clamp(320px,62vw,460px)}
+ .room .cap{position:static;width:auto;margin-top:18px;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+ .room .cap h2{font-size:clamp(44px,12vw,64px)}
+ .story,.fit,.go{grid-template-columns:1fr}
+  .story>.ct,.go>.ct{max-width:420px}
+ .go .acts{max-width:none}
+ footer{flex-direction:column;align-items:flex-start}
+}
+@media (min-width:561px) and (max-width:860px){
+ .stage{height:46svh;min-height:380px}
+ .story>.ct,.go>.ct{max-width:none}
+ .story .pic{aspect-ratio:1.15}
+ .go .pic{aspect-ratio:.95}
+ .go .pic img{object-position:40% 78%}
+}
+@media (max-width:599px){
+ .arches{grid-template-columns:1fr}
+ .ar p{font-size:28px}
+}
+</style>
+</head>
+<body>
+<svg id="neon" aria-hidden="true"><defs><linearGradient id="nf" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="240"><stop offset="0" stop-color="#fff6f2" stop-opacity="0"/><stop offset="1" stop-color="#fff6f2" stop-opacity="1"/></linearGradient><linearGradient id="nfg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="240"><stop offset="0" stop-color="#f3bdd3" stop-opacity="0"/><stop offset="1" stop-color="#f3bdd3" stop-opacity="1"/></linearGradient></defs><path class="g g1"/><path class="g g2"/><path class="g g3"/><path class="core"/></svg>
+
+<nav id="nav">
+  <a href="#top" aria-label="Zerkalo store, в начало"><img class="logo" src="img/logo.svg" alt="Zerkalo store" width="120" height="50"></a>
+  <div class="right">
+    <a href="#cat">Что есть</a><a href="#room">Примерочные</a><a href="#go">Как дойти</a>
+    <a class="pill" href="tel:+79502838187">Позвонить</a>
+  </div>
+  <div class="chips"><a href="#cat">Что есть</a><a href="#room">Примерочные</a><a href="#go">Как дойти</a></div>
+</nav>
+<div class="demo">Демо-версия сайта</div>
+
+<main id="top">
+<section class="hero">
+  <div class="txt">
+    <div class="eyebrow">Шоурум на&nbsp;Адмирала Фокина,&nbsp;27</div>
+    <h1>Женская одежда у&nbsp;<i>розового зеркала</i></h1>
+    <p class="lead">Костюмы, платья, джинсы, обувь и&nbsp;сумки. Каждый день с&nbsp;10&nbsp;до&nbsp;20, Владивосток.</p>
+    <div class="acts"><a class="btn solid" href="#go">Как дойти</a><a class="btn" href="tel:+79502838187">Позвонить</a></div>
+  </div>
+  <div class="stage">
+    <div class="still"><img src="img/03.jpg" alt="Зеркало в розовой раме у входа в Zerkalo, в отражении витрина с платьями" style="object-position:80% 50%"></div>
+    <canvas id="mirror" aria-hidden="true"></canvas>
+    <div class="score"><b>5,0</b><span>121 оценка в 2ГИС</span></div>
+  </div>
+</section>
+
+<div class="brandline" id="brand"><div class="wrap">
+  <img class="bigword" src="img/word.svg" alt="" width="1500" height="300">
+  <img class="bigword refl" id="refl" src="img/word.svg" alt="" width="1500" height="300">
+</div></div>
+
+<section class="story">
+  <div class="ct rv"><div class="pic arch"><img src="img/02.jpg" loading="lazy" alt="Стойка в шоуруме: золотые буквы Zerkalo store на белой арке, неоновая линия и цветы на потолке"></div></div>
+  <div class="rv">
+    <div class="eyebrow">Про продавца, из отзыва в 2ГИС</div>
+    <blockquote>«Она вроде есть, но&nbsp;не&nbsp;мешает выбирать»</blockquote>
+    <p>Так покупательница написала о&nbsp;продавце и&nbsp;добавила: «ничего не&nbsp;навязывает, не&nbsp;пристает, с&nbsp;другой стороны если что-то надо сразу подсказывает и&nbsp;показывает».</p>
+    <span class="who">Татьяна, август 2026</span>
+  </div>
+</section>
+
+<section class="cat" id="cat">
+  <div class="eyebrow rv">Подписи из отзывов в&nbsp;2ГИС</div>
+  <h2 class="rv">Что можно примерить</h2>
+  <div class="arcade">
+    <div class="ac ct rv" style="--w:1.15;--k:1"><div class="ph"><img src="img/a-suits.jpg" loading="lazy" alt="Белые и чёрные жакеты на золотой стойке"><h3>Костюмы</h3></div><q>Перемерила кучу костюмов, не&nbsp;могла определиться, купила два</q></div>
+    <div class="ac ct rv" style="--w:1;--k:.88"><div class="ph"><img src="img/a-dress.jpg" loading="lazy" alt="Платье в мелкий цветок на манекене в витрине"><h3>Платья</h3></div><q>От топов до&nbsp;вечерних платьев</q></div>
+    <div class="ac ct rv" style="--w:1.05;--k:.95"><div class="ph"><img src="img/a-jeans.jpg" loading="lazy" alt="Джинсы, кожаные куртки и рубашка в клетку на вешалке"><h3>Джинсы</h3></div></div>
+    <div class="ac ct rv" style="--w:1.2;--k:.95"><div class="ph"><img src="img/a-shoes.jpg" loading="lazy" alt="Замшевый лоафер на золотой полке"><h3>Обувь</h3></div><q>Хорошее качество и&nbsp;большой выбор обуви и&nbsp;сумок</q></div>
+    <div class="ac ct rv" style="--w:1.2;--k:1"><div class="ph"><img src="img/a-acc.jpg" loading="lazy" alt="Солнцезащитные очки на стойке и серьги на подставке"><h3>Аксессуары</h3></div><q>Очень много красивых аксессуаров</q></div>
+  </div>
+  <p class="two rv">«Ассортимент меняется каждые две недели», написала Nadezhda в&nbsp;2ГИС, март 2025.</p>
+</section>
+
+<section class="fit">
+  <div class="eyebrow rv">Кому подошло</div>
+  <ul class="rv">
+    <li>«Нашла прекрасное универсальное на&nbsp;мой высокий рост костюм»<small>Aytalina, апрель 2026</small></li>
+    <li>«Нашла то, что искала для беременной фигуры»<small>Маргарита, март 2026</small></li>
+  </ul>
+</section>
+
+<section class="room" id="room">
+  <div class="rw rv">
+    <div class="pic"><img src="img/09.jpg" loading="lazy" alt="Примерочные за белыми арками, неон на потолке"></div>
+    <div class="cap"><h2>Примерочные</h2><p>«Комфортные примерочные, кулер с&nbsp;водой, все с&nbsp;заботой о&nbsp;клиентах». Диана, ноябрь 2025.</p></div>
+  </div>
+  <div class="arches">
+    <div class="ar ct rv"><div class="arch"><div class="ph"><img src="img/r1.jpg" loading="lazy" alt="Белая арка в зале, за ней вешалки и манекен"></div><div class="in"><p>«Рада, что случайно к&nbsp;вам зашла»</p><span class="who">Ana, ноябрь 2024</span></div></div></div>
+    <div class="ar ct rv"><div class="arch"><div class="ph"><img src="img/r2.jpg" loading="lazy" alt="Розовые и чёрные вещи на золотой стойке"></div><div class="in"><p>«Часто проходила мимо этого магазина и&nbsp;зря»</p><span class="who">Мария, апрель 2026</span></div></div></div>
+    <div class="ar ct rv"><div class="arch"><div class="ph"><img src="img/r3.jpg" loading="lazy" alt="Стойка в шоуруме: мраморная столешница с подсветкой, очки и серьги"></div><div class="in"><p>«Красивый магазин, музыка топ, сразу хочется танцевать»</p><span class="who">Алёна, сентябрь 2025</span></div></div></div>
+  </div>
+</section>
+
+<section class="go" id="go">
+  <div class="rv">
+    <div class="eyebrow">Как дойти</div>
+    <h2>Адмирала Фокина, 27</h2>
+    <p class="mute">Первый этаж, 250&nbsp;метров от&nbsp;остановки «Площадь Борцов революции». У&nbsp;входа розовое зеркало и&nbsp;цветущее дерево. Каждый день с&nbsp;10:00 до&nbsp;20:00.</p>
+    <p class="mute payline">Оплата картой, наличными, переводом, по&nbsp;QR. Есть «Плати частями».</p>
+    <div class="acts">
+      <a class="btn solid" href="tel:+79502838187"><span>Позвонить</span><span>+7 950 283-81-87</span></a>
+      <a class="btn" href="https://wa.me/79502838187" target="_blank" rel="noopener"><span>Написать в WhatsApp</span><span aria-hidden="true">→</span></a>
+      <a class="btn" href="https://2gis.ru/vladivostok/firm/70000001100837888" target="_blank" rel="noopener"><span>Маршрут в 2ГИС</span><span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="ct rv"><div class="pic arch"><img src="img/04.jpg" loading="lazy" alt="Вход в шоурум Zerkalo: цветущее дерево и розовое зеркало у двери"></div></div>
+</section>
+</main>
+
+<footer>
+  <div class="fl"><img src="img/logo.svg" alt="Zerkalo store" width="134" height="56"><span>Владивосток, Адмирала Фокина, 27. Отзывы и оценка из 2ГИС.</span></div>
+  <div class="fa"><a href="tel:+79502838187">+7 950 283-81-87</a><a href="https://2gis.ru/vladivostok/firm/70000001100837888" target="_blank" rel="noopener">Маршрут в 2ГИС</a></div>
+</footer>
+
+<script>
+/* шапка, появление */
+const nav=document.getElementById('nav');
+let lastY=scrollY;const onS=()=>{const y=scrollY;nav.classList.toggle('on',y>30);if(y>90&&y>lastY+4)nav.classList.add('noc');else if(y<lastY-4||y<=90)nav.classList.remove('noc');lastY=y};addEventListener('scroll',onS,{passive:true});onS();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')}),2500);
+
+/* линия идёт по краям секций и пересекает страницу только в промежутках */
+const svg=document.getElementById('neon'),core=svg.querySelector('.core'),paths=[core,...svg.querySelectorAll('.g')];
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let len=0;
+function build(){
+  svg.style.height=0;
+  const W=document.documentElement.clientWidth,H=document.body.scrollHeight;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.style.height=H+'px';
+  const m=Math.max(7,W*.018),R0=W<=860?28:56;
+  const secs=[...document.querySelectorAll('main>section')].slice(1).map(s=>{const r=s.getBoundingClientRect();const cs=getComputedStyle(s);return{t:r.top+scrollY,b:r.bottom+scrollY,pt:parseFloat(cs.paddingTop),pb:parseFloat(cs.paddingBottom)}});
+  let side=1,x=W-m;
+  /* вход сверху вдоль края, без крючка */
+  const y0=secs[0].t-240;
+  svg.querySelectorAll('linearGradient').forEach(g=>{g.setAttribute('y1',y0);g.setAttribute('y2',y0+240)});
+  let d=`M${x} ${y0}`;
+  secs.forEach((s,i)=>{
+    const last=i===secs.length-1;
+    if(last){
+      /* в последней секции линия идёт по краю и уходит за нижний край фото */
+      const pe=document.querySelector('.go .pic'),pr=pe.getBoundingClientRect(),ty=new DOMMatrix(getComputedStyle(pe.parentElement).transform).m42,pb=pr.bottom+scrollY-ty,px=pr.left+pr.width*.62;
+      const sy=pb-Math.min(170,pr.height*.3);
+      d+=` L${x} ${sy} C${x} ${sy+70} ${px+90} ${pb-24} ${px} ${pb-24}`;
+      return;
+    }
+    /* переход на другой край: дуга, пологая прямая, дуга */
+    const nx=side>0?m:W-m,sg=nx>x?1:-1,dx=Math.abs(nx-x);
+    const y1=s.b-s.pb+16,y2=secs[i+1].t+secs[i+1].pt-16,dy=y2-y1;
+    const r=Math.max(8,Math.min(R0,(dy-6)/2));
+    let lo=.02,hi=Math.PI/2-.001;
+    const g=a=>2*r*Math.sin(a)+(dx-2*r*(1-Math.cos(a)))*Math.cos(a)/Math.sin(a)-dy;
+    for(let k=0;k<50;k++){const mid=(lo+hi)/2;if(g(mid)>0)lo=mid;else hi=mid}
+    const al=(lo+hi)/2,L=(dx-2*r*(1-Math.cos(al)))/Math.sin(al),sw=sg>0?0:1;
+    const ax=x+sg*r*(1-Math.cos(al)),ay=y1+r*Math.sin(al);
+    const bx=ax+sg*L*Math.sin(al),by=ay+L*Math.cos(al);
+    d+=` L${x} ${y1} A${r} ${r} 0 0 ${sw} ${ax} ${ay} L${bx} ${by} A${r} ${r} 0 0 ${1-sw} ${nx} ${y2}`;
+    x=nx;side=-side;
+  });
+  paths.forEach(p=>p.setAttribute('d',d));
+  len=core.getTotalLength();
+  paths.forEach(p=>p.style.strokeDasharray=len);
+  draw();
+}
+let dq=0;function draw(){if(dq)return;dq=requestAnimationFrame(paint)}
+function paint(){dq=0;
+  const max=document.body.scrollHeight-innerHeight;
+  const p=still?1:Math.min(1,(scrollY+innerHeight*.35)/Math.max(1,max*.86));
+  paths.forEach(e=>e.style.strokeDashoffset=len*(1-p));
+}
+addEventListener('scroll',draw,{passive:true});
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,200)});
+addEventListener('load',()=>{build();setTimeout(build,1500)});
+document.fonts&&document.fonts.ready.then(build);
+
+/* отражение слова тает при прокрутке */
+const refl=document.getElementById('refl');
+if(!still)addEventListener('scroll',()=>{const b=refl.getBoundingClientRect(),k=Math.max(0,Math.min(1,(innerHeight-b.top)/innerHeight));refl.style.opacity=(.33-k*.24).toFixed(3)},{passive:true});
+</script>
+<script type="module">
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+try{
+const T=await import('./js/three.module.min.js');
+const c=document.getElementById('mirror');
+const r=new T.WebGLRenderer({canvas:c,alpha:true,antialias:true,preserveDrawingBuffer:location.hash==='#shot'});
+r.setPixelRatio(Math.min(devicePixelRatio,2));
+r.toneMapping=T.ACESFilmicToneMapping;r.toneMappingExposure=1;
+/* кадр: рама занимает 77 % высоты холста, верх на 5 %, под ней место для отражения в полу */
+const VH=4.7,D=8.2,BEV=.13;
+const sc=new T.Scene(),cam=new T.PerspectiveCamera(2*Math.atan(VH/2/D)*180/Math.PI,1,.1,50);cam.position.set(0,0,D);
+
+/* студия как у хромированной фигуры на тёмном фоне: чёрная среда и узкие белые софтбоксы */
+const env=new T.Scene();env.background=new T.Color(0x000000);
+const pan=(w,h,col,x,y,z,i=1)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color(col).multiplyScalar(i),side:T.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);env.add(m)};
+pan(3,12,'#ffffff',-7,1,4,12);pan(2,12,'#ffffff',7,0,5,7);pan(12,1.6,'#ffffff',0,8,3,10);pan(8,8,'#f3a9c8',6,-3,-6,3);pan(6,10,'#f3a9c8',-7,-2,-3,2.4);pan(14,3,'#1a1416',0,-7,4,1);pan(9,18,'#8d8d94',0,0,10.9,.5);pan(3,18,'#f3a9c8',5.8,0,10,2.2);
+const pm=new T.PMREMGenerator(r);sc.environment=pm.fromScene(env,.03).texture;
+
+function archShape(w,h){const s=new T.Shape(),R=w/2,top=h-R;s.moveTo(-R,0);s.lineTo(-R,top);s.absarc(0,top,R,Math.PI,0,true);s.lineTo(R,0);s.lineTo(-R,0);return s}
+const W=1.86,H=3.36,F=.02;
+const frame=archShape(W,H);frame.holes.push((()=>{const p=new T.Path(),R=(W-2*F)/2,y0=F,top=H-F-R;p.moveTo(-R,y0);p.lineTo(R,y0);p.lineTo(R,top);p.absarc(0,top,R,0,Math.PI,false);p.lineTo(-R,y0);return p})());
+const geo=new T.ExtrudeGeometry(frame,{depth:.04,bevelEnabled:true,bevelThickness:BEV,bevelSize:BEV,bevelSegments:24,curveSegments:96});
+const chrome=new T.MeshStandardMaterial({color:0xeae6e6,metalness:1,roughness:.14});
+const BASE=2.115-H-BEV;/* низ рамы без фаски */
+const g=new T.Group();g.add(new T.Mesh(geo,chrome));
+
+/* внутри зеркала настоящий вход в магазин */
+const tex=await new T.TextureLoader().loadAsync('img/03.jpg');tex.colorSpace=T.SRGBColorSpace;tex.anisotropy=r.capabilities.getMaxAnisotropy();
+const inner=new T.ShapeGeometry(archShape(W-2*F+.01,H-2*F+.01),80);
+const uv=inner.attributes.uv,p=inner.attributes.position,iw=W-2*F,ih=H-2*F,ta=1440/1814,va=iw/ih;
+const sx=va/ta*1.02,ox=.58;
+for(let i=0;i<uv.count;i++){uv.setXY(i,ox+(p.getX(i)/iw)*sx,(.03+(p.getY(i)/ih)*.97))}
+const glass=new T.Mesh(inner,new T.MeshBasicMaterial({map:tex,toneMapped:false}));glass.position.set(0,F,.09);g.add(glass);
+
+/* блик проходит по стеклу */
+const sheen=new T.Mesh(inner,new T.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{t:{value:0}},vertexShader:'varying vec2 v;void main(){v=position.xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 v;uniform float t;void main(){float d=v.x+v.y*.55-t;float a=smoothstep(.34,.0,abs(d))*.26;float e=smoothstep(.6,3.1,v.y)*.1;gl_FragColor=vec4(1.,.96,.97,a+e);}'}));
+sheen.position.set(0,F,.1);g.add(sheen);
+
+g.position.y=BASE;
+const root=new T.Group();root.add(g);sc.add(root);
+
+/* отражение на чёрном полу: копия вверх ногами, прозрачность сама тает вниз по высоте */
+const FLOOR=BASE-BEV;
+function fade(m,k){m.transparent=true;m.depthWrite=false;
+ m.onBeforeCompile=sh=>{sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying float vWY;').replace('#include <begin_vertex>','#include <begin_vertex>\nvWY=(modelMatrix*vec4(position,1.)).y;');
+ sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying float vWY;').replace('#include <dithering_fragment>','#include <dithering_fragment>\ngl_FragColor.a*='+k.toFixed(2)+'*smoothstep('+(FLOOR-.8).toFixed(3)+','+FLOOR.toFixed(3)+',vWY);')};return m}
+const m2=new T.Group();
+m2.add(new T.Mesh(geo,fade(chrome.clone(),.62)));
+const gl2=glass.clone();gl2.material=fade(glass.material.clone(),.5);m2.add(gl2);
+m2.scale.y=-1;m2.position.y=2*FLOOR-BASE;root.add(m2);
+
+function size(){const b=c.parentElement.getBoundingClientRect();r.setSize(b.width,b.height,false);cam.aspect=b.width/b.height;cam.updateProjectionMatrix()}
+size();addEventListener('resize',size);
+
+let mx=0,my=0,cx=0,cy=0,vis=true;
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+const t0=performance.now();
+function loop(n){requestAnimationFrame(loop);if(!vis)return;const s=(n-t0)/1000;
+ cx+=(mx-cx)*.05;cy+=(my-cy)*.05;
+ root.rotation.y=Math.sin(s*.28)*.14+cx*.38;root.rotation.x=cy*.08;
+ sheen.material.uniforms.t.value=((s*.16)%1)*7-1.6;
+ r.render(sc,cam)}
+requestAnimationFrame(loop);
+r.render(sc,cam);requestAnimationFrame(()=>c.classList.add('on'));
+}catch(e){console.warn('3D выключен',e);document.querySelector('.still').classList.add('show')}
+}else document.querySelector('.still').classList.add('show');
+</script>
+</body>
+</html>
