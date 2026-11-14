@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Тачки - автосервис во Владивостоке, 5,0 на 2ГИС</title>
+<meta name="description" content="Тачки - СТО на 2-й Линейной, 22, Владивосток. Рейтинг 5,0 на 2ГИС, 101 отзыв. Масло, ГРМ, диагностика, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Тачки - автосервис во Владивостоке, 5,0 на 2ГИС">
+<meta property="og:description" content="СТО на 2-й Линейной, 22. 101 отзыв на 2ГИС, рейтинг 5,0. Масло, ГРМ, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/tachki/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0c0e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0c0e'/%3E%3Cpath d='M6 20 L12 12 H52 L58 20 L56 38 H40 L32 50 L24 38 H8 Z' fill='%23d2383a' stroke='%23fff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;600;800&family=Nunito:wght@900&family=JetBrains+Mono:wght@400;600&subset=cyrillic&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c0e; --bg2:#111215; --bg3:#17181c;
+  --ink:#eef0f3; --silver:#cfd4db; --mute:#9aa1ab;
+  --line:rgba(207,212,219,.17); --line2:rgba(207,212,219,.30);
+  --yel:#ffc61a; --red:#e2231a;
+  --f:'Fira Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --m:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --gut:clamp(20px,5vw,72px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-weight:400;font-size:17px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--yel);outline-offset:3px;border-radius:6px}
+section[id]{scroll-margin-top:72px}
+
+/* демо-плашка */
+.demo{position:relative;z-index:60;background:var(--yel);color:#0b0c0e;text-align:center;font-family:var(--m);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;
+  background-image:repeating-linear-gradient(-45deg,rgba(11,12,14,.9) 0 8px,transparent 8px 16px);background-size:100% 3px;background-repeat:no-repeat;background-position:bottom}
+
+/* линейка по краю: идёт через весь сайт */
+.ruler{position:fixed;left:0;top:0;bottom:0;width:44px;z-index:40;pointer-events:none;
+  background:
+   repeating-linear-gradient(to bottom,transparent 0 31px,rgba(207,212,219,.22) 31px 32px) 14px 0/14px 100% no-repeat,
+   repeating-linear-gradient(to bottom,transparent 0 159px,rgba(207,212,219,.4) 159px 160px) 14px 0/24px 100% no-repeat;}
+.ruler::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--line2)}
+.ruler i{position:absolute;left:8px;width:36px;height:2px;background:var(--yel);top:0;transform:translateY(0);box-shadow:0 0 14px rgba(255,198,26,.55)}
+.ruler b{position:absolute;left:52px;margin-top:-9px;font:600 12px var(--m);letter-spacing:.12em;color:var(--yel);white-space:nowrap}
+
+/* меню */
+nav.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:28px;padding:14px var(--gut) 14px calc(var(--gut) + 28px);background:rgba(11,12,14,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px}
+.mark{width:100px;height:auto;flex:none;filter:drop-shadow(0 4px 12px rgba(210,56,58,.28))}
+.plate{display:inline-block;transform:skewX(-9deg);background:linear-gradient(180deg,#f0352b,#c61a12);border-radius:5px 12px 5px 12px;padding:5px 15px 6px;font-weight:800;font-size:20px;line-height:1;color:#fff;letter-spacing:.01em;box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
+.plate span{display:inline-block;transform:skewX(9deg)}
+.logo small{font:600 11px var(--m);letter-spacing:.2em;color:var(--silver);text-transform:uppercase;line-height:1.35}
+.menu{display:flex;gap:26px;margin-left:auto;font-size:15px;color:var(--silver)}
+.menu a{position:relative;padding:6px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--yel);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu a:hover::after{transform:scaleX(1)}
+.status{font:400 12px var(--m);color:var(--mute);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.status em{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2.4s infinite;font-style:normal}
+.status.closed em{background:#e2231a;animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;letter-spacing:.005em;transition:transform .35s var(--ease),background .3s,border-color .3s,box-shadow .35s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.y{background:var(--yel);color:#0b0c0e;box-shadow:0 10px 30px -10px rgba(255,198,26,.55)}
+.btn.y:hover{transform:translateY(-3px);box-shadow:0 16px 36px -10px rgba(255,198,26,.7)}
+.btn.o{border:1px solid var(--line2);color:var(--ink);background:rgba(255,255,255,.03)}
+.btn.o:hover{transform:translateY(-3px);border-color:var(--silver);background:rgba(255,255,255,.07)}
+.btn.sm{min-height:44px;padding:0 18px;font-size:14px}
+nav.top .btn.sm svg{width:18px;height:18px}
+
+/* общие */
+.wrap{padding-left:calc(var(--gut) + 28px);padding-right:var(--gut)}
+.eyebrow{font:400 12px var(--m);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--yel)}
+h1,h2,h3,.big,.sname{text-wrap:balance}
+p,blockquote{text-wrap:pretty}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.02}
+h2{font-size:clamp(34px,4.6vw,68px)}
+section{position:relative;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+/* ГЕРОЙ */
+.hero{border-top:0;padding-top:clamp(24px,2.6vw,36px);padding-bottom:0;overflow:hidden;background:radial-gradient(70% 55% at 62% 62%,rgba(207,212,219,.09),transparent 70%)}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero h1{font-size:clamp(46px,5.83vw,100px);font-weight:300;letter-spacing:-.04em;line-height:.96;margin-top:16px}
+.hero h1 b{font-weight:800;background:linear-gradient(100deg,#8c929b 0%,#fff 38%,#aab0b9 52%,#fff 66%,#8c929b 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s ease-in-out infinite;display:inline-block;padding-bottom:.06em}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.hlead{max-width:440px;color:var(--silver);font-size:18px;padding-bottom:6px}
+.hlead p{margin-bottom:22px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stage{margin-top:24px;display:grid;grid-template-columns:minmax(0,2.1fr) minmax(280px,1fr);border-top:1px solid var(--line)}
+.scene{position:relative;padding:0;align-self:end}
+.scene svg{width:100%;height:auto;overflow:visible}
+.panel{border-left:1px solid var(--line);padding:14px 0 14px clamp(20px,2.6vw,40px);display:flex;flex-direction:column;gap:8px;position:relative}
+.read{font:600 clamp(54px,6vw,92px)/.9 var(--m);letter-spacing:-.04em;color:var(--ink)}
+.read small{font-size:.32em;color:var(--yel);margin-left:6px;letter-spacing:0}
+.lab{font:400 12px var(--m);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.sname{font-size:clamp(24px,2.3vw,32px);font-weight:600;letter-spacing:-.02em;line-height:1.1;transition:opacity .35s}
+.scap{color:var(--silver);font-size:16px;min-height:5.4em;transition:opacity .35s;max-width:360px}
+.sw{opacity:0}
+.spring{display:flex;gap:14px;align-items:flex-end;margin-top:auto}
+.spring svg{width:84px;flex:none}
+.spring p{font-size:14px;color:var(--mute);line-height:1.45;padding-bottom:6px}
+.ctrl{grid-column:1/-1;border-top:1px solid var(--line);padding:12px 0 14px;display:grid;grid-template-columns:auto 1fr;gap:18px 34px;align-items:center}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line2);border-radius:999px;padding:9px 18px;font-size:14px;color:var(--silver);transition:all .3s var(--ease);min-height:44px}
+.chip:hover{border-color:var(--silver);color:#fff}
+.chip.on{background:var(--yel);border-color:var(--yel);color:#0b0c0e;font-weight:600}
+.rng{position:relative;display:flex;align-items:center;gap:14px}
+.rng span{font:400 12px var(--m);letter-spacing:.16em;color:var(--mute);text-transform:uppercase;white-space:nowrap}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:44px;background:transparent;cursor:grab;--p:40%}
+input[type=range]:active{cursor:grabbing}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(to right,var(--yel) var(--p),rgba(207,212,219,.22) var(--p))}
+input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:rgba(207,212,219,.22)}
+input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:var(--yel)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--yel);margin-top:-13px;border:5px solid #0b0c0e;box-shadow:0 0 0 1px var(--yel),0 6px 18px rgba(255,198,26,.45);transition:transform .25s var(--ease)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--yel);border:5px solid #0b0c0e;box-shadow:0 0 0 1px var(--yel),0 6px 18px rgba(255,198,26,.45)}
+input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
+.hint{grid-column:1/-1;font:400 14px var(--f);color:var(--mute)}
+
+/* машина */
+.glow{animation:sweep 7s ease-in-out 2.5s infinite}
+@keyframes sweep{0%{transform:translateX(0)}55%,100%{transform:translateX(1320px)}}
+#carsvg path,#carsvg line,#carsvg circle,#carsvg rect,#carsvg use,#spsvg path,#spsvg rect{vector-effect:non-scaling-stroke}
+.ln{fill:none;stroke:#cfd4db;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.stage.off *{animation-play-state:paused !important}
+.rate{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:8px 18px 8px 14px;border:1px solid var(--line2);border-radius:999px;font:400 13px var(--m);letter-spacing:.06em;color:var(--silver);transition:border-color .3s}
+.rate:hover{border-color:var(--silver)}
+.rate svg{width:18px;height:18px;fill:var(--yel)}
+.rate b{font-weight:600;font-size:18px;color:var(--ink)}
+.hphoto{position:relative;margin:clamp(28px,4vw,52px) 0 0;height:clamp(190px,24vw,350px);border-radius:22px 22px 0 0;overflow:hidden;border:1px solid var(--line);border-bottom:0}
+.hphoto img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.hphoto figcaption{position:absolute;left:14px;bottom:14px;background:rgba(11,12,14,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:7px 13px;border-radius:999px;font:400 12px var(--m);letter-spacing:.08em}
+.pneu{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(20px,3vw,40px)}
+.pneu .stage{margin-top:0}
+.stage.off *{animation-play-state:paused !important}
+.clrrow{display:flex;align-items:baseline;gap:12px;font:600 15px var(--m);color:var(--yel);letter-spacing:.04em}
+.clrrow .lab{color:var(--mute)}
+.clrrow b{font-weight:600}
+.flowline{stroke-dasharray:3 9;opacity:0;animation:flow .6s linear infinite}
+.flowline.on{opacity:1}
+.flowline.dn{animation-direction:reverse}
+@keyframes flow{to{stroke-dashoffset:-12}}
+.tickon{fill:var(--yel)}
+
+/* ПРИЗНАКИ */
+.sym{background:var(--bg2);padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px)}
+.sgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:start}
+.sgrid h2{margin-top:20px}
+.sgrid .lead{color:var(--silver);margin-top:22px;max-width:420px}
+.rows{border-top:1px solid var(--line2)}
+.row{display:grid;grid-template-columns:54px 1fr;gap:6px 10px;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .45s var(--ease)}
+.row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--yel);transition:width .6s var(--ease)}
+.row:hover::after{width:100%}
+.row:hover{padding-left:12px}
+.row .n{font:400 13px var(--m);color:var(--yel);padding-top:10px}
+.row h3{font-size:clamp(24px,2.9vw,40px);font-weight:300;letter-spacing:-.03em;line-height:1.08}
+.row p{grid-column:2;color:var(--mute);font-size:16px}
+
+/* СТУПЕНИ */
+.steps{padding-top:clamp(64px,9vw,128px);padding-bottom:0;background:var(--bg2)}
+.stairs{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px}
+.sh{position:absolute;left:0;top:0;width:52%;z-index:2}
+.sh h2{margin-top:14px;font-size:clamp(28px,3.1vw,46px)}
+.st{margin-top:calc(var(--i) * 76px);border-top:1px solid var(--line2);border-left:1px solid var(--line2);padding:28px clamp(18px,2vw,32px) 34px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .4s}
+.st:hover{background:rgba(255,255,255,.025)}
+.st::before{content:"";position:absolute;left:-1px;top:-1px;width:2px;height:34px;background:var(--yel)}
+.st .no{font:300 clamp(64px,7vw,104px)/.85 var(--m);color:transparent;-webkit-text-stroke:1px var(--silver);letter-spacing:-.06em}
+.st h3{font-size:clamp(20px,1.8vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.st p{color:var(--silver);font-size:15.5px}
+.st blockquote{margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);font-size:14px;color:var(--mute);font-weight:300}
+.st blockquote cite{display:block;margin-top:6px;font:400 12px var(--m);font-style:normal;letter-spacing:.08em;color:var(--silver)}
+.steps .rv.st{transform:translateY(60px)}
+.steps .rv.st.in{transform:none}
+
+/* БЕГУЩАЯ ЛИНИЯ */
+.also{padding:clamp(56px,7vw,96px) 0 clamp(28px,4vw,56px);overflow:hidden}
+.also .wrap{margin-bottom:34px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end}
+.also h2{font-size:clamp(30px,3.8vw,56px);font-weight:300}
+.also h2 b{font-weight:800}
+.also .wrap p{color:var(--mute);max-width:420px;justify-self:end;font-size:15px}
+.belt{display:flex;width:max-content;animation:belt 60s linear infinite;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.belt.back{animation-direction:reverse;animation-duration:75s;border-top:0}
+.belt:hover{animation-play-state:paused}
+.belt span{line-height:1;font-size:clamp(34px,5vw,72px);font-weight:200;letter-spacing:-.035em;padding:14px 34px;white-space:nowrap;display:flex;align-items:center;gap:68px;color:var(--silver)}
+.belt span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--yel);flex:none}
+.belt.back span{color:transparent;-webkit-text-stroke:1px var(--silver)}
+@keyframes belt{to{transform:translateX(-50%)}}
+
+/* ОТЗЫВЫ */
+.rev{padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px)}
+.rtop{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(28px,5vw,80px);align-items:end}
+.big{font-size:clamp(28px,3.7vw,56px);font-weight:300;letter-spacing:-.03em;line-height:1.14;margin-top:26px}
+.big em{font-style:normal;font-weight:800;color:#fff}
+.who{margin-top:22px;font:400 12px var(--m);letter-spacing:.12em;color:var(--mute);text-transform:uppercase}
+.score{border-left:1px solid var(--line);padding-left:clamp(20px,3vw,44px)}
+.score .num{font:600 clamp(80px,9vw,140px)/.85 var(--m);letter-spacing:-.06em}
+.score .num sup{font-size:.28em;color:var(--yel);vertical-align:top;margin-left:4px;letter-spacing:0}
+.stars{display:flex;gap:5px;margin:16px 0 12px}
+.stars svg{width:20px;height:20px;fill:var(--yel)}
+.score p{color:var(--silver);font-size:15px}
+.score a{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font:400 12px var(--m);letter-spacing:.1em;border-bottom:1px solid var(--yel);padding-bottom:3px;text-transform:uppercase}
+.wall{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(20px,3vw,44px);margin-top:clamp(44px,6vw,80px)}
+.q{border-top:1px solid var(--line2);padding:22px 0 34px;position:relative}
+.q::before{content:"";position:absolute;left:0;top:-1px;width:28px;height:2px;background:var(--yel)}
+.q p{font-size:17px;line-height:1.5;color:var(--ink)}
+.q cite{display:block;margin-top:14px;font:400 12px var(--m);font-style:normal;letter-spacing:.1em;color:var(--mute);text-transform:uppercase}
+.q.a{grid-column:span 5}.q.a p{font-size:clamp(22px,2.2vw,30px);font-weight:300;letter-spacing:-.02em;line-height:1.25}
+.q.b{grid-column:span 3}
+.q.c{grid-column:span 4}
+.q.d{grid-column:span 4}
+.q.e{grid-column:span 4}
+.q.f{grid-column:span 4}
+.q.g{grid-column:span 4}
+
+/* БОКС */
+.box{padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px);background:var(--bg2)}
+.btop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(36px,5vw,64px)}
+.btop h2{margin-top:20px}
+.btop p{color:var(--silver);max-width:460px;justify-self:end}
+.gal{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(110px,13vw,190px);gap:14px}
+.gal figure{position:relative;overflow:hidden;border-radius:20px;background:var(--bg3);border:1px solid var(--line)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.gal figure:hover img{transform:scale(1.045)}
+.gal figcaption{position:absolute;left:12px;bottom:12px;background:rgba(11,12,14,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:7px 13px;border-radius:999px;font:400 12px var(--m);letter-spacing:.08em;color:var(--ink)}
+.g1{grid-column:1/8;grid-row:span 3}
+.g2{grid-column:8/13;grid-row:span 2}
+.g3{grid-column:8/13;grid-row:span 1}
+.g4{grid-column:1/5;grid-row:span 2}
+.g5{grid-column:5/9;grid-row:span 2}
+.g6{grid-column:9/13;grid-row:span 2}
+.quote2{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;border-top:1px solid var(--line2);padding-top:26px;max-width:880px}
+.quote2 .lab{padding-top:8px}
+.quote2 p{font-size:clamp(20px,2.2vw,28px);font-weight:300;letter-spacing:-.02em;line-height:1.3}
+.quote2 cite{display:block;margin-top:10px;font:400 12px var(--m);font-style:normal;letter-spacing:.1em;color:var(--mute);text-transform:uppercase}
+
+/* КОНТАКТЫ */
+.contact{padding-top:clamp(64px,9vw,128px);padding-bottom:0;background:radial-gradient(60% 70% at 85% 100%,rgba(255,198,26,.07),transparent 70%)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.cgrid h2{font-size:clamp(40px,6vw,92px);font-weight:300;letter-spacing:-.04em;line-height:.98;margin-top:22px}
+.cgrid h2 b{font-weight:800}
+.info{margin-top:34px;display:grid;gap:0;max-width:460px;border-top:1px solid var(--line2)}
+.info div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.info dt,.info .k{font:400 12px var(--m);letter-spacing:.16em;color:var(--mute);text-transform:uppercase;padding-top:5px}
+.info a{border-bottom:1px solid var(--line2);display:inline-block;padding:12px 0 4px}
+.info a:hover{border-color:var(--yel)}
+.acts{display:grid;gap:12px}
+.act{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:18px;padding:20px 24px 20px 20px;border:1px solid var(--line2);border-radius:26px;background:rgba(255,255,255,.025);transition:transform .4s var(--ease),border-color .3s,background .3s}
+.act:hover{transform:translateX(8px);border-color:var(--silver);background:rgba(255,255,255,.055)}
+.act .ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(207,212,219,.09)}
+.act .ic svg{width:26px;height:26px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.act strong{display:block;font-size:clamp(19px,1.9vw,24px);font-weight:600;letter-spacing:-.015em;line-height:1.2}
+.act small{display:block;font-size:14px;color:var(--mute);margin-top:2px}
+.act .ar{width:24px;height:24px;stroke:var(--silver);fill:none;stroke-width:1.6;transition:transform .35s var(--ease)}
+.act:hover .ar{transform:translateX(5px)}
+.act.main{background:var(--yel);border-color:var(--yel);color:#0b0c0e;box-shadow:0 18px 50px -18px rgba(255,198,26,.6)}
+.act.main .ic{background:rgba(11,12,14,.12)}
+.act.main .ic svg{stroke:#0b0c0e}
+.act.main small{color:#3a3105}
+.act.main .ar{stroke:#0b0c0e}
+.road{margin-top:clamp(56px,8vw,110px);border-top:1px solid var(--line2);position:relative;padding:22px 0 26px}
+.road::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:repeating-linear-gradient(90deg,var(--yel) 0 48px,transparent 48px 96px);opacity:.9;mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;font:400 12px var(--m);letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
+
+/* нижняя панель на телефоне */
+.dock{display:none}
+.dock{transition:transform .45s var(--ease),opacity .3s}
+.dock.off{transform:translateY(110%);opacity:0;pointer-events:none}
+
+@media (max-width:1000px){
+  .menu{display:none}
+  .status{margin-left:auto}
+  .hgrid{grid-template-columns:1fr;align-items:start}
+  .stage{grid-template-columns:1fr}
+  .panel{border-left:0;border-top:1px solid var(--line);padding:22px 0}
+  .panel{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:28px;align-items:start}
+  .panel>*{grid-column:1}
+  .spring{grid-column:2;grid-row:1/7;margin-top:0;flex-direction:column;align-items:flex-start;max-width:170px}
+  .scap{min-height:0}
+  .ctrl{grid-template-columns:1fr;gap:6px;border-top:0;padding:4px 0 8px;order:2}
+  .scene{order:1}.panel{order:3}
+  .sgrid,.rtop,.btop,.cgrid,.also .wrap{grid-template-columns:1fr}
+  .btop p,.also .wrap p{justify-self:start}
+  .score{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}
+  .stairs{grid-template-columns:1fr;margin-top:30px}
+  .sh{position:static;width:auto;margin-bottom:28px}
+  .st{margin-top:0 !important;margin-left:calc(var(--k,0) * 14px);min-height:0}
+  .st:nth-child(2){--k:0}.st:nth-child(3){--k:1}.st:nth-child(4){--k:2}.st:nth-child(5){--k:3}
+  .st{border-left:1px solid var(--line2)}
+  .st .no{font-size:64px}
+  .wall .q{grid-column:span 12 !important}
+  .wall .q.b,.wall .q.d{grid-column:span 6 !important}
+  .gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}
+  .gal figure{grid-column:auto;grid-row:auto}
+  .gal .g1,.gal .g6{grid-column:1/-1}
+  .gal .g1{grid-row:span 2}
+  .gal figcaption{white-space:nowrap;max-width:calc(100% - 16px);left:8px;bottom:8px;padding:6px 10px;letter-spacing:0;font-size:11px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .ruler{width:22px;background:
+   repeating-linear-gradient(to bottom,transparent 0 23px,rgba(207,212,219,.22) 23px 24px) 6px 0/10px 100% no-repeat,
+   repeating-linear-gradient(to bottom,transparent 0 119px,rgba(207,212,219,.4) 119px 120px) 6px 0/16px 100% no-repeat}
+  .ruler::before{left:6px}
+  .ruler i{left:2px;width:22px}
+  .ruler b{display:none}
+  .wrap,nav.top{padding-left:36px;padding-right:20px}
+  nav.top{gap:12px}
+  .logo small{display:none}
+  .status{font-size:12px;min-width:0}
+  nav.top .btn.sm{width:44px;padding:0;gap:0;font-size:0;flex:none}
+  nav.top .btn.sm svg{width:20px;height:20px}
+  nav.top .btn.sm .cl{display:none}
+  .status{margin-left:auto}
+  .dims,#clr,.eyebrow .ad{display:none}
+  .info .k,.eyebrow,.lab,.q cite,.who,.foot{font-size:12px}
+  .hero h1{font-size:clamp(38px,11.4vw,56px)}
+  .hlead{font-size:17px}
+  .cta .btn{flex:1 1 100%}
+  .read{font-size:64px}
+  .scap{min-height:0}
+  .wall .q.b,.wall .q.d{grid-column:span 12 !important}
+  .info div{grid-template-columns:90px 1fr}
+  .act{grid-template-columns:48px 1fr auto;padding:16px;gap:14px;border-radius:22px}
+  .act .ic{width:48px;height:48px}
+  .quote2{grid-template-columns:1fr}
+  .rng span{display:none}
+  .hint{display:none}
+  .gal .g1{grid-row:span 1}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,12,14,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .dock .btn{min-height:50px;padding:0 10px}
+  .road{padding-bottom:94px}
+}
+@media (max-width:560px){
+  .panel{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:6px;padding:14px 0 18px}
+  .panel>*{grid-column:1/-1}
+  .panel .read{grid-column:1;grid-row:2}
+  .panel .clrrow{grid-column:2;grid-row:2;align-self:end;padding-bottom:8px}
+  .spring{grid-column:1/-1;grid-row:auto;flex-direction:row;align-items:flex-end;max-width:none;margin-top:8px}
+  .spring svg{width:64px}
+  .hgrid{gap:14px}
+  .hlead p{margin-bottom:14px}
+  .rate{margin-bottom:16px}
+  .cta{gap:10px}
+  .cta .btn{min-height:48px}
+  .stage{margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('no-js');requestAnimationFrame(function(){document.documentElement.classList.remove('no-js')});</script>
+
+<div class="demo">Демо-версия сайта</div>
+<div class="ruler" aria-hidden="true"><i id="rmark"></i><b id="rlab">01</b></div>
+
+<nav class="top">
+  <a class="logo" href="#top" aria-label="Тачки - наверх">
+    <svg class="mark" viewBox="0 -2 208 78" role="img" aria-label="Тачки"><path d="M10 14 L2 0 L38 12 Z M198 14 L206 0 L170 12 Z" fill="#23262b" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 14 L200 14 L198 54 L134 54 L104 74 L74 54 L10 54 Z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M14 19 L194 19 L192.7 49 L129 49 L104 66 L79 49 L15.3 49 Z" fill="#d2383a"/><text x="0" y="0" transform="translate(104 45) skewX(-9)" text-anchor="middle" font-family="Nunito,'Fira Sans',Arial,sans-serif" font-weight="900" font-size="33" letter-spacing="-.5" fill="#fff" stroke="#fff" stroke-width="1.2" stroke-linejoin="round">тачки</text></svg>
+    <small>Автосервис<br>Владивосток</small>
+  </a>
+  <div class="menu">
+    <a href="#reviews">Отзывы</a>
+    <a href="#steps">Как чиним</a>
+    <a href="#pneu">Пневмоподвеска</a>
+    <a href="#box">Бокс</a>
+    <a href="#contacts">Контакты</a>
+  </div>
+  <div class="status" id="status"><em></em><span id="stxt">10:00 - 19:00</span></div>
+  <a class="btn y sm" href="tel:+79046272020" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span class="cl">Позвонить</span></a>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="hgrid">
+    <div>
+      <div class="eyebrow">Автосервис · Владивосток<span class="ad"> · 2-я Линейная, 22</span></div>
+      <h1>Скажем как есть<br><b>и сделаем быстро</b></h1>
+    </div>
+    <div class="hlead">
+      <p>101 отзыв на 2ГИС и рейтинг 5,0. Клиенты пишут, что здесь не накручивают проблемы и делают быстро: масло, ГРМ, кондиционер, АКПП, шиномонтаж.</p>
+      <a class="rate" href="https://2gis.ru/vladivostok/firm/70000001079894482" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg><b>5,0</b><span>101 отзыв на 2ГИС</span></a>
+      <div class="cta">
+        <a class="btn y" href="https://t.me/tachki125" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l5.5 2L10 19l3.2-3.6L18 19z"/><path d="m8.5 13 9-6"/></svg>Написать в Telegram</a>
+        <a class="btn o" href="tel:+79046272020"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+7 904 627-20-20</a>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hphoto"><img src="img/box-12.jpg" alt="Подъёмник, тележка с маслом и расписанная стена в боксе автосервиса" width="1280" height="720"><figcaption>2-я Линейная, 22</figcaption></figure>
+</header>
+
+<section class="rev wrap" id="reviews">
+  <div class="rtop">
+    <div class="rv">
+      <div class="eyebrow">Отзывы на 2ГИС</div>
+      <p class="big">«Хороший сервис определяется не тем, сколько с тебя взяли, а тем, <em>сколько помогли сэкономить.</em> Этот сервис регулярно доказывает это на практике.»</p>
+      <div class="who">Михаил А. · февраль 2026</div>
+    </div>
+    <div class="score rv" style="--d:.1s">
+      <div class="num">5,0</div>
+      <div class="stars" aria-label="5 из 5">
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg>
+      </div>
+      <p>Рейтинг по 101 отзыву на 2ГИС.</p>
+      <a href="https://2gis.ru/vladivostok/firm/70000001079894482" target="_blank" rel="noopener">Читать все отзывы</a>
+    </div>
+  </div>
+
+  <div class="wall">
+    <div class="q a rv"><p>Не накручивают «проблемы» по ремонту, говорят всё как есть. Мастера сразу поняли, в чём проблема моего авто.</p><cite>Olga S. · апрель 2026</cite></div>
+    <div class="q b rv" style="--d:.08s"><p>Ремень сделали качественно, ребята вникают в вопрос и предлагают грамотное решение.</p><cite>Александр К. · май 2026</cite></div>
+    <div class="q c rv" style="--d:.16s"><p>Водительское сиденье застелили перед тем как автомеханик сел в машину, такое только видел в элитных СТО.</p><cite>Отзыв на 2ГИС · декабрь 2024</cite></div>
+    <div class="q d rv"><p>Всегда позитивная атмосфера и оптимистичные ребята, не навязывают ничего лишнего.</p><cite>Денис А. · июль 2026</cite></div>
+    <div class="q e rv" style="--d:.08s"><p>Парень очень доходчиво объяснил проблемные зоны, показал. Уточнил, что в первую очередь необходимо заменить.</p><cite>Алёна К. · май 2025</cite></div>
+    <div class="q f rv" style="--d:.16s"><p>Не пришлось менять печку, как мне сразу предложили в другом сервисе.</p><cite>Отзыв на 2ГИС · декабрь 2024</cite></div>
+  </div>
+</section>
+
+<section class="steps wrap" id="steps">
+  <div class="stairs">
+    <div class="sh rv">
+      <div class="eyebrow">Как чиним</div>
+      <h2>Четыре ступени<br>до ремонта</h2>
+    </div>
+    <article class="st rv" style="--i:3">
+      <div class="no">01</div>
+      <h3>Находим причину</h3>
+      <p>Шум, глохнет, заводится через раз, не работает кондиционер: сначала разбираемся, в чём причина.</p>
+      <blockquote>«Отличный сервис, быстро выяснили причину, и все исправили! Спасибо!»<cite>Бронислав, 2ГИС, сентябрь 2025</cite></blockquote>
+    </article>
+    <article class="st rv" style="--i:2;--d:.1s">
+      <div class="no">02</div>
+      <h3>Показываем вам</h3>
+      <p>Объясняем простыми словами, что сломалось и что с этим делать. Показываем на самой машине.</p>
+      <blockquote>«На фото-видео, даже с помощью эндоскопа, предоставили отчёт!»<cite>Андрей, 2ГИС, ноябрь 2024</cite></blockquote>
+    </article>
+    <article class="st rv" style="--i:1;--d:.2s">
+      <div class="no">03</div>
+      <h3>Подбираем детали</h3>
+      <p>Запчасти заказываем сами, вам не надо искать их по городу.</p>
+      <blockquote>«Илья, который занимается подбором деталей, тут же нашел по оптимальной цене запчасти и мы сразу оформили.»<cite>Алёна, 2ГИС, май 2025</cite></blockquote>
+    </article>
+    <article class="st rv" style="--i:0;--d:.3s">
+      <div class="no">04</div>
+      <h3>Чиним и отдаём</h3>
+      <p>Делаем ремонт и отдаём машину.</p>
+      <blockquote>«Починили за два дня, взяли за работу по божески.»<cite>Андрей Т., 2ГИС, декабрь 2025</cite></blockquote>
+    </article>
+  </div>
+</section>
+
+<section class="pneu wrap" id="pneu">
+  <div class="btop">
+    <div class="rv">
+      <div class="eyebrow">Услуга из 2ГИС</div>
+      <h2>Пневмоподвеска:<br>высота кузова</h2>
+    </div>
+    <p class="rv" style="--d:.1s">В карточке Тачек на 2ГИС указан ремонт пневмоподвески. Двигайте ползунок: так на воздухе меняется высота кузова.</p>
+  </div>
+  <div class="stage">
+    <div class="scene">
+      <svg id="carsvg" viewBox="-70 30 1070 440" role="img" aria-label="Чертёж внедорожника сбоку. Ползунок поднимает и опускает кузов на пневмоподвеске, колёса стоят на месте">
+        <defs>
+          <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".1" stop-color="#fff"/><stop offset=".9" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <mask id="gm" maskUnits="userSpaceOnUse" x="-70" y="395" width="1070" height="30"><rect x="-70" y="395" width="1070" height="30" fill="url(#fadeL)"/></mask>
+          <linearGradient id="swg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <mask id="swm" maskUnits="userSpaceOnUse" x="-100" y="0" width="1200" height="420"><rect class="glow" x="-220" y="0" width="200" height="420" fill="url(#swg)"/></mask>
+          <marker id="ar" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="10" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 3 L0 6 Z" fill="#cfd4db" stroke="none"/></marker>
+          <marker id="ary" viewBox="0 0 10 6" refX="9" refY="3" markerWidth="10" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 3 L0 6 Z" fill="#ffc61a" stroke="none"/></marker>
+          <path id="bodyp" d="M56 334 L40 334 Q32 333 32 322 L32 276 L34 266 L38 172 L44 104 Q46 84 56 74 Q64 64 86 63 L596 62 C620 63 634 78 646 100 L704 189 Q710 193 720 194 L884 205 Q906 208 911 219 L916 236 L917 302 Q917 322 908 330 L904 334 L833 334 A88 88 0 1 0 663 360 L317 360 A88 88 0 1 0 147 334 Z"/>
+          <g id="wheel">
+            <circle r="72"/>
+            <circle r="68" stroke-dasharray="7 5" stroke-opacity=".35"/>
+            <circle r="42"/><circle r="37" stroke-opacity=".55"/>
+            <circle r="13"/><circle r="4" stroke-opacity=".7"/>
+            <path id="spoke" d="M-5 -15 L-7 -36 L7 -36 L5 -15"/>
+            <use href="#spoke" transform="rotate(72)"/><use href="#spoke" transform="rotate(144)"/><use href="#spoke" transform="rotate(216)"/><use href="#spoke" transform="rotate(288)"/>
+            <path d="M-86 0 H86 M0 -86 V86" stroke-dasharray="16 4 3 4" stroke-opacity=".28"/>
+          </g>
+        </defs>
+
+        <g mask="url(#gm)"><line x1="-70" y1="400" x2="1000" y2="400" stroke="#cfd4db" stroke-opacity=".6" stroke-width="1.2"/><path id="hatch" d="" stroke="#cfd4db" stroke-opacity=".22" stroke-width="1" fill="none"/></g>
+
+        <g id="wheels" class="ln">
+          <use href="#wheel" transform="translate(235 328)"/>
+          <use href="#wheel" transform="translate(745 328)"/>
+        </g>
+
+        <g id="bodyg" class="ln">
+          <use href="#bodyp" stroke-width="1.3"/>
+          <path d="M116 78 L598 77 C608 78 614 83 620 92 L676 180 L104 180 Z"/>
+          <path d="M420 77 L426 180 M440 77 L446 180 M318 77 L322 180 M338 77 L342 180" stroke-opacity=".8"/>
+          <path d="M676 182 L645 350 M434 180 L437 350 M329 180 L336 349"/>
+          <path d="M122 56 L586 55 M170 55 V62 M530 55 V62" stroke-opacity=".8"/>
+          <path d="M326 349 L652 349 M44 292 L152 292 M318 292 L654 292 M830 292 L890 296" stroke-opacity=".55"/>
+          <rect x="452" y="197" width="38" height="7" rx="3.5" stroke-opacity=".8"/>
+          <rect x="350" y="197" width="34" height="7" rx="3.5" stroke-opacity=".8"/>
+          <path d="M680 184 L712 178 Q726 178 727 191 L723 207 Q719 214 706 213 L686 209 Z" fill="#0b0c0e"/>
+          <path d="M846 208 L904 218 Q911 221 912 230 L910 254 L856 244 Q846 242 846 233 Z M858 224 L902 232" stroke-opacity=".9"/>
+          <path d="M905 258 L903 302 M836 306 L913 310" stroke-opacity=".6"/>
+          <rect x="884" y="316" width="20" height="8" rx="3" stroke-opacity=".7"/>
+          <path d="M44 184 L62 183 L64 246 L38 248 Z M34 268 L150 270 M46 226 L656 224 L832 232" stroke-opacity=".8"/>
+          <g mask="url(#swm)"><use href="#bodyp" stroke="#fff" stroke-width="1.8"/></g>
+        </g>
+
+        <g class="dims" fill="none" stroke="#cfd4db" stroke-opacity=".5" stroke-width="1">
+          <path d="M235 340 V440 M745 340 V440 M32 336 V466 M917 336 V466 " stroke-dasharray="3 4" stroke-opacity=".3"/>
+          <path d="M235 432 H745" marker-start="url(#ar)" marker-end="url(#ar)"/>
+          <path d="M32 458 H917" marker-start="url(#ar)" marker-end="url(#ar)"/>
+          <path id="hext" d="M600 62 H970" stroke-dasharray="3 4" stroke-opacity=".3"/>
+          <path id="hline" d="M962 62 V400" marker-start="url(#ar)" marker-end="url(#ar)"/>
+          <g fill="#9aa1ab" stroke="none" font-family="JetBrains Mono,monospace" font-size="14" letter-spacing="1.5" text-anchor="middle">
+            <text x="490" y="426">КОЛЁСНАЯ БАЗА 2850</text>
+            <text x="475" y="452">ДЛИНА 4950</text>
+            <text id="htext" transform="translate(950 231) rotate(-90)">ВЫСОТА 1890</text>
+          </g>
+        </g>
+        <g id="clr">
+          <path id="cline" d="M490 400 V360" stroke="#ffc61a" stroke-width="1.4" fill="none" marker-start="url(#ary)" marker-end="url(#ary)"/>
+          <text id="ctext" x="502" y="384" fill="#ffc61a" font-family="JetBrains Mono,monospace" font-size="14" letter-spacing="1.2">ПРОСВЕТ 225 мм</text>
+        </g>
+      </svg>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <div class="lab">Ход подвески</div>
+      <div class="read"><span id="num">040</span><small>%</small></div>
+      <div class="clrrow"><span class="lab">Просвет</span><span class="mm"><b id="clrmm">225</b> мм</span></div>
+      <div class="sname" id="sname">Рабочая высота</div>
+      <p class="scap" id="scap">Так машина должна стоять. Воздух в баллонах, кузов на своём месте.</p>
+      <div class="spring">
+        <svg id="spsvg" class="ln" viewBox="0 0 180 290" aria-hidden="true"></svg>
+        <p>Пневмобаллон растягивается и сжимается, пока подвеска меняет высоту.</p>
+      </div>
+    </aside>
+
+    <div class="ctrl">
+      <div class="chips" role="group" aria-label="Быстрый выбор высоты">
+        <button class="chip" data-v="4">Села</button>
+        <button class="chip on" data-v="40">Рабочая</button>
+        <button class="chip" data-v="76">Выше</button>
+      </div>
+      <label class="rng"><span>ниже</span><input id="rng" type="range" min="0" max="100" step="1" value="0" aria-label="Высота кузова"><span>выше</span></label>
+      <div class="hint">Двигайте ползунок: кузов поднимается, баллон растягивается.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sym wrap" id="signs">
+  <div class="sgrid">
+    <div class="rv">
+      <div class="eyebrow">Узнаёте?</div>
+      <h2>Пора на проверку, если машина...</h2>
+      <p class="lead">Эти четыре признака знакомы владельцам машин на воздухе. Лучше приехать раньше, чем ждать, пока всё просядет до упора.</p>
+    </div>
+    <div class="rows">
+      <div class="row rv"><span class="n">01</span><h3>За ночь оседает</h3><p>Вечером кузов стоял нормально, утром лежит ниже.</p></div>
+      <div class="row rv" style="--d:.08s"><span class="n">02</span><h3>Показывает ошибку подвески</h3><p>Горит лампа подвески - приезжайте.</p></div>
+      <div class="row rv" style="--d:.16s"><span class="n">03</span><h3>Качает долго и гудит</h3><p>Компрессор работает без остановки или слышен гул из-под днища.</p></div>
+      <div class="row rv" style="--d:.24s"><span class="n">04</span><h3>Стоит с перекосом</h3><p>Один угол просел ниже остальных.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="also" id="also">
+  <div class="wrap rv">
+    <h2>Что ещё делают<br><b>по отзывам</b></h2>
+    <p>Это из отзывов: что клиенты здесь уже делали со своими машинами.</p>
+  </div>
+  <div class="belt" aria-hidden="true" id="belt1"></div>
+  <div class="belt back" aria-hidden="true" id="belt2"></div>
+</section>
+
+<section class="box wrap" id="box">
+  <div class="btop">
+    <div class="rv">
+      <div class="eyebrow">Изнутри</div>
+      <h2>Так выглядит<br>рабочий день</h2>
+    </div>
+    <p class="rv" style="--d:.1s">Подъёмники, смотровая яма и расписанные стены. Фото с 2-й Линейной, 22.</p>
+  </div>
+  <div class="gal">
+    <figure class="g1 rv"><img src="img/box-mac.jpg" alt="Грузовик Мак из мультфильма «Тачки», нарисованный на кирпичной стене бокса" loading="lazy"><figcaption>Мак на стене</figcaption></figure>
+    <figure class="g2 rv" style="--d:.08s"><img src="img/box-11.jpg" alt="Два подъёмника, смотровая яма и жёлтая разметка на полу" loading="lazy"><figcaption>Два подъёмника</figcaption></figure>
+    <figure class="g3 rv" style="--d:.16s"><img src="img/box-06.jpg" alt="Вывеска «Тачки Автосервис Автовыкуп» на кирпичной стене" loading="lazy"><figcaption>Вывеска у входа</figcaption></figure>
+    <figure class="g4 rv"><img src="img/box-03.jpg" alt="Двигатель, снятый с машины, на фоне расписанной стены" loading="lazy"><figcaption>Мотор на подвесе</figcaption></figure>
+    <figure class="g5 rv" style="--d:.08s"><img src="img/box-14.jpg" alt="Смотровая яма с красными бортами и жёлтой полосатой разметкой" loading="lazy"><figcaption>Яма и разметка</figcaption></figure>
+    <figure class="g6 rv" style="--d:.16s"><img src="img/box-19.jpg" alt="Мотор под открытым капотом" loading="lazy"><figcaption>Под капотом</figcaption></figure>
+  </div>
+  <div class="quote2 rv">
+    <span class="lab">Из отзыва</span>
+    <div><p>«Сервис современный, удобный и комфортный. … в боксе опрятно, инструмент не из дешёвых, видно подход мастеров к делу.»</p><cite>Алан Ш. · декабрь 2025</cite></div>
+  </div>
+</section>
+
+<section class="contact wrap" id="contacts">
+  <div class="cgrid">
+    <div class="rv">
+      <div class="eyebrow">Контакты</div>
+      <h2>Напишите,<br>что с <b>машиной</b></h2>
+      <div class="info">
+        <div><span class="k">Адрес</span><span>Владивосток,<br>2-я Линейная улица, 22</span></div>
+        <div><span class="k">График</span><span>Ежедневно, 10:00 - 19:00 <span id="stxt2" style="color:var(--mute)"></span></span></div>
+        <div><span class="k">Телефон</span><span><a href="tel:+79046272020">+7 904 627-20-20</a><br><a href="tel:+79990578269">+7 999 057-82-69</a></span></div>
+        <div><span class="k">Оплата</span><span>Картой, наличными, переводом, по QR-коду</span></div>
+        <div><span class="k">Карта</span><span><a href="https://2gis.ru/vladivostok/firm/70000001079894482" target="_blank" rel="noopener">Открыть в 2ГИС</a></span></div>
+      </div>
+    </div>
+    <div class="acts rv" style="--d:.12s">
+      <a class="act main" href="https://t.me/tachki125" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l5.5 2L10 19l3.2-3.6L18 19z"/><path d="m8.5 13 9-6"/></svg></span><span><strong>Telegram</strong><small>Напишите, что случилось с машиной</small></span><svg class="ar" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      <a class="act" href="tel:+79046272020"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span><strong>Позвонить</strong><small>+7 904 627-20-20</small></span><svg class="ar" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      <a class="act" href="https://wa.me/79046272020" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16A8.5 8.5 0 1 1 8 19z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-1 .6c-.8-.4-1.6-1.2-2-2l.6-1-1-2z"/></svg></span><span><strong>WhatsApp</strong><small>Тот же номер, что и телефон</small></span><svg class="ar" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      <a class="act" href="https://vk.com/avtoservicetachki" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 9c.4 4 2.4 6 5 6V9m0 3c1.6-.2 2.6-1.4 3-3m-3 3c1.6.2 2.6 1.4 3 3"/></svg></span><span><strong>ВКонтакте</strong><small>Страница автосервиса</small></span><svg class="ar" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="road">
+    <div class="foot"><span>Тачки · автосервис · Владивосток</span><span>2-я Линейная улица, 22</span><span>Демо-версия сайта</span></div>
+  </div>
+</section>
+
+<div class="dock">
+  <a class="btn y" href="https://t.me/tachki125" target="_blank" rel="noopener">Telegram</a>
+  <a class="btn o" href="tel:+79046272020">Позвонить</a>
+</div>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  var $=function(s){return document.querySelector(s)};
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- машина: кузов и колёса разными слоями, двигается только кузов ---- */
+  var bodyg=$('#bodyg'), cline=$('#cline'), ctext=$('#ctext'), hline=$('#hline'), hext=$('#hext'), htext=$('#htext');
+  var hp='';for(var hx=-50;hx<1010;hx+=12){hp+='M'+hx+' 400 l-9 9 '}
+  $('#hatch').setAttribute('d',hp);
+  var movers=[bodyg], carsvg=$('#carsvg'), kUp=.3, mq=window.matchMedia('(max-width:640px)');
+  function applyMq(){kUp=mq.matches?.5:.3;carsvg.setAttribute('viewBox',mq.matches?'22 14 906 398':'-70 30 1070 440')}
+  applyMq();(mq.addEventListener?mq.addEventListener('change',applyMq):mq.addListener(applyMq));
+
+  /* ---- пневмобаллон ---- */
+  var sp=$('#spsvg');
+  var CX=80, BOT=252;
+  el('rect',{x:30,y:266,width:100,height:10,rx:3},sp);
+  el('path',{d:'M54 252 L106 252 L98 266 L62 266 Z'},sp);
+  var conv=[],crimps=[];
+  for(var i=0;i<3;i++){conv.push(el('path',{},sp))}
+  for(var j=0;j<4;j++){crimps.push(el('rect',{width:70,height:5,rx:2},sp))}
+  var topPlate=el('rect',{width:84,height:10,rx:3},sp);
+  var stud=el('rect',{width:12,height:24,rx:2},sp);
+  var hose=el('path',{},sp);
+  var flow=el('path',{fill:'none',stroke:'#ffc61a','stroke-width':2,'stroke-linecap':'round',class:'flowline'},sp);
+  function drawSpring(v){
+    var ext=v/100, H=78+ext*96, seg=H/3, ww=26, b=26-ext*13;
+    for(var i=0;i<3;i++){
+      var y1=BOT-i*seg, y0=y1-seg, k=b*1.35;
+      conv[i].setAttribute('d','M'+(CX-ww)+' '+y1+' C'+(CX-ww-k)+' '+y1+' '+(CX-ww-k)+' '+y0+' '+(CX-ww)+' '+y0+' L'+(CX+ww)+' '+y0+' C'+(CX+ww+k)+' '+y0+' '+(CX+ww+k)+' '+y1+' '+(CX+ww)+' '+y1+' Z');
+    }
+    for(var j=0;j<4;j++){var y=BOT-j*seg;crimps[j].setAttribute('x',CX-35);crimps[j].setAttribute('y',y-2.5)}
+    var yt=BOT-H;
+    topPlate.setAttribute('x',CX-42);topPlate.setAttribute('y',yt-12);
+    stud.setAttribute('x',CX-6);stud.setAttribute('y',yt-34);
+    var hx=CX+6,hy=yt-28;
+    var d='M'+hx+' '+hy+' C'+(hx+40)+' '+hy+' '+(hx+30)+' 36 180 36';
+    hose.setAttribute('d',d);flow.setAttribute('d',d);
+  }
+
+  /* ---- состояние ---- */
+  var rng=$('#rng'), num=$('#num'), sname=$('#sname'), scap=$('#scap'), chips=document.querySelectorAll('.chip');
+  var clrmm=$('#clrmm');
+  var stages=[
+    {max:22,name:'Села',cap:'Кузов лежит низко: воздух ушёл из баллонов. Так выглядит просевшая подвеска.',chip:0},
+    {max:62,name:'Рабочая высота',cap:'Так машина должна стоять. Воздух в баллонах, кузов на своём месте.',chip:1},
+    {max:88,name:'Выше',cap:'Подвеска на воздухе умеет менять высоту: выше для плохой дороги или снега, ниже для трассы.',chip:2},
+    {max:101,name:'Предел хода',cap:'Крайняя точка. Если ваша машина до неё не дотягивается или не держит высоту, везите в бокс.',chip:-1}
+  ];
+  var vis=true,looping=true;
+  var curStage=-1,cur=0,target=0,dragging=false,ready=false,t0=performance.now(),lastFlow=0;
+  function stageOf(v){for(var i=0;i<stages.length;i++)if(v<stages[i].max)return i;return 3}
+  function setStage(i,force){
+    if(i===curStage&&!force)return;curStage=i;
+    var s=stages[i];
+    sname.style.opacity=0;scap.style.opacity=0;
+    setTimeout(function(){sname.textContent=s.name;scap.textContent=s.cap;sname.style.opacity=1;scap.style.opacity=1},reduce?0:170);
+    chips.forEach(function(c,k){c.classList.toggle('on',k===s.chip)});
+  }
+  /* просвет: по масштабу чертежа 0,179 пикс. на мм; 40% = 225 мм */
+  function render(v,shown){
+    var t=-(v-40)*(v>40?kUp:0.3);
+    movers.forEach(function(m){m.setAttribute('transform','translate(0 '+t.toFixed(2)+')')});
+    var sill=360+t;
+    cline.setAttribute('d','M490 400 V'+sill.toFixed(2));
+    var sv=Math.max(0,Math.min(100,shown));
+    var mm=Math.round((40+0.3*(sv-40))/0.179/5)*5;
+    var rt=62+t;hline.setAttribute('d','M962 '+rt.toFixed(2)+' V400');hext.setAttribute('d','M600 '+rt.toFixed(2)+' H970');
+    var hh=Math.round((400-62-(Math.max(0,Math.min(100,shown))-40)*-0.3)/0.179/5)*5;
+    htext.textContent='ВЫСОТА '+hh;htext.setAttribute('transform','translate(950 '+((rt+400)/2).toFixed(1)+') rotate(-90)');
+    ctext.textContent='ПРОСВЕТ '+mm+' мм';
+    ctext.setAttribute('y',(400-(40+0.3*(sv-40))/2+5).toFixed(1));
+    if(clrmm)clrmm.textContent=mm;
+    drawSpring(v);
+    num.textContent=('00'+Math.round(sv)).slice(-3);
+    rng.style.setProperty('--p',sv+'%');
+  }
+  function frame(now){
+    var d=target-cur;
+    if(Math.abs(d)>.5){cur+=d*(reduce?1:.075);lastFlow=now;}else cur=target;
+    var breath=(ready&&!dragging&&!reduce&&Math.abs(d)<.5)?Math.sin((now-t0)/1500)*.55:0;
+    var v=cur+breath;
+    render(v,cur);
+    setStage(stageOf(cur));
+    var moving=Math.abs(d)>.4;
+    flow.classList.toggle('on',moving);flow.classList.toggle('dn',d<0);
+    if(vis)requestAnimationFrame(frame);else looping=false;
+  }
+  rng.addEventListener('input',function(){target=+rng.value;dragging=true;clearTimeout(rng._t);rng._t=setTimeout(function(){dragging=false},400)});
+  chips.forEach(function(c){c.addEventListener('click',function(){target=+c.dataset.v;rng.value=target})});
+  // вступление: машина поднимается из «села»
+  function fixCap(){var o=scap.textContent,m=0;scap.style.minHeight='0';stages.forEach(function(st){scap.textContent=st.cap;m=Math.max(m,scap.offsetHeight)});scap.textContent=o;scap.style.minHeight=m+'px'}
+  var capT;addEventListener('resize',function(){clearTimeout(capT);capT=setTimeout(fixCap,150)});
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fixCap);fixCap();
+  render(0,0);setStage(0,true);
+  var startAt=reduce?0:700;
+  setTimeout(function(){target=40;rng.value=40;ready=true;if(reduce){cur=40}},startAt);
+  requestAnimationFrame(frame);
+  var stageEl=$('.stage');
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;stageEl.classList.toggle('off',!vis);if(vis&&!looping){looping=true;requestAnimationFrame(frame)}},{threshold:0}).observe(stageEl);
+
+  /* ---- бегущие слова ---- */
+  var words=['Диагностика','Масло','Свечи','Антифриз','Термостат','Ремень ГРМ','Колодки и суппорты','Кондиционер','Промывка печки','Ремонт АКПП','Подбор запчастей'];
+  var w2=words.slice(5).concat(words.slice(0,5));
+  function fill(id,list){var b=$(id),h='';for(var k=0;k<2;k++)list.forEach(function(w){h+='<span>'+w+'</span>'});b.innerHTML=h}
+  fill('#belt1',words);fill('#belt2',w2);
+
+  /* ---- появление блоков ---- */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(n){io.observe(n)});
+
+  /* ---- линейка: маркер идёт за прокруткой ---- */
+  var rmark=$('#rmark'), rlab=$('#rlab');
+  var secs=['top','reviews','steps','pneu','signs','also','box','contacts'].map(function(id){return document.getElementById(id)});
+  var labels=['01','02','03','04','04','05','06','07'];
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    var p=h>0?scrollY/h:0;
+    var y=p*(innerHeight-2);
+    rmark.style.transform='translateY('+y.toFixed(1)+'px)';
+    rlab.style.transform='translateY('+y.toFixed(1)+'px)';
+    var idx=0,mid=scrollY+innerHeight*.4;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=mid)idx=i});
+    rlab.textContent=labels[idx];
+  }
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+
+  /* ---- нижняя панель: после первого экрана ---- */
+  var dock=$('.dock');
+  function dk(){if(dock)dock.classList.toggle('off',scrollY<innerHeight*.7)}
+  dock&&dock.classList.add('off');addEventListener('scroll',dk,{passive:true});dk();
+
+  /* ---- открыто / закрыто (Владивосток, UTC+10) ---- */
+  function status(){
+    var n=new Date(),utc=n.getTime()+n.getTimezoneOffset()*60000,v=new Date(utc+10*3600000);
+    var m=v.getHours()*60+v.getMinutes(),open=m>=600&&m<1140;
+    var s=$('#status');s.classList.toggle('closed',!open);
+    $('#stxt').textContent=open?'Открыто до 19:00':'Закрыто до 10:00';
+    $('#stxt2').textContent=open?'(сейчас открыто)':'(сейчас закрыто)';
+  }
+  status();setInterval(status,60000);
+})();
+</script>
+</body>
+</html>

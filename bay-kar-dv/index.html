@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>БайКар ДВ - автомобили с аукционов, Владивосток</title>
+<meta name="description" content="БайКар ДВ, Владивосток: подбор и заказ автомобилей с аукционов. Changan, Chery, Haval, Exeed, LIVAN, новые и подержанные. Каплунова, 6.">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:title" content="БайКар ДВ - автомобили с аукционов">
+<meta property="og:description" content="Подбор и заказ автомобилей с аукционов во Владивостоке. Звоните: +7 914 687-71-91.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/bay-kar-dv/img/og.jpg">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@700;800;900&family=Jost:wght@400;500;600&subset=cyrillic&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10; --bg2:#12151a; --bg3:#191d24;
+  --ink:#eef1f5; --mute:#a3abb6; --line:rgba(238,241,245,.16);
+  --red:#ff5547; --silver1:#f3f5f8; --silver2:#bcc3cd;
+  --disp:'Sofia Sans Extra Condensed','Arial Narrow',Impact,sans-serif;
+  --body:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --gut:clamp(20px,4vw,64px);
+    --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* плашка демо */
+.demo{position:fixed;top:0;left:0;right:0;z-index:60;height:34px;display:flex;align-items:center;justify-content:center;gap:10px;background:#f3f5f8;color:#0b0d10;font:600 13px/1 var(--body);letter-spacing:.04em}
+.demo b{display:inline-block;width:7px;height:7px;border-radius:50%;background:#d6261a;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+
+header{position:fixed;top:34px;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gut);background:rgba(11,13,16,.86);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:44px;height:44px;flex:none}
+.logo span{font:800 26px/1 var(--disp);letter-spacing:.06em;text-transform:uppercase}
+.logo small{display:block;font:500 12px/1.2 var(--body);letter-spacing:.14em;color:var(--mute);margin-top:3px;text-transform:uppercase}
+nav{display:flex;gap:30px;font-weight:500;font-size:15px}
+nav a{position:relative;padding:6px 0;color:var(--ink)}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+nav a:hover::after{transform:scaleX(1)}
+.hphone{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:15px;padding:11px 20px;border-radius:999px;border:1px solid rgba(238,241,245,.5);transition:background .3s,color .3s;white-space:nowrap}
+.hphone:hover{background:var(--ink);color:var(--bg)}
+
+main{padding-left:var(--gut);padding-right:var(--gut)}
+section{position:relative}
+.label{display:flex;align-items:center;gap:14px;font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.label i{display:block;width:44px;height:1px;background:var(--red)}
+.label em{font-style:normal;color:var(--ink)}
+h1,h2{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:.005em}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;font-weight:600;font-size:17px;position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,background .3s,color .3s;isolation:isolate}
+.btn svg{width:22px;height:22px;flex:none}
+.btn.main{background:linear-gradient(180deg,var(--silver1),var(--silver2));color:#0b0d10;box-shadow:0 10px 30px -12px rgba(243,245,248,.45)}
+.btn.main::before{content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);animation:shine 5.5s var(--ease) infinite;z-index:-1}
+@keyframes shine{0%,60%{left:-40%}100%{left:140%}}
+.btn.ghost{border:1px solid rgba(238,241,245,.45);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+
+/* hero */
+.hero{padding-top:134px;padding-bottom:40px}
+.hero > *{max-width:1325px}
+.herotop{margin-top:22px}
+.herogrid{display:grid;grid-template-columns:minmax(0,960px) minmax(280px,1fr);gap:clamp(24px,3vw,44px);align-items:end;margin-top:clamp(22px,2.4vw,32px)}
+.herogrid > *{min-width:0}
+.hero h1{font-size:clamp(60px,10.4vw,150px);margin:0 0 0 -.02em;white-space:nowrap}
+.hero h1 .ln{display:block;overflow:hidden;padding-top:.04em}
+.hero h1 .ln span{display:inline-block;transform:translateY(105%);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s}
+.hero h1 .out{color:#8d96a3}
+@keyframes rise{to{transform:none}}
+.heroside p{font-size:clamp(17px,1.4vw,19px);line-height:1.5;color:var(--ink);margin-bottom:22px}
+.heroside .row{display:flex;flex-wrap:wrap;gap:10px}
+.heroside .btn{padding:0 24px}
+.band{position:relative;border-radius:28px;overflow:hidden;height:clamp(300px,27vw,380px);background:var(--bg3)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,13,16,.7),rgba(11,13,16,0) 48%),rgba(11,13,16,.26)}
+.tag{position:absolute;z-index:2;right:clamp(16px,2.4vw,34px);top:clamp(16px,2.4vw,34px);display:flex;gap:10px;align-items:center;padding:10px 16px;border-radius:999px;background:rgba(11,13,16,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);font-size:15px;font-weight:500}
+.tag b{font:800 22px/1 var(--disp);color:var(--ink)}
+.tag span{color:var(--mute)}
+
+/* маршрут: аукцион - таможня - Владивосток */
+.route{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(22px,2.4vw,34px)}
+.route::before,.route::after{content:"";position:absolute;left:0;top:5px;height:1px;width:calc(100% * 2 / 3)}
+.route::before{background:var(--line)}
+.route::after{background:linear-gradient(90deg,var(--silver1),var(--red));transform:scaleX(0);transform-origin:left;transition:transform 2.4s var(--ease) .3s}
+.route.on::after{transform:scaleX(1)}
+.stn{position:relative;padding:26px 16px 0 0}
+.stn::before{content:"";position:absolute;left:0;top:0;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid var(--silver2);z-index:1}
+.stn:last-child::before{background:var(--red);border-color:var(--red);box-shadow:0 0 0 6px rgba(255,85,71,.18)}
+.stn b{display:block;font:800 clamp(26px,3.2vw,46px)/1 var(--disp);text-transform:uppercase;letter-spacing:.01em}
+.stn span{display:block;color:var(--mute);font-size:15px;margin-top:6px;line-height:1.35}
+
+/* подбор */
+.pick{padding:clamp(80px,10vw,150px) 0 0}
+.pick h2{font-size:clamp(56px,9.5vw,150px);margin-top:22px}
+.pick h2 .out{color:#8d96a3}
+.pick .lead{max-width:560px;color:var(--mute);margin-top:22px}
+.pickgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,80px);margin-top:clamp(36px,5vw,70px);align-items:start}
+.ctl h3{font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+.ctl h3:not(:first-child){margin-top:36px}
+.brands{list-style:none;border-top:1px solid var(--line)}
+.brands li{border-bottom:1px solid var(--line)}
+.brands button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 4px;text-align:left;font:800 clamp(34px,4.4vw,60px)/1.05 var(--disp);text-transform:uppercase;letter-spacing:.02em;color:var(--mute);transition:color .35s,padding .5s var(--ease)}
+.brands button small{font:500 13px/1 var(--body);letter-spacing:.1em;color:var(--mute);opacity:0;transition:opacity .3s}
+.brands button:hover{color:var(--ink);padding-left:14px}
+.brands button[aria-pressed=true]{color:var(--ink);padding-left:22px}
+.brands button[aria-pressed=true]::before{content:"";position:absolute;margin-left:-22px;width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(255,85,71,.18)}
+.brands button[aria-pressed=true] small{opacity:1;color:var(--ink)}
+.brands li{position:relative}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:13px 22px;border-radius:999px;border:1px solid rgba(238,241,245,.35);font-weight:500;font-size:16px;transition:all .3s var(--ease)}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.field{display:block;width:100%;padding:15px 20px;border-radius:16px;border:1px solid rgba(238,241,245,.35);background:transparent;color:var(--ink);font:500 17px var(--body)}
+.field[hidden]{display:none}
+.field::placeholder{color:var(--mute)}
+.field:focus{outline:none;border-color:var(--ink);background:rgba(255,255,255,.04)}
+
+/* билет */
+.ticketwrap{position:sticky;top:124px}
+@media (max-height:780px){.ticketwrap{position:static}}
+.ticket{position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;background:linear-gradient(160deg,#1c2129,#12151a 60%);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.tk-top{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.tk-top svg{width:40px;height:40px}
+.tk-main{padding:6px 28px 34px}
+.tk-k{font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.tk-brand{--fs:clamp(64px,9vw,128px);height:var(--fs);display:flex;align-items:center;margin:12px 0 22px;overflow:hidden;font-size:var(--fs);line-height:1;text-transform:uppercase;font-family:var(--disp);font-weight:900;letter-spacing:.01em;white-space:nowrap}
+.tk-brand span{display:inline-block;font-size:var(--fs)}
+.tk-brand span.in{animation:flip .6s var(--ease)}
+@keyframes flip{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:1}}
+.tk-rows{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tk-rows div:last-child{grid-column:1/-1}
+.tk-rows div b{display:block;font-weight:600;font-size:20px;line-height:1.25;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-bot{position:relative;padding:30px 28px 28px;border-top:2px dashed rgba(238,241,245,.22)}
+.tk-bot .btn{width:100%;padding:0 18px;font-size:17px;white-space:nowrap}
+.tk-bot p{font-size:14.5px;color:var(--mute);margin-top:14px;line-height:1.45}
+.tk-bot .alt{display:block;text-align:center;margin-top:6px;padding:11px 0;font-weight:500;font-size:16px;border-bottom:1px solid transparent;transition:border-color .3s}
+.tk-bot .alt:hover b{border-color:var(--ink)}
+.tk-bot .alt b{font-weight:600;border-bottom:1px solid var(--line)}
+
+/* витрина */
+.shown{padding:clamp(90px,11vw,170px) 0 0}
+.shown h2{font-size:clamp(52px,8.4vw,132px);margin-top:22px;max-width:1100px}
+.railhead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.arrows{display:flex;gap:10px}
+.arrows button{width:56px;height:56px;border-radius:50%;border:1px solid rgba(238,241,245,.4);display:grid;place-items:center;transition:all .3s var(--ease)}
+.arrows button:hover{background:var(--ink);color:var(--bg)}
+.arrows svg{width:22px;height:22px}
+.rail{display:flex;gap:18px;margin-top:clamp(30px,4vw,56px);margin-right:calc(var(--gut) * -1);padding-right:var(--gut);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.car{flex:0 0 min(640px,82vw);scroll-snap-align:start;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/10;background:var(--bg3)}
+.car img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);-webkit-user-drag:none;user-select:none}
+.car:hover img{transform:scale(1.05)}
+.car::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,13,16,.85),transparent 42%)}
+.car figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end}
+.car figcaption b{font:800 clamp(32px,3.4vw,46px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.car figcaption span{font:600 13px/1 var(--body);letter-spacing:.14em;color:var(--mute);padding-bottom:6px}
+.prog{position:relative;height:2px;background:var(--line);margin-top:26px}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:20%;background:linear-gradient(90deg,var(--silver1),var(--red));transition:transform .15s linear;transform-origin:left}
+.src{font-size:14.5px;color:var(--mute);margin-top:14px}
+
+/* история */
+.story{padding:clamp(90px,11vw,170px) 0 0}
+.storygrid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,6vw,100px);margin-top:34px;align-items:start}
+.story h2{font-size:clamp(48px,7vw,110px);max-width:900px}
+blockquote{position:relative;max-width:820px;font:500 clamp(21px,2.1vw,29px)/1.4 var(--body);letter-spacing:-.01em;margin-top:34px;padding-left:0}
+blockquote::before{content:"\00AB";display:block;font:800 clamp(100px,11vw,170px)/.7 var(--disp);color:var(--red);height:.45em;margin-bottom:10px}
+.who{margin-top:26px;display:flex;align-items:center;gap:14px;font-size:15px;color:var(--mute)}
+.who b{display:block;color:var(--ink);font-weight:600;font-size:18px}
+.who span{display:block;margin-top:2px}
+.more{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-size:16px;font-weight:500;border-bottom:1px solid var(--line);transition:border-color .3s}
+.more:hover{border-color:var(--ink)}
+.who i{display:block;width:44px;height:1px;background:var(--red)}
+.stepswrap{position:sticky;top:170px}
+.steps{list-style:none;position:relative;padding-left:34px}
+.steps::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:var(--line)}
+.steps i.fill{position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--silver1),var(--red));transform-origin:top;transform:scaleY(0);transition:transform 2s var(--ease)}
+.steps.on i.fill{transform:scaleY(1)}
+.steps li{position:relative;padding:0 0 34px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid var(--silver2)}
+.steps li b{display:block;font:800 clamp(24px,2.4vw,32px)/1.05 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.steps li span{display:block;color:var(--mute);font-size:15px;margin-top:6px}
+.stepswrap h4{font:600 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 26px 34px}
+
+/* отзывы */
+.revs{padding:clamp(90px,11vw,170px) 0 0}
+.revhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.revhead h2{font-size:clamp(52px,8vw,124px);margin-top:22px}
+.score{display:flex;align-items:baseline;gap:14px}
+.score b{font:900 clamp(80px,10vw,150px)/.8 var(--disp)}
+.score span{color:var(--mute);font-size:15px;max-width:170px;line-height:1.35}
+.revgrid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(34px,4vw,60px);position:relative}
+.revgrid::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+.rev{padding:30px 32px 10px 0;position:relative}
+.rev + .rev{padding-left:32px;border-left:1px solid var(--line)}
+.rev p{font-size:clamp(18px,1.5vw,21px);line-height:1.45}
+.rev footer{margin-top:22px;color:var(--mute);font-size:14.5px}
+.rev footer b{display:block;color:var(--ink);font-weight:600;font-size:16px}
+
+/* контакты */
+.contact{padding:clamp(90px,11vw,170px) 0 0}
+.contact h2{font-size:clamp(56px,10vw,160px);margin-top:22px}
+.contact h2 .out{color:#8d96a3}
+.cgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,80px);margin-top:clamp(34px,4.5vw,64px);align-items:start}
+.cbtns{display:grid;gap:12px}
+.cbtns .big{min-height:clamp(78px,8vw,112px);font:800 clamp(34px,4.6vw,66px)/1 var(--disp);letter-spacing:.03em;gap:18px;justify-content:space-between;padding:0 clamp(24px,3vw,44px)}
+.cbtns .big svg{width:clamp(30px,3.4vw,46px);height:clamp(30px,3.4vw,46px)}
+.cduo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cduo .btn{justify-content:flex-start;min-height:64px;font-size:17px}
+.cduo .btn small{display:block;font-weight:400;font-size:12.5px;color:var(--mute);line-height:1.2;margin-top:2px}
+.cduo .btn:hover small{color:#3b424c}
+.btxt{display:block;line-height:1.2}
+.info{border-top:1px solid var(--line)}
+.info div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.info dt{font:600 13px/1.6 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.info dd{font-size:18px;font-weight:500}
+.info dd a{display:inline-block;padding:8px 0}
+.info dd small{display:block;color:var(--mute);font-size:15px;font-weight:400}
+.fab{display:none;position:fixed;z-index:55;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translate(-50%,24px);opacity:0;pointer-events:none;min-height:54px;padding:0 34px;border-radius:999px;align-items:center;justify-content:center;font-weight:600;font-size:17px;background:linear-gradient(180deg,var(--silver1),var(--silver2));color:#0b0d10;box-shadow:0 14px 34px -10px rgba(0,0,0,.8),0 0 0 1px rgba(11,13,16,.4);transition:opacity .35s,transform .45s var(--ease);white-space:nowrap}
+.fab.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.open{display:inline-flex;align-items:center;gap:9px;margin-top:6px;font-size:15px;font-weight:500}
+.open i{width:9px;height:9px;border-radius:50%;background:#6ee08a;box-shadow:0 0 0 0 rgba(110,224,138,.5);animation:ring 2.4s infinite}
+.open.off i{background:var(--red);animation:none}
+@keyframes ring{70%{box-shadow:0 0 0 9px rgba(110,224,138,0)}100%{box-shadow:0 0 0 0 rgba(110,224,138,0)}}
+.foot{margin-top:clamp(60px,7vw,100px);padding:24px 0 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);font-size:14px}
+
+/* появление */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+.ln-rv{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .pickgrid,.storygrid,.cgrid{grid-template-columns:1fr}
+  .ticketwrap{position:static}
+  .herogrid{grid-template-columns:minmax(0,1fr)}
+  .heroside{order:-1}
+  .herogrid .band{margin-top:6px}
+  .hero h1{font-size:clamp(44px,12.4vw,110px);white-space:normal}
+  .hero h1 .ln span{white-space:nowrap}
+  .stepswrap{position:static}
+  .fab{display:flex}
+  .revgrid{grid-template-columns:1fr}
+  .rev + .rev{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .rev{padding:28px 0 28px}
+  .logo small{display:none}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .hphone{padding:10px 14px;font-size:14px}
+  .logo span{font-size:22px}.logo svg{width:38px;height:38px}
+  .hero{padding-top:128px}
+  .hero h1{font-size:clamp(46px,12.6vw,56px);line-height:.92}
+  .band{border-radius:22px;height:250px}
+  .band img{object-position:50% 58%}
+  .tag{left:14px;right:auto;top:14px}
+  .heroside .btn{flex:1 1 100%}
+  .route{grid-template-columns:1fr}
+  .route::before,.route::after{display:none}
+  .stn{padding:0 0 26px 32px}
+  .stn:last-child{padding-bottom:0}
+  .stn::before{top:7px}
+  .stn:not(:last-child)::after{content:"";position:absolute;left:5px;top:19px;bottom:-7px;width:1px;background:linear-gradient(var(--silver2),var(--red))}
+  .stn b{font-size:30px}
+  .stn span{font-size:15px}
+  .label{letter-spacing:.08em;gap:12px}.label i{width:24px}
+  .label,.tk-top,.tk-k,.ctl h3,.info dt,.stepswrap h4,.score span,.car figcaption span{font-size:14px}
+  .cduo .btn small,.src,.tk-bot p,.foot,.brands button small{font-size:14px}
+  .tk-rows{grid-template-columns:1fr}
+  .tk-rows div:last-child{grid-column:auto}
+  .cduo{grid-template-columns:1fr}
+  .info div{grid-template-columns:1fr;gap:4px}
+  .car{aspect-ratio:4/3}
+  .arrows button{width:48px;height:48px}
+  .revhead{align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .ln span{transform:none}
+  .route::after{transform:scaleX(1)}
+  .steps i.fill{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f8fb"/><stop offset="1" stop-color="#9aa3af"/></linearGradient>
+<symbol id="bcd" viewBox="0 0 64 64">
+  <rect x="1.5" y="1.5" width="61" height="61" rx="18" fill="#0b0d10" stroke="#eef1f5" stroke-opacity=".45" stroke-width="1.5"/>
+  <path d="M12 26C19 17 27 16.5 35 17.5S49 20 53 26" fill="none" stroke="url(#sg)" stroke-width="2.6" stroke-linecap="round"/>
+  <g fill="none" stroke="url(#sg)" stroke-width="3" stroke-linejoin="round">
+    <path d="M12 31.5v14M12 31.5h4.2a3.5 3.5 0 0 1 0 7H12M12 38.5h5a3.5 3.5 0 0 1 0 7H12"/>
+    <path d="M36.2 33.6A7 7 0 1 0 36.2 43.4" stroke-linecap="round"/>
+    <path d="M41.5 31.5v14h2.8a7 7 0 0 0 0-14z"/>
+  </g>
+  <path d="M12 52h40" stroke="#ff5547" stroke-width="2.6" stroke-linecap="round"/>
+</symbol></defs></svg>
+<div class="demo"><b></b>Демо-версия сайта</div>
+
+<header>
+  <a href="#top" class="logo" aria-label="БайКар ДВ, на главную">
+    <svg aria-hidden="true"><use href="#bcd"/></svg>
+    <div><span>БайКар ДВ</span><small>Авто с аукционов</small></div>
+  </a>
+  <nav>
+    <a href="#pick">Подбор</a>
+    <a href="#shown">Привозили</a>
+    <a href="#story">История</a>
+    <a href="#revs">Отзывы</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+  <a class="hphone" href="tel:+79146877191">+7 914 687-71-91</a>
+</header>
+
+<a class="fab" id="fab" href="#pick">Подобрать авто</a>
+<main id="top">
+<section class="hero">
+  <div class="label rv"><i></i>Владивосток · Каплунова, 6</div>
+  <div class="herotop">
+    <h1><span class="ln"><span>Авто с аукционов</span></span><span class="ln"><span class="out">под ваш запрос</span></span></h1>
+  </div>
+
+  <div class="herogrid">
+    <div class="band rv">
+    <img src="img/20.jpg" alt="Бирюзовый Chery с рамкой номера БайКар ДВ" width="1280" height="720" fetchpriority="high">
+    <div class="tag"><b>4,9</b><span>191 отзыв в 2ГИС</span></div>
+  </div>
+    <div class="heroside rv">
+      <p>БайКар ДВ подбирает и привозит автомобили: новые и подержанные, Changan, Chery, Haval, Exeed, LIVAN и другие марки. Опишите, что ищете, и менеджер предложит варианты.</p>
+      <div class="row">
+        <a class="btn main" href="#pick">Подобрать авто</a>
+        <a class="btn ghost" href="tel:+79146877191">Позвонить</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="route rv">
+    <div class="stn"><b>Аукцион</b><span>Менеджер предлагает варианты под ваш запрос</span></div>
+    <div class="stn"><b>Таможня</b><span>Помогают с оформлением, таможней и утилем</span></div>
+    <div class="stn"><b>Владивосток</b><span>Офис на Каплунова, 6</span></div>
+  </div>
+</section>
+
+<section class="pick" id="pick">
+  <div class="ln-rv"></div>
+  <div class="label rv"><i></i><em>01</em>Подбор авто</div>
+  <h2 class="rv">Соберите <span class="out">заявку</span></h2>
+  <p class="lead rv">Выберите марку, состояние и тип, укажите город. Заявка превратится в готовое сообщение менеджеру, останется нажать одну кнопку.</p>
+
+  <div class="pickgrid">
+    <div class="ctl rv">
+      <h3>Марка</h3>
+      <ul class="brands" id="brands">
+        <li><button type="button" aria-pressed="true" data-v="Changan">Changan</button></li>
+        <li><button type="button" aria-pressed="false" data-v="Chery">Chery</button></li>
+        <li><button type="button" aria-pressed="false" data-v="Haval">Haval</button></li>
+        <li><button type="button" aria-pressed="false" data-v="Exeed">Exeed</button></li>
+        <li><button type="button" aria-pressed="false" data-v="LIVAN">LIVAN</button></li>
+        <li><button type="button" aria-pressed="false" data-v="Другая марка">Другая марка<small>впишите ниже</small></button></li>
+      </ul>
+      <input class="field" id="brandOther" type="text" placeholder="Какая марка?" aria-label="Какая марка" maxlength="30" autocomplete="off" hidden style="margin-top:14px">
+      <h3>Состояние</h3>
+      <div class="chips" id="cond">
+        <button type="button" class="chip" aria-pressed="true" data-v="Новый">Новый</button>
+        <button type="button" class="chip" aria-pressed="false" data-v="Подержанный">Подержанный</button>
+      </div>
+      <h3>Тип</h3>
+      <div class="chips" id="kind">
+        <button type="button" class="chip" aria-pressed="true" data-v="Любой">Любой</button>
+        <button type="button" class="chip" aria-pressed="false" data-v="Электромобиль">Электромобиль</button>
+      </div>
+      <h3>Город, куда везти</h3>
+      <label class="sr" for="city" style="position:absolute;left:-9999px">Город</label>
+      <input class="field" id="city" type="text" placeholder="Например, Владивосток" autocomplete="address-level2" maxlength="40">
+    </div>
+
+    <div class="ticketwrap rv" style="--d:.15s">
+      <div class="ticket" role="group" aria-label="Ваша заявка">
+        <div class="tk-top"><span>Заявка на подбор</span>
+          <svg aria-hidden="true"><use href="#bcd"/></svg></div>
+        <div class="tk-main">
+          <div class="tk-k">Марка</div>
+          <div class="tk-brand" id="tkBrand"><span>Changan</span></div>
+          <div class="tk-rows">
+            <div><div class="tk-k">Состояние</div><b id="tkCond">Новый</b></div>
+            <div><div class="tk-k">Тип</div><b id="tkKind">Любой</b></div>
+            <div><div class="tk-k">Город</div><b id="tkCity">Укажите город</b></div>
+          </div>
+        </div>
+        <div class="tk-bot">
+          <a class="btn main" id="tkWa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 8.8c.3 2.6 2.7 5 5.3 5.4l1.2-1.3-2-1-.9.7a4 4 0 0 1-1.9-1.9l.7-.9-1-2z"/></svg>
+            Отправить в WhatsApp
+          </a>
+          <p>Цены и сроки зависят от машины: их менеджер называет лично, после вашего сообщения.</p>
+          <a class="alt" href="tel:+79146877191">или позвонить: <b>+7 914 687-71-91</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shown" id="shown">
+  <div class="ln-rv"></div>
+  <div class="railhead">
+    <div>
+      <div class="label rv"><i></i><em>02</em>Привозили</div>
+      <h2 class="rv">Что уже <span style="color:#8d96a3">привозили</span></h2>
+    </div>
+    <div class="arrows rv">
+      <button type="button" id="prev" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" id="next" aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="rail rv" id="rail">
+    <figure class="car"><img src="img/22.jpg" alt="Белый Geely у колоннады во Владивостоке" loading="lazy" draggable="false"><figcaption><b>Geely</b><span>01 / 05</span></figcaption></figure>
+    <figure class="car"><img src="img/23.jpg" alt="Синий Audi на фоне Русского моста во Владивостоке" loading="lazy" draggable="false"><figcaption><b>Audi</b><span>02 / 05</span></figcaption></figure>
+    <figure class="car"><img src="img/01.jpg" alt="Toyota RAV4, вид спереди" loading="lazy" draggable="false"><figcaption><b>Toyota RAV4</b><span>03 / 05</span></figcaption></figure>
+    <figure class="car"><img src="img/02.jpg" alt="Mitsubishi, вид спереди" loading="lazy" draggable="false"><figcaption><b>Mitsubishi</b><span>04 / 05</span></figcaption></figure>
+    <figure class="car"><img src="img/07.jpg" alt="Geely, вид спереди" loading="lazy" draggable="false"><figcaption><b>Geely</b><span>05 / 05</span></figcaption></figure>
+  </div>
+  <div class="prog"><i id="prog"></i></div>
+  <p class="src">Из 2ГИС компании</p>
+</section>
+
+<section class="story" id="story">
+  <div class="ln-rv"></div>
+  <div class="label rv"><i></i><em>03</em>История клиента</div>
+  <div class="storygrid">
+    <div>
+      <h2 class="rv">Как это выглядело <span style="color:#8d96a3">у Максима</span></h2>
+      <blockquote class="rv">…И доставка непосредственно мне в месте получения в Уссурийске, а так же трансфер организован бесплатный…</blockquote>
+      <div class="who rv"><i></i><div><b>Максим Загорулько</b><span>отзыв в 2ГИС, 6 октября 2026</span></div></div>
+      <a class="more rv" href="https://2gis.ru/vladivostok/firm/70000001062499376" target="_blank" rel="noopener">Читать отзыв целиком в 2ГИС</a>
+    </div>
+    <div class="stepswrap rv">
+      <h4>Путь по его отзыву</h4>
+      <div class="steps rv" id="steps">
+      <i class="fill"></i>
+      <ol style="list-style:none">
+      <li><b>Много вариантов</b></li>
+      <li><b>Отсеяли проблемные</b></li>
+      <li><b>Оформление</b></li>
+      <li><b>Доставка</b></li>
+      <li><b>После покупки</b></li>
+      </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="revs" id="revs">
+  <div class="ln-rv"></div>
+  <div class="revhead">
+    <div>
+      <div class="label rv"><i></i><em>04</em>Отзывы</div>
+      <h2 class="rv">Что пишут <span style="color:#8d96a3">покупатели</span></h2>
+    </div>
+    <div class="score rv"><b data-count="4.9">4,9</b><span>средняя оценка по 191 отзыву в 2ГИС</span></div>
+  </div>
+  <div class="revgrid">
+    <article class="rev rv"><p>«Уже третий год сотрудничаем, привезено более 50 автомобилей для клиентов в нашем регионе… Проблемные вопросы возникают крайне редко, при этом решаются оперативно.»</p><footer><b>Александр Никулин</b>октябрь 2026</footer></article>
+    <article class="rev rv" style="--d:.1s"><p>«…Дмитрий подобрал отличный автомобиль, бюджет наш был сильно ограничен, в других компаниях даже ответа не присылали и не хотели связываться…»</p><footer><b>Городской житель</b>октябрь 2026</footer></article>
+    <article class="rev rv" style="--d:.2s"><p>«…машина была доставлена за 1,5 месяца, как и договаривались, в отличном состоянии, теперь не нарадуюсь моей ласточке!»</p><footer><b>Kenny TF</b>октябрь 2026</footer></article>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="ln-rv"></div>
+  <div class="label rv"><i></i><em>05</em>Контакты</div>
+  <h2 class="rv">Напишите, что <span class="out">ищете</span></h2>
+  <div class="cgrid">
+    <div class="cbtns rv">
+      <a class="btn main big" href="tel:+79146877191"><span>+7 914 687-71-91</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+      <div class="cduo">
+        <a class="btn ghost" id="waMain" href="https://wa.me/79146877191" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span class="btxt">WhatsApp<small>основной номер</small></span></a>
+        <a class="btn ghost" href="https://t.me/+mMdrZhVsYgswZDU6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2L11 20l3-4.5L19 19z"/><path d="M9 13.2L21 4"/></svg><span class="btxt">Telegram</span></a>
+        <a class="btn ghost" href="https://vk.com/club211496322" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 9c.4 4 2.4 6 5 6M17 9c-.3 2.4-1.4 3.6-3 4"/></svg><span class="btxt">ВКонтакте<small>сообщество</small></span></a>
+        <a class="btn ghost" href="https://2gis.ru/vladivostok/firm/70000001062499376" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="btxt">Маршрут в 2ГИС<small>и отзывы</small></span></a>
+      </div>
+    </div>
+    <dl class="info rv" style="--d:.12s">
+      <div><dt>Адрес</dt><dd>Владивосток, улица Каплунова, 6</dd></div>
+      <div><dt>График</dt><dd>Пн-Пт 11:00-18:00<small>Сб-Вс выходной</small><span class="open" id="open"><i></i><span id="openT">Проверяем</span></span></dd></div>
+      <div><dt>Телефон</dt><dd><a href="tel:+79146877191">+7 914 687-71-91</a><small>Звонки и WhatsApp</small><a href="tel:+79143221010">+7 914 322-10-10</a><small>Второй номер</small></dd></div>
+      <div><dt>Оплата</dt><dd>Наличными или через банк</dd></div>
+    </dl>
+  </div>
+  <div class="foot"><span>Демо-версия сайта. Данные из карточки БайКар ДВ в 2ГИС.</span><span>БайКар ДВ, Владивосток</span></div>
+</section>
+</main>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* появление блоков */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  /* плавающая кнопка на телефоне и планшете */
+  var fab=$('#fab'),pickEl=$('#pick'),contEl=$('#contact'),ticking=false;
+  function inView(el){var r=el.getBoundingClientRect();return r.top<innerHeight*.85&&r.bottom>innerHeight*.15}
+  function onScroll(){
+    ticking=false;
+    if(!fab)return;
+    fab.classList.toggle('show',scrollY>innerHeight*.7&&!inView(pickEl)&&!inView(contEl));
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  onScroll();
+
+  /* подбор */
+  var state={brand:'Changan',other:'',cond:'Новый',kind:'Любой',city:''};
+  var tkBrand=$('#tkBrand'),tkCond=$('#tkCond'),tkKind=$('#tkKind'),tkCity=$('#tkCity'),tkWa=$('#tkWa'),other=$('#brandOther');
+  var isOther=function(){return state.brand==='Другая марка'};
+  function brandText(){return isOther()?(state.other||'Ваша марка'):state.brand}
+  function fit(){
+    var s=tkBrand.firstChild;if(!s)return;
+    s.style.fontSize='';
+    var fs=parseFloat(getComputedStyle(s).fontSize);
+    while(s.offsetWidth>tkBrand.clientWidth&&fs>30){fs-=2;s.style.fontSize=fs+'px'}
+  }
+  function render(animate){
+    if(animate){tkBrand.innerHTML='<span class="in"></span>'}
+    if(!tkBrand.firstChild)tkBrand.innerHTML='<span></span>';
+    tkBrand.firstChild.textContent=brandText();fit();
+    tkCond.textContent=state.cond;
+    tkKind.textContent=state.kind;
+    tkCity.textContent=state.city||'Укажите город';
+    var t='Здравствуйте! Хочу подобрать авто.'
+      +(isOther()?(state.other?' Марка: '+state.other+'.':''):' Марка: '+state.brand+'.')
+      +' Состояние: '+state.cond+'.'
+      +(state.kind!=='Любой'?' Тип: '+state.kind+'.':'')
+      +(state.city?' Город: '+state.city+'.':'');
+    tkWa.href='https://wa.me/79146877191?text='+encodeURIComponent(t);
+  }
+  function group(sel,key){
+    var box=$(sel);
+    box.addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b)return;
+      box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      state[key]=b.dataset.v;
+      if(key==='brand'){other.hidden=!isOther();if(isOther())other.focus()}
+      render(key==='brand');
+    });
+  }
+  group('#brands','brand');group('#cond','cond');group('#kind','kind');
+  other.addEventListener('input',function(e){state.other=e.target.value.trim();render(false)});
+  $('#city').addEventListener('input',function(e){state.city=e.target.value.trim();render(false)});
+  addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  render(false);
+
+  /* витрина */
+  var rail=$('#rail'),prog=$('#prog');
+  function step(){return rail.querySelector('.car').offsetWidth+18}
+  $('#prev').onclick=function(){rail.scrollBy({left:-step(),behavior:'smooth'})};
+  $('#next').onclick=function(){rail.scrollBy({left:step(),behavior:'smooth'})};
+  function updProg(){
+    var max=rail.scrollWidth-rail.clientWidth;
+    var p=max>0?rail.scrollLeft/max:0;
+    var w=Math.max(.15,rail.clientWidth/rail.scrollWidth);
+    prog.style.width=(w*100)+'%';
+    prog.style.transform='translateX('+(p*(1/w-1)*100)+'%)';
+  }
+  rail.addEventListener('scroll',updProg,{passive:true});addEventListener('resize',updProg);updProg();
+  var down=false,sx=0,sl=0,moved=false;
+  rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft});
+  addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>4){moved=true;rail.classList.add('drag')}rail.scrollLeft=sl-dx});
+  addEventListener('pointerup',function(){if(!down)return;down=false;rail.classList.remove('drag')});
+
+  /* открыто сейчас (Владивосток) */
+  (function(){
+    try{
+      var f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Vladivostok',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+      var g={};f.forEach(function(p){g[p.type]=p.value});
+      var wd=['Mon','Tue','Wed','Thu','Fri'].indexOf(g.weekday)>-1;
+      var m=(+g.hour%24)*60+(+g.minute);
+      var open=wd&&m>=660&&m<1080;
+      var el=$('#open'),t=$('#openT');
+      if(open){t.textContent='Сейчас открыто, до 18:00'}
+      else{el.classList.add('off');t.textContent=wd&&m<660?'Сейчас закрыто, откроемся в 11:00':'Сейчас закрыто'}
+    }catch(e){$('#open').style.display='none'}
+  })();
+})();
+</script>
+</body>
+</html>

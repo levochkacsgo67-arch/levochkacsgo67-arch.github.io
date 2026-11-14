@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ru" data-mode="dvs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High Service - гибриды и ДВС во Владивостоке</title>
+<meta name="description" content="High Service: ремонт и обслуживание гибридных авто и авто с ДВС во Владивостоке. Мыс Кунгасный, 2 ст5. Рейтинг 4,8 в 2ГИС, 186 отзывов.">
+<meta property="og:title" content="High Service - гибриды и ДВС во Владивостоке">
+<meta property="og:description" content="Ремонт и обслуживание гибридных авто и авто с ДВС. Рейтинг 4,8 в 2ГИС.">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/high-service/img/12.jpg">
+<meta name="theme-color" content="#0b0d10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d10'/%3E%3Cg transform='translate(10 7) scale(.082)' stroke-linejoin='round' stroke-width='14'%3E%3Cpath d='M82 138 500 378 572 350V520L165 290 88 305Z' fill='%23eef1f6' stroke='%23eef1f6'/%3E%3Cpath d='M492 108 540 48 572 62V298L528 336 312 208 325 150 492 242Z' fill='%236b5fe0' stroke='%236b5fe0'/%3E%3Cpath transform='rotate(180 327 340)' d='M492 108 540 48 572 62V298L528 336 312 208 325 150 492 242Z' fill='%236b5fe0' stroke='%236b5fe0'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Commissioner:wght@300;400;500;600&subset=cyrillic&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10; --bg2:#10141a; --ink:#e9edf2; --mute:#9aa5b1; --line:rgba(233,237,242,.11);
+  --amber:#f1a95c; --vio:#9187f5; --acc:var(--amber);
+  --gut:clamp(20px,5vw,72px);
+  --disp:'Montserrat','Arial',sans-serif; --body:'Commissioner',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html[data-mode="hyb"]{--acc:var(--vio)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);overflow-x:hidden;position:relative}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto}
+
+/* два провода слева, ведущий - выбранный режим */
+.spine{position:absolute;top:0;bottom:0;left:calc(var(--gut) / 2 - 5px);width:10px;z-index:1;pointer-events:none}
+.spine::before,.spine::after{content:"";position:absolute;top:0;bottom:0;width:2px;border-radius:2px;background:rgba(233,237,242,.07)}
+.spine::before{left:0}.spine::after{left:7px}
+.w{position:absolute;top:0;width:2px;border-radius:2px;height:var(--p,0px);transition:opacity .6s}
+.w-e{left:0;background:linear-gradient(to bottom,transparent,var(--amber) 80%)}
+.w-v{left:7px;background:linear-gradient(to bottom,transparent,var(--vio) 80%)}
+.w::after{content:"";position:absolute;left:-2px;bottom:-2px;width:6px;height:6px;border-radius:50%;background:inherit;opacity:0;transition:opacity .6s}
+.w-e::after{background:var(--amber);box-shadow:0 0 10px 1px var(--amber)}
+.w-v::after{background:var(--vio);box-shadow:0 0 10px 1px var(--vio)}
+html[data-mode="dvs"] .w-e::after,html[data-mode="hyb"] .w-v::after{opacity:1}
+html[data-mode="dvs"] .w-v,html[data-mode="hyb"] .w-e{opacity:.38;height:calc(var(--p,0px) - 44px)}
+
+/* плашка и шапка */
+.demo{background:#161b22;color:var(--ink);border-bottom:1px solid var(--line);text-align:center;font:500 14px/1 var(--body);letter-spacing:.04em;padding:9px 12px;position:relative;z-index:30}
+header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto;min-width:0}
+.brand svg{width:32px;height:38px;flex:none}
+.brand b{font:600 17px/1 var(--disp);letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+.brand small{display:block;font:400 12px/1.2 var(--body);color:var(--mute);letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
+nav{display:flex;gap:28px}
+nav a{font-size:14px;color:var(--mute);padding:11px 0;transition:color .3s}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;font:500 16px/1 var(--body);white-space:nowrap;transition:transform .35s var(--ease),box-shadow .35s,background .3s,border-color .3s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-main{background:var(--ink);color:#0b0d10}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--acc)}
+.btn-ghost{border:1px solid rgba(233,237,242,.28);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--acc);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+
+/* ГЕРОЙ */
+.hero{position:relative;padding-block:clamp(28px,5vw,64px) clamp(40px,6vw,80px);overflow:hidden;border-bottom:1px solid var(--line)}
+.txt{display:flex;flex-direction:column}
+.txt .eyebrow{order:1}.txt h1{order:2}.txt .lead{order:3}.txt .cta{order:4;margin-top:26px}.txt .switch{order:5;align-self:flex-start;margin-top:26px}.txt .mode-text{order:6}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,64px);align-items:center;position:relative;z-index:2}
+.eyebrow{font:500 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:22px}
+h1{font:600 clamp(44px,5.6vw,84px)/1 var(--disp);text-transform:uppercase;letter-spacing:-.01em}
+h1 span{display:block;background:linear-gradient(100deg,#9aa5b1 0%,#f4f7fb 30%,#9aa5b1 55%,#f4f7fb 80%,#9aa5b1 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s ease-in-out infinite alternate}
+h1 span+span{animation-delay:-3s}
+@keyframes sheen{from{background-position:0% 0}to{background-position:100% 0}}
+.lead{max-width:34em;margin-top:24px;color:var(--mute);font-size:clamp(16px,1.3vw,18px)}
+.lead b{color:var(--ink);font-weight:500}
+
+/* переключатель */
+.switch{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;margin-top:30px;padding:5px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.switch button{position:relative;z-index:2;min-width:132px;height:50px;padding:0 24px;border-radius:999px;font:600 16px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);transition:color .4s}
+.switch button[aria-pressed="true"]{color:#0b0d10}
+.switch button:not([aria-pressed="true"]):hover{color:var(--ink)}
+.switch .thumb{position:absolute;z-index:1;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--acc);box-shadow:0 0 26px -8px var(--acc);transition:transform .55s var(--ease),background .6s,box-shadow .6s}
+html[data-mode="hyb"] .switch .thumb{transform:translateX(100%)}
+.mode-text{margin-top:22px;max-width:36em;min-height:5.2em;font-size:clamp(16px,1.35vw,18px)}
+[data-m]{display:none}
+html[data-mode="dvs"] [data-m="dvs"],html[data-mode="hyb"] [data-m="hyb"]{display:block;animation:rise .6s var(--ease) both}
+html[data-mode="dvs"] li[data-m="dvs"],html[data-mode="hyb"] li[data-m="hyb"]{display:grid}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* фото героя, под ним полоса «двух сердец» */
+.stage{display:flex;flex-direction:column;gap:12px}
+.stage .ph{position:relative;aspect-ratio:4/3.3;overflow:hidden;border-radius:28px;background:var(--bg2)}
+.stage .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
+.stage .ph .i-dvs{object-position:50% 85%}
+html[data-mode="dvs"] .stage .ph .i-dvs,html[data-mode="hyb"] .stage .ph .i-hyb{opacity:1;transform:scale(1)}
+.hearts{display:flex;align-items:center;gap:12px;height:72px;padding:0 14px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.hc{cursor:pointer;flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:2px solid var(--amber);background:rgba(241,169,92,.12);font:600 17px/1 var(--disp);letter-spacing:.02em;color:var(--ink);animation:beat 1.9s ease-in-out infinite}
+.hc-h{border-color:var(--vio);background:rgba(145,135,245,.14);animation-delay:.95s}
+.hc:hover{transform:scale(1.08)}
+.hl{flex:none;font:500 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;transition:opacity .5s}
+.hl-e{color:var(--amber)} .hl-h{color:var(--vio)}
+.hc-h{opacity:.65;transition:opacity .6s}
+html[data-mode="hyb"] .hc-h{opacity:1}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.wire{flex:1;min-width:20px;height:20px}
+.link-base{stroke:rgba(233,237,242,.18);fill:none;stroke-width:1.5}
+.link-flow{fill:none;stroke:var(--vio);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:6 14;opacity:0;transition:opacity .6s}
+html[data-mode="hyb"] .link-flow{opacity:1;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-40}}
+
+/* полоса цифр */
+.facts{border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:26px 24px 26px 28px;border-right:1px solid var(--line)}
+.fact:first-child{padding-left:0}
+.fact:last-child{border-right:0}
+.fact b{display:block;font:600 clamp(28px,3vw,42px)/1 var(--disp);letter-spacing:0}
+.fact b em{font-style:normal;color:var(--acc);transition:color .6s}
+.fact span{display:block;margin-top:8px;font-size:14px;color:var(--mute);line-height:1.4}
+
+.park{font-size:16px;color:var(--mute);margin-bottom:6px}
+
+/* секции */
+section{position:relative;padding-block:clamp(56px,8vw,112px);border-bottom:1px solid var(--line)}
+.sec-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,52px)}
+h2{font:600 clamp(34px,4.6vw,66px)/1.02 var(--disp);text-transform:uppercase;max-width:14em;letter-spacing:-.01em}
+h2 small{display:block;font:500 12px/1 var(--body);letter-spacing:.2em;color:var(--acc);margin-bottom:16px;transition:color .6s}
+.sw-sm{margin-top:0}
+.sw-sm button{min-width:108px;height:42px;font-size:14px}
+
+/* услуги */
+.svc{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,5vw,80px);align-items:start}
+.rows{list-style:none}
+.row{grid-template-columns:54px 1fr auto;gap:8px 14px;align-items:center;padding:22px 0;border-top:1px solid var(--line);cursor:default}
+.rows li:last-child{border-bottom:1px solid var(--line)}
+.row .n{font:500 14px/1 var(--body);color:var(--mute);letter-spacing:.1em;transition:color .4s}
+.row h3{font:600 clamp(20px,2.3vw,32px)/1.1 var(--disp);text-transform:uppercase;letter-spacing:0;color:#b4bdc8;transition:color .4s,transform .5s var(--ease)}
+.row p{grid-column:2;color:var(--mute);font-size:16px;max-width:36em}
+.row .th{grid-row:1/3;grid-column:3;width:76px;height:76px;object-fit:cover;border-radius:16px;display:none}
+.row.on .n{color:var(--acc)}
+.row.on h3{color:#fff}
+@media (hover:hover){.row:hover h3{transform:translateX(10px);color:#fff}.row:hover .n{color:var(--acc)}}
+.preview{position:sticky;top:96px;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:var(--bg2)}
+.preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .6s var(--ease),transform 1.2s var(--ease)}
+.preview img.on{opacity:1;transform:scale(1)}
+.preview::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to top,rgba(11,13,16,.6),transparent);pointer-events:none}
+.preview .tag{position:absolute;z-index:2;left:20px;bottom:18px;font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.preview .tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acc);margin-right:10px;box-shadow:0 0 12px var(--acc);animation:beat 1.9s infinite}
+
+/* история */
+.story{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,80px)}
+.story .who{position:sticky;top:96px;align-self:start}
+.qm{font:600 clamp(120px,16vw,220px)/.7 var(--disp);color:var(--acc);opacity:.9;transition:color .6s;height:.5em}
+.who .name{font:600 20px/1.2 var(--disp);letter-spacing:.04em;text-transform:uppercase;margin-top:8px}
+.who .meta{color:var(--mute);font-size:14px;margin-top:6px}
+.stars{display:flex;gap:4px;margin-top:14px;color:var(--acc);transition:color .6s}
+.stars svg{width:18px;height:18px}
+.story blockquote{font:300 clamp(21px,2.5vw,32px)/1.4 var(--body);letter-spacing:-.005em}
+.story blockquote mark{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--acc) 30%,transparent) 62%);color:#fff;padding:0 2px;transition:background .6s}
+.strip{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+.strip img{width:100%;height:100%;aspect-ratio:16/8;object-fit:cover;border-radius:20px}
+
+/* бегущая строка отзывов */
+.voices{padding-block:clamp(40px,6vw,72px);overflow:hidden}
+.voices .sec-h{margin-bottom:28px}
+.track{display:flex;gap:16px;width:max-content;animation:run 70s linear infinite}
+.voices:hover .track{animation-play-state:paused}
+.vc{flex:none;width:min(340px,80vw);padding:22px 22px 20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.vc p{font-size:16px;line-height:1.5}
+.vc cite{font:500 12px/1 var(--body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.mask{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+@keyframes run{to{transform:translateX(calc(-50% - 8px))}}
+
+/* галерея */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(90px,11vw,170px);gap:14px}
+.gal figure{position:relative;overflow:hidden;border-radius:22px;background:var(--bg2)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .6s;filter:saturate(.92)}
+.gal figure:hover img{transform:scale(1.05);filter:saturate(1.08)}
+.g1{grid-column:span 7;grid-row:span 4}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 5;grid-row:span 2}
+.g4{grid-column:span 4;grid-row:span 2}.g5{grid-column:span 4;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 2}
+.g7{grid-column:span 5;grid-row:span 2}.g8{grid-column:span 7;grid-row:span 2}
+
+/* контакты */
+.contact{border-bottom:0;padding-bottom:0}
+.c-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,80px)}
+.big{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:clamp(22px,3vw,34px);border-radius:28px;margin-bottom:14px;transition:transform .5s var(--ease),box-shadow .5s,border-color .4s}
+.big small{display:block;font:500 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:10px}
+.big b{font:600 clamp(26px,3.6vw,48px)/1 var(--disp);letter-spacing:0;text-transform:uppercase}
+.big svg.go{width:44px;height:44px;flex:none;transition:transform .5s var(--ease)}
+.big:hover{transform:translateY(-3px)}
+.big:hover svg.go{transform:translate(4px,-4px)}
+.b-tg{background:var(--ink);color:#0b0d10}
+.b-tg:hover{box-shadow:0 20px 60px -20px var(--acc)}
+.b-ph,.b-wa{border:1px solid rgba(233,237,242,.25)}
+.b-ph:hover,.b-wa:hover{border-color:var(--acc)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pair .big{margin-bottom:0}
+.pair .big b{font-size:clamp(18px,2vw,26px)}
+.info h3{font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.info address{font-style:normal;font:400 clamp(22px,2.3vw,30px)/1.25 var(--body);margin-bottom:8px}
+.info .map{display:inline-flex;gap:8px;align-items:center;color:var(--acc);font-size:16px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;min-height:44px;margin-bottom:24px;transition:color .6s}
+.hours{list-style:none;margin-bottom:12px}
+.hours li{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line);font-size:18px;transition:color .3s}
+.hours li:last-child{border-bottom:1px solid var(--line)}
+.hours li.today{color:#fff}
+.hours li.today span:first-child::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acc);margin-right:12px;box-shadow:0 0 10px var(--acc)}
+.hours li:not(.today){color:var(--mute)}
+.state{font-size:14px;color:var(--mute);min-height:1.5em}
+.pay{margin-top:28px;font-size:14px;color:var(--mute)}
+footer{margin-top:clamp(56px,8vw,100px);border-top:1px solid var(--line);padding-block:22px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+
+/* появление */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+@media (max-width:900px){
+  nav{display:none}
+  .hero .wrap,.svc,.story,.c-grid{grid-template-columns:minmax(0,1fr)}
+  .hero .wrap{gap:20px}
+  .txt .eyebrow{order:1;margin-bottom:14px}
+  .txt h1{order:2}
+  .txt .lead{order:3;margin-top:16px}
+  .txt .switch{order:4;align-self:flex-start;margin-top:22px}
+  .txt .cta{order:5;margin-top:18px}
+  .txt .mode-text{order:6;min-height:0}
+  .stage{order:-1}
+  .hearts{display:none}
+  .stage .ph{aspect-ratio:auto;height:340px;border-radius:22px}
+  .preview{display:none}
+  .row .th{display:block}
+  .row{grid-template-columns:34px 1fr auto;padding:18px 0}
+  .story .who{position:static}
+  .qm{height:.42em}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact{padding:20px 12px 20px 16px}
+  .fact:nth-child(odd){padding-left:0;border-right:1px solid var(--line)}
+  .fact:nth-child(even){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .gal{grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(70px,22vw,130px)}
+  .g1{grid-column:span 6;grid-row:span 3}.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 3;grid-row:span 2}.g8{grid-column:span 6;grid-row:span 2}
+  .pair{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .g6,.g7{grid-column:span 6}
+  .g7{grid-row:span 3}
+  .g7 img{object-position:50% 40%!important}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  header .wrap{height:62px;gap:10px}
+  .brand svg{width:28px;height:34px}
+  .brand small{display:none}
+  .brand b{font-size:15px}
+  header .btn-ghost span{display:none}
+  header .btn-ghost{width:46px;padding:0}
+  header .btn{padding:0 18px}
+  .txt .switch{display:grid;width:100%}
+  .switch button{min-width:0}
+  .stage{gap:10px}
+  .stage .ph{height:220px}
+  .hearts{height:60px;padding:0 10px;gap:8px}
+  .hc{width:44px;height:44px;font-size:15px}
+  .hl{font-size:13px;letter-spacing:.1em}
+  .eyebrow,.vc cite,.info h3,h2 small,.big small,.preview .tag{font-size:14px;letter-spacing:.14em}
+  .cta .btn{flex:1 1 100%;height:52px}
+  .big{border-radius:22px}
+  .sw-sm{width:100%}
+}
+@media (max-width:520px){
+  .spine{left:8px;width:2px}
+  .spine::after{display:none}
+  .w-e,.w-v{left:0}
+  html[data-mode="dvs"] .w-v,html[data-mode="hyb"] .w-e{display:none}
+}
+@media (max-width:400px){
+  header .btn-main{width:46px;padding:0}
+  header .btn-main span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .track{overflow-x:auto;width:auto}
+}
+</style>
+</head>
+<body class="no-js">
+<div class="spine" aria-hidden="true"><i class="w w-e"></i><i class="w w-v"></i></div>
+<div class="demo">Демо-версия сайта</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="High Service, в начало">
+      <svg viewBox="70 36 514 608" aria-hidden="true"><g stroke-linejoin="round" stroke-width="14"><path d="M82 138 500 378 572 350V520L165 290 88 305Z" fill="#eef1f6" stroke="#eef1f6"/><path id="lc" d="M492 108 540 48 572 62V298L528 336 312 208 325 150 492 242Z" fill="#6b5fe0" stroke="#6b5fe0"/><use href="#lc" transform="rotate(180 327 340)"/></g></svg>
+      <span><b>High Service</b><small>Гибриды и ДВС</small></span>
+    </a>
+    <nav>
+      <a href="#uslugi">Что чиним</a><a href="#istoriya">История</a><a href="#box">Бокс</a><a href="#kontakty">Контакты</a>
+    </nav>
+    <a class="btn btn-ghost" href="tel:+79242515151" aria-label="Позвонить +7 924 251-51-51"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>+7 924 251-51-51</span></a>
+    <a class="btn btn-main" href="https://t.me/highservice25" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.1-.2 1.3l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.4-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.5zM8.7 13.2l9.6-6c.5-.3.9-.1.5.2l-7.9 7.1-.3 3.3z"/></svg><span>Telegram</span></a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="txt">
+      <p class="eyebrow rv">Владивосток</p>
+      <h1 class="rv" style="--d:.08s"><span>Два сердца</span><span>под одним</span><span>капотом</span></h1>
+      <p class="lead rv" style="--d:.16s">Сервис по ремонту и обслуживанию <b>гибридных авто</b> и <b>авто с ДВС</b>. Выберите, что у вас под капотом.</p>
+      <div class="switch rv" style="--d:.24s" role="group" aria-label="Тип двигателя">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" data-set="dvs" aria-pressed="true">ДВС</button>
+        <button type="button" data-set="hyb" aria-pressed="false">Гибрид</button>
+      </div>
+      <div class="mode-text">
+        <p data-m="dvs">Турбина, робот и АКПП, ходовая, рулевая рейка. Мастер разбирает узел и показывает, что именно вышло из строя.</p>
+        <p data-m="hyb">Гибридная батарея, диагностика, ходовая и робот на Fit и Vezel. Объясняют, как ездить, чтобы батарея прожила дольше.</p>
+      </div>
+      <div class="cta rv" style="--d:.32s">
+        <a class="btn btn-main" href="https://t.me/highservice25" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.1-.2 1.3l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.4-2.3 4.8 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.5zM8.7 13.2l9.6-6c.5-.3.9-.1.5.2l-7.9 7.1-.3 3.3z"/></svg>Написать в Telegram</a>
+        <a class="btn btn-ghost" href="tel:+79242515151"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+7 924 251-51-51</a>
+      </div>
+    </div>
+
+    <div class="stage rv" style="--d:.12s">
+      <div class="ph">
+        <img class="i-dvs" src="img/12.jpg" alt="Мотор с воронкой под открытым капотом в боксе High Service">
+        <img class="i-hyb" src="img/07.jpg" alt="Высоковольтная батарея гибрида, снятая с автомобиля">
+      </div>
+      <div class="hearts">
+        <button type="button" class="hc hc-e" data-set="dvs" aria-label="Показать ДВС">ДВС</button><span class="hl hl-e" aria-hidden="true">Мотор</span>
+        <svg class="wire" aria-hidden="true" viewBox="0 0 100 20" preserveAspectRatio="none"><path class="link-base" d="M0 10H100" vector-effect="non-scaling-stroke"/><path class="link-flow" d="M0 10H100" vector-effect="non-scaling-stroke"/></svg>
+        <span class="hl hl-h" aria-hidden="true">Гибрид</span><button type="button" class="hc hc-h" data-set="hyb" aria-label="Показать гибрид">HV</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact rv"><b><em>4,8</em></b><span>рейтинг в 2ГИС</span></div>
+    <div class="fact rv" style="--d:.06s"><b>186</b><span>отзывов в 2ГИС</span></div>
+    <div class="fact rv" style="--d:.12s"><b>10<em>-</em>19</b><span>Пн-Пт, в выходные <nobr>10-18</nobr></span></div>
+    <div class="fact rv" style="--d:.18s"><b>Гарантия</b><span>на все виды работ</span></div>
+  </div>
+</div>
+
+<section id="uslugi">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="rv"><small>Что чиним</small>Мотор или батарея</h2>
+      <div class="switch sw-sm rv" role="group" aria-label="Тип двигателя">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" data-set="dvs" aria-pressed="true">ДВС</button>
+        <button type="button" data-set="hyb" aria-pressed="false">Гибрид</button>
+      </div>
+    </div>
+    <div class="svc">
+      <ul class="rows">
+        <li class="row on" data-m="dvs" data-img="img/04.jpg"><span class="n">01</span><h3>Турбина</h3><p>Разбирают, показывают, что сломалось, запчасть находят сами.</p><img class="th" src="img/04.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/17.jpg"><span class="n">02</span><h3>Робот и АКПП</h3><p>Пинки и рывки на Хонде, замена масла в коробке.</p><img class="th" src="img/17.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/13.jpg"><span class="n">03</span><h3>Ходовая</h3><p>Стук в подвеске: ищут причину и меняют только то, что нужно.</p><img class="th" src="img/13.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/02.jpg"><span class="n">04</span><h3>Рулевая рейка</h3><p>Перебор и ремонт рейки, если рейка потекла.</p><img class="th" src="img/02.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/11.jpg"><span class="n">05</span><h3>Выхлоп</h3><p>Ремонт глушителя и тюнинг выхлопной системы.</p><img class="th" src="img/11.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/08.jpg"><span class="n">06</span><h3>Тормоза</h3><p>Проточка тормозных дисков.</p><img class="th" src="img/08.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/09.jpg"><span class="n">07</span><h3>Масло и ТО</h3><p>Обслуживание с рекомендациями, как эксплуатировать дальше.</p><img class="th" src="img/09.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/01.jpg"><span class="n">08</span><h3>Прошивка, калибровка, адаптация</h3><p>Прошивка блоков, калибровка и адаптация узлов.</p><img class="th" src="img/01.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="dvs" data-img="img/22.jpg"><span class="n">09</span><h3>Диагностика авто перед покупкой</h3><p>Осмотр и диагностика машины до того, как вы её купите.</p><img class="th" src="img/22.jpg" alt="" loading="lazy"></li>
+
+        <li class="row on" data-m="hyb" data-img="img/10.jpg"><span class="n">01</span><h3>Гибридная батарея</h3><p>Ремонт батареи и советы, как её беречь, в том числе зимой.</p><img class="th" src="img/10.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/01.jpg"><span class="n">02</span><h3>Диагностика</h3><p>Проверка гибрида на ноутбуке с программой Techstream.</p><img class="th" src="img/01.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/09.jpg"><span class="n">03</span><h3>Робот на гибриде</h3><p>Рывки робота на Fit и Vezel. Масло в коробке.</p><img class="th" src="img/09.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/13.jpg"><span class="n">04</span><h3>Ходовая</h3><p>Находят изношенные детали и меняют только нужное.</p><img class="th" src="img/13.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/03.jpg"><span class="n">05</span><h3>Рулевая рейка</h3><p>Ремонт рейки на гибридах и обычных машинах.</p><img class="th" src="img/03.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/17.jpg"><span class="n">06</span><h3>Масло в планетарке</h3><p>Меняют масло и заодно смотрят ходовку. Что не горит, менять не заставляют.</p><img class="th" src="img/17.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/01.jpg"><span class="n">07</span><h3>Прошивка, калибровка, адаптация</h3><p>Прошивка блоков, калибровка и адаптация узлов.</p><img class="th" src="img/01.jpg" alt="" loading="lazy"></li>
+        <li class="row" data-m="hyb" data-img="img/22.jpg"><span class="n">08</span><h3>Диагностика авто перед покупкой</h3><p>Осмотр и диагностика машины до того, как вы её купите.</p><img class="th" src="img/22.jpg" alt="" loading="lazy"></li>
+      </ul>
+      <div class="preview" aria-hidden="true">
+        <img class="on" src="img/04.jpg" alt="">
+        <img src="img/17.jpg" alt="" loading="lazy">
+        <img src="img/13.jpg" alt="" loading="lazy">
+        <img src="img/02.jpg" alt="" loading="lazy">
+        <img src="img/11.jpg" alt="" loading="lazy">
+        <img src="img/08.jpg" alt="" loading="lazy">
+        <img src="img/09.jpg" alt="" loading="lazy">
+        <img src="img/10.jpg" alt="" loading="lazy">
+        <img src="img/01.jpg" alt="" loading="lazy">
+        <img src="img/03.jpg" alt="" loading="lazy">
+        <img src="img/22.jpg" alt="" loading="lazy">
+        <span class="tag" id="ptag">ДВС</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="istoriya">
+  <div class="wrap story">
+    <div class="who rv">
+      <div class="qm" aria-hidden="true">&ldquo;</div>
+      <p class="name">Данил Руденко</p>
+      <p class="meta">Отзыв в 2ГИС, 28 мая 2026</p>
+      <div class="stars" aria-label="5 из 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.2l1.5-7L2 9.4l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.2l1.5-7L2 9.4l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.2l1.5-7L2 9.4l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.2l1.5-7L2 9.4l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.2l1.5-7L2 9.4l7-.8z"/></svg></div>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <blockquote>Обращались в данный автосервис по ремонту рулевой рейки, и ремонту турбины, <mark>все объяснили показали, предоставили фото отчет по проделанной работе</mark>, в общем решили все мои проблемы по автомобилю в очень быстрые сроки. Работой сервиса довольны!</blockquote>
+      <div class="strip">
+        <img src="img/05.jpg" alt="Машина с открытым капотом, на заправке кондиционера шланги" loading="lazy" style="object-position:50% 40%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices" aria-label="Отзывы">
+  <div class="wrap sec-h"><h2 class="rv"><small>Клиенты пишут</small>Что говорят люди</h2></div>
+  <div class="mask">
+    <div class="track">
+<figure class="vc"><p>Обращались в данный автосервис по ремонту рулевой рейки, и ремонту турбины, все объяснили показали, предоставили фото отчет по проделанной работе, в общем решили все мои проблемы по автомобилю в очень быстрые сроки. Работой сервиса довольны!</p><cite>Данил Руденко</cite></figure>
+<figure class="vc"><p>Отличное обслуживание, высокий сервис, хорошие цены. Грамотные специалисты - Понятно и доходчиво объясняют, предлагают лучший вариант. Всем рекомендую!</p><cite>Татьяна Козлова</cite></figure>
+<figure class="vc"><p>Ребята очень большие молодцы и точно знают своё дело! Обслужили у них автомобиль только пришедший из Японии, все объяснили, дали рекомендации по обслуживанию и эксплуатации, видно что люди очень опытные и с ними очень приятно иметь дело. Спасибо!</p><cite>Андрей Петров</cite></figure>
+<figure class="vc"><p>Ремонтировала глушитель. Очень все понравилось. Мастер Евгений очень профессиональный. Предложил два вариант ремонта. Дешевле и дороже. Работал очень профессионально и быстро. Пять баллов из пяти</p><cite>Tonya Antonina</cite></figure>
+<figure class="vc"><p>Искала место для обслуживания робота - остановилась на этом сервисе. Работники вежливые, помогли заехать и выехать, чтобы я не мучалась предложили чай/кофе, подарили вонючку в машину и автовизитку</p><cite>Настасья</cite></figure>
+<figure class="vc" aria-hidden="true"><p>Обращались в данный автосервис по ремонту рулевой рейки, и ремонту турбины, все объяснили показали, предоставили фото отчет по проделанной работе, в общем решили все мои проблемы по автомобилю в очень быстрые сроки. Работой сервиса довольны!</p><cite>Данил Руденко</cite></figure>
+<figure class="vc" aria-hidden="true"><p>Отличное обслуживание, высокий сервис, хорошие цены. Грамотные специалисты - Понятно и доходчиво объясняют, предлагают лучший вариант. Всем рекомендую!</p><cite>Татьяна Козлова</cite></figure>
+<figure class="vc" aria-hidden="true"><p>Ребята очень большие молодцы и точно знают своё дело! Обслужили у них автомобиль только пришедший из Японии, все объяснили, дали рекомендации по обслуживанию и эксплуатации, видно что люди очень опытные и с ними очень приятно иметь дело. Спасибо!</p><cite>Андрей Петров</cite></figure>
+<figure class="vc" aria-hidden="true"><p>Ремонтировала глушитель. Очень все понравилось. Мастер Евгений очень профессиональный. Предложил два вариант ремонта. Дешевле и дороже. Работал очень профессионально и быстро. Пять баллов из пяти</p><cite>Tonya Antonina</cite></figure>
+<figure class="vc" aria-hidden="true"><p>Искала место для обслуживания робота - остановилась на этом сервисе. Работники вежливые, помогли заехать и выехать, чтобы я не мучалась предложили чай/кофе, подарили вонючку в машину и автовизитку</p><cite>Настасья</cite></figure>
+    </div>
+  </div>
+</section>
+
+<section id="box">
+  <div class="wrap">
+    <div class="sec-h"><h2 class="rv"><small>Фото из 2ГИС</small>В боксе порядок</h2></div>
+    <div class="gal">
+      <figure class="g1 rv"><img src="img/24.jpg" alt="Бокс High Service: потолок из светящихся гексагонов, подъёмник, стеллажи с расходниками" loading="lazy" style="object-position:50% 0"></figure>
+      <figure class="g2 rv" style="--d:.05s"><img src="img/19.jpg" alt="Синяя машина с открытым капотом на подъёмнике" loading="lazy" style="object-position:50% 60%"></figure>
+      <figure class="g3 rv" style="--d:.1s"><img src="img/06.jpg" alt="Мастер работает болгаркой, летят искры" loading="lazy" style="object-position:50% 30%"></figure>
+      <figure class="g4 rv"><img src="img/16.jpg" alt="Инструмент и оснастка на фоне стены с логотипом High Service" loading="lazy"></figure>
+      <figure class="g5 rv" style="--d:.05s"><img src="img/23.jpg" alt="Чёрная машина под потолком из светящихся гексагонов" loading="lazy" style="object-position:50% 25%"></figure>
+      <figure class="g6 rv" style="--d:.1s"><img src="img/15.jpg" alt="Запчасти Changan на фоне стены с логотипом High Service" loading="lazy"></figure>
+      <figure class="g7 rv"><img src="img/14.jpg" alt="Вход в High Service: вывеска с логотипом, график работы и список услуг" loading="lazy" style="object-position:50% 30%"></figure>
+      <figure class="g8 rv" style="--d:.06s"><img src="img/20.jpg" alt="Машина с открытым капотом в боксе" loading="lazy" style="object-position:50% 55%"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="kontakty" class="contact">
+  <div class="wrap">
+    <div class="sec-h"><h2 class="rv"><small>Контакты</small>Расскажите, что с машиной</h2></div>
+    <div class="c-grid">
+      <div class="rv">
+        <a class="big b-tg" href="https://t.me/highservice25" target="_blank" rel="noopener"><span><small>Основной способ</small><b>Telegram</b></span><svg class="go" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 34 34 14M18 14h16v16"/></svg></a>
+        <div class="pair">
+          <a class="big b-ph" href="tel:+79242515151"><span><small>Позвонить</small><b>+7 924 251-51-51</b></span></a>
+          <a class="big b-wa" href="https://wa.me/79242515151" target="_blank" rel="noopener"><span><small>Написать</small><b>WhatsApp</b></span></a>
+        </div>
+      </div>
+      <div class="info rv" style="--d:.1s">
+        <h3>Адрес</h3>
+        <address>Владивосток, улица Мыс Кунгасный, 2 ст5</address>
+        <p class="park">Парковка напротив</p>
+        <a class="map" href="https://2gis.ru/vladivostok/firm/70000001102826263" target="_blank" rel="noopener">Открыть в 2ГИС &rarr;</a>
+        <h3>Когда работаем</h3>
+        <ul class="hours">
+          <li data-days="1,2,3,4,5" data-open="10" data-close="19"><span>Пн-Пт</span><span>10:00-19:00</span></li>
+          <li data-days="0,6" data-open="10" data-close="18"><span>Сб-Вс</span><span>10:00-18:00</span></li>
+        </ul>
+        <p class="state" id="state"></p>
+        <p class="pay">Оплата: наличные, перевод с карты, QR-код.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap"><span>High Service, Владивосток</span><span>Демо-версия сайта</span></div>
+  </footer>
+</section>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement, body=document.body;
+  body.classList.remove('no-js');
+  /* переключатель ДВС / Гибрид */
+  var tag=document.getElementById('ptag');
+  function setMode(m){
+    root.setAttribute('data-mode',m);
+    document.querySelectorAll('.switch button,.hc[data-set]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===m?'true':'false')});
+    if(tag) tag.textContent=m==='dvs'?'ДВС':'Гибрид';
+    var first=document.querySelector('.row[data-m="'+m+'"]');
+    if(first) activate(first);
+  }
+  document.querySelectorAll('.switch button,.hc[data-set]').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.set)})});
+  /* предпросмотр услуг */
+  var prev=[].slice.call(document.querySelectorAll('.preview img'));
+  function activate(row){
+    document.querySelectorAll('.row.on').forEach(function(r){ if(r.dataset.m===row.dataset.m) r.classList.remove('on')});
+    row.classList.add('on');
+    var src=row.dataset.img;
+    prev.forEach(function(i){i.classList.toggle('on',i.getAttribute('src')===src)});
+  }
+  document.querySelectorAll('.row').forEach(function(r){
+    r.addEventListener('mouseenter',function(){activate(r)});
+    r.addEventListener('click',function(){activate(r)});
+  });
+  /* появление */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+  /* провода по странице */
+  var spine=document.querySelector('.spine');
+  function prog(){
+    var h=document.documentElement.scrollHeight;
+    var y=window.scrollY+window.innerHeight*0.6;
+    spine.style.setProperty('--p',Math.min(h,y)+'px');
+  }
+  prog(); window.addEventListener('scroll',prog,{passive:true}); window.addEventListener('resize',prog);
+  /* график: сегодня и открыто ли (по Владивостоку) */
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Vladivostok',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[parts.find(function(p){return p.type==='weekday'}).value];
+    var hh=+parts.find(function(p){return p.type==='hour'}).value%24, mm=+parts.find(function(p){return p.type==='minute'}).value;
+    var now=hh+mm/60, openNow=false, closeAt=19, st=document.getElementById('state');
+    document.querySelectorAll('.hours li').forEach(function(li){
+      var days=li.dataset.days.split(',').map(Number);
+      if(days.indexOf(wd)>-1){li.classList.add('today'); closeAt=+li.dataset.close; openNow=now>=+li.dataset.open&&now<closeAt;}
+    });
+    st.textContent=openNow?'Сейчас открыто, до '+closeAt+':00':'Сейчас закрыто, откроемся в 10:00';
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
