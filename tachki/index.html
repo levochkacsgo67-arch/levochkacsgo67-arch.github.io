@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Тачки - автосервис во Владивостоке, 5,0 на 2ГИС</title>
-<meta name="description" content="Тачки - СТО на 2-й Линейной, 22, Владивосток. Рейтинг 5,0 на 2ГИС, 101 отзыв. Масло, ГРМ, диагностика, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
+<meta name="description" content="Тачки - СТО на 2-й Линейной, 22, Владивосток. Рейтинг 5,0 на 2ГИС, 101 отзыв. Масло, ремень, диагностика, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Тачки - автосервис во Владивостоке, 5,0 на 2ГИС">
-<meta property="og:description" content="СТО на 2-й Линейной, 22. 101 отзыв на 2ГИС, рейтинг 5,0. Масло, ГРМ, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
+<meta property="og:description" content="СТО на 2-й Линейной, 22. 101 отзыв на 2ГИС, рейтинг 5,0. Масло, ремень, кондиционер, шиномонтаж, ремонт пневмоподвески. Ежедневно с 10 до 19.">
 <meta property="og:image" content="https://levochkacsgo67-arch.github.io/tachki/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -64,7 +64,7 @@ nav.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:28p
 .menu a:hover::after{transform:scaleX(1)}
 .status{font:400 12px var(--m);color:var(--mute);display:flex;align-items:center;gap:8px;white-space:nowrap}
 .status em{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2.4s infinite;font-style:normal}
-.status.closed em{background:#e2231a;animation:none}
+.status.closed em{background:#7b828c;animation:none}
 @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
 
 /* кнопки */
@@ -144,6 +144,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
 .hphoto figcaption{position:absolute;left:14px;bottom:14px;background:rgba(11,12,14,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:7px 13px;border-radius:999px;font:400 12px var(--m);letter-spacing:.08em}
 .pneu{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(20px,3vw,40px)}
 .pneu .stage{margin-top:0}
+.symblock{margin-top:clamp(56px,8vw,110px);padding-top:clamp(40px,6vw,80px);border-top:1px solid var(--line);padding-bottom:clamp(20px,4vw,56px)}
 .stage.off *{animation-play-state:paused !important}
 .clrrow{display:flex;align-items:baseline;gap:12px;font:600 15px var(--m);color:var(--yel);letter-spacing:.04em}
 .clrrow .lab{color:var(--mute)}
@@ -179,7 +180,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
 .st .no{font:300 clamp(64px,7vw,104px)/.85 var(--m);color:transparent;-webkit-text-stroke:1px var(--silver);letter-spacing:-.06em}
 .st h3{font-size:clamp(20px,1.8vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
 .st p{color:var(--silver);font-size:15.5px}
-.st blockquote{margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);font-size:14px;color:var(--mute);font-weight:300}
+.st blockquote{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-size:14px;color:var(--mute);font-weight:300}
 .st blockquote cite{display:block;margin-top:6px;font:400 12px var(--m);font-style:normal;letter-spacing:.08em;color:var(--silver)}
 .steps .rv.st{transform:translateY(60px)}
 .steps .rv.st.in{transform:none}
@@ -199,7 +200,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
 @keyframes belt{to{transform:translateX(-50%)}}
 
 /* ОТЗЫВЫ */
-.rev{padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px)}
+.rev{padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(40px,5vw,72px)}
 .rtop{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(28px,5vw,80px);align-items:end}
 .big{font-size:clamp(28px,3.7vw,56px);font-weight:300;letter-spacing:-.03em;line-height:1.14;margin-top:26px}
 .big em{font-style:normal;font-weight:800;color:#fff}
@@ -240,7 +241,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
 .g4{grid-column:1/5;grid-row:span 2}
 .g5{grid-column:5/9;grid-row:span 2}
 .g6{grid-column:9/13;grid-row:span 2}
-.quote2{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;border-top:1px solid var(--line2);padding-top:26px;max-width:880px}
+.quote2{margin-top:clamp(36px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;border-top:1px solid var(--line2);padding-top:26px}
 .quote2 .lab{padding-top:8px}
 .quote2 p{font-size:clamp(20px,2.2vw,28px);font-weight:300;letter-spacing:-.02em;line-height:1.3}
 .quote2 cite{display:block;margin-top:10px;font:400 12px var(--m);font-style:normal;letter-spacing:.1em;color:var(--mute);text-transform:uppercase}
@@ -391,7 +392,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
       <h1>Скажем как есть<br><b>и сделаем быстро</b></h1>
     </div>
     <div class="hlead">
-      <p>101 отзыв на 2ГИС и рейтинг 5,0. Клиенты пишут, что здесь не накручивают проблемы и делают быстро: масло, ГРМ, кондиционер, АКПП, шиномонтаж.</p>
+      <p>По отзывам на 2ГИС здесь не накручивают проблемы и делают быстро: масло, ремень, кондиционер, АКПП, шиномонтаж.</p>
       <a class="rate" href="https://2gis.ru/vladivostok/firm/70000001079894482" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></svg><b>5,0</b><span>101 отзыв на 2ГИС</span></a>
       <div class="cta">
         <a class="btn y" href="https://t.me/tachki125" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l5.5 2L10 19l3.2-3.6L18 19z"/><path d="m8.5 13 9-6"/></svg>Написать в Telegram</a>
@@ -400,7 +401,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
     </div>
   </div>
 
-  <figure class="hphoto"><img src="img/box-12.jpg" alt="Подъёмник, тележка с маслом и расписанная стена в боксе автосервиса" width="1280" height="720"><figcaption>2-я Линейная, 22</figcaption></figure>
+  <figure class="hphoto"><img src="img/box-12.jpg" alt="Подъёмник, тележка с маслом и расписанная стена в боксе автосервиса" width="1280" height="720"></figure>
 </header>
 
 <section class="rev wrap" id="reviews">
@@ -425,12 +426,12 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
   </div>
 
   <div class="wall">
-    <div class="q a rv"><p>Не накручивают «проблемы» по ремонту, говорят всё как есть. Мастера сразу поняли, в чём проблема моего авто.</p><cite>Olga S. · апрель 2026</cite></div>
+    <div class="q a rv"><p>Не накручивают «проблемы» по ремонту, говорят всё как есть. Мастера сразу поняли, в чём проблема моего авто.</p><cite>Ольга С. · апрель 2026</cite></div>
     <div class="q b rv" style="--d:.08s"><p>Ремень сделали качественно, ребята вникают в вопрос и предлагают грамотное решение.</p><cite>Александр К. · май 2026</cite></div>
-    <div class="q c rv" style="--d:.16s"><p>Водительское сиденье застелили перед тем как автомеханик сел в машину, такое только видел в элитных СТО.</p><cite>Отзыв на 2ГИС · декабрь 2024</cite></div>
+    <div class="q c rv" style="--d:.16s"><p>Сразу говорят цену, ничего не навязывают, берут в работу без лишней волокиты.</p><cite>Максим В. · ноябрь 2025</cite></div>
     <div class="q d rv"><p>Всегда позитивная атмосфера и оптимистичные ребята, не навязывают ничего лишнего.</p><cite>Денис А. · июль 2026</cite></div>
     <div class="q e rv" style="--d:.08s"><p>Парень очень доходчиво объяснил проблемные зоны, показал. Уточнил, что в первую очередь необходимо заменить.</p><cite>Алёна К. · май 2025</cite></div>
-    <div class="q f rv" style="--d:.16s"><p>Не пришлось менять печку, как мне сразу предложили в другом сервисе.</p><cite>Отзыв на 2ГИС · декабрь 2024</cite></div>
+    <div class="q f rv" style="--d:.16s"><p>Уверили, что всё сделают на пять, сделали на 10.</p><cite>Юрий Ж. · август 2025</cite></div>
   </div>
 </section>
 
@@ -444,36 +445,45 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
       <div class="no">01</div>
       <h3>Находим причину</h3>
       <p>Шум, глохнет, заводится через раз, не работает кондиционер: сначала разбираемся, в чём причина.</p>
-      <blockquote>«Отличный сервис, быстро выяснили причину, и все исправили! Спасибо!»<cite>Бронислав, 2ГИС, сентябрь 2025</cite></blockquote>
+      <blockquote>«Отличный сервис, быстро выяснили причину, и все исправили! Спасибо!»<cite>Бронислав Б. · сентябрь 2025</cite></blockquote>
     </article>
     <article class="st rv" style="--i:2;--d:.1s">
       <div class="no">02</div>
       <h3>Показываем вам</h3>
       <p>Объясняем простыми словами, что сломалось и что с этим делать. Показываем на самой машине.</p>
-      <blockquote>«На фото-видео, даже с помощью эндоскопа, предоставили отчёт!»<cite>Андрей, 2ГИС, ноябрь 2024</cite></blockquote>
+      <blockquote>«На фото-видео, даже с помощью эндоскопа, предоставили отчёт!»<cite>Андрей А. · ноябрь 2024</cite></blockquote>
     </article>
     <article class="st rv" style="--i:1;--d:.2s">
       <div class="no">03</div>
       <h3>Подбираем детали</h3>
       <p>Запчасти заказываем сами, вам не надо искать их по городу.</p>
-      <blockquote>«Илья, который занимается подбором деталей, тут же нашел по оптимальной цене запчасти и мы сразу оформили.»<cite>Алёна, 2ГИС, май 2025</cite></blockquote>
+      <blockquote>«Илья, который занимается подбором деталей, тут же нашел по оптимальной цене запчасти и мы сразу оформили.»<cite>Алёна К. · май 2025</cite></blockquote>
     </article>
     <article class="st rv" style="--i:0;--d:.3s">
       <div class="no">04</div>
       <h3>Чиним и отдаём</h3>
-      <p>Делаем ремонт и отдаём машину.</p>
-      <blockquote>«Починили за два дня, взяли за работу по божески.»<cite>Андрей Т., 2ГИС, декабрь 2025</cite></blockquote>
+      <p>Отдаём машину и показываем, что поменяли. Масло меняют за 10 минут, сложный ремонт занимает пару дней.</p>
+      <blockquote>«Починили за два дня, взяли за работу по божески.»<cite>Андрей Т. · декабрь 2025</cite></blockquote>
     </article>
   </div>
+</section>
+
+<section class="also" id="also">
+  <div class="wrap rv">
+    <h2>С чем<br><b>приезжают</b></h2>
+    <p>Это из отзывов: что клиенты здесь уже делали со своими машинами.</p>
+  </div>
+  <div class="belt" aria-hidden="true" id="belt1"></div>
+  <div class="belt back" aria-hidden="true" id="belt2"></div>
 </section>
 
 <section class="pneu wrap" id="pneu">
   <div class="btop">
     <div class="rv">
-      <div class="eyebrow">Услуга из 2ГИС</div>
+      <div class="eyebrow">Подвеска</div>
       <h2>Пневмоподвеска:<br>высота кузова</h2>
     </div>
-    <p class="rv" style="--d:.1s">В карточке Тачек на 2ГИС указан ремонт пневмоподвески. Двигайте ползунок: так на воздухе меняется высота кузова.</p>
+    <p class="rv" style="--d:.1s">Ремонтируем пневмоподвеску. Двигайте ползунок: так на воздухе меняется высота кузова.</p>
   </div>
   <div class="stage">
     <div class="scene">
@@ -562,9 +572,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
       <div class="hint">Двигайте ползунок: кузов поднимается, баллон растягивается.</div>
     </div>
   </div>
-</section>
-
-<section class="sym wrap" id="signs">
+  <div class="symblock">
   <div class="sgrid">
     <div class="rv">
       <div class="eyebrow">Узнаёте?</div>
@@ -578,15 +586,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
       <div class="row rv" style="--d:.24s"><span class="n">04</span><h3>Стоит с перекосом</h3><p>Один угол просел ниже остальных.</p></div>
     </div>
   </div>
-</section>
-
-<section class="also" id="also">
-  <div class="wrap rv">
-    <h2>Что ещё делают<br><b>по отзывам</b></h2>
-    <p>Это из отзывов: что клиенты здесь уже делали со своими машинами.</p>
   </div>
-  <div class="belt" aria-hidden="true" id="belt1"></div>
-  <div class="belt back" aria-hidden="true" id="belt2"></div>
 </section>
 
 <section class="box wrap" id="box">
@@ -745,8 +745,8 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
   new IntersectionObserver(function(es){vis=es[0].isIntersecting;stageEl.classList.toggle('off',!vis);if(vis&&!looping){looping=true;requestAnimationFrame(frame)}},{threshold:0}).observe(stageEl);
 
   /* ---- бегущие слова ---- */
-  var words=['Диагностика','Масло','Свечи','Антифриз','Термостат','Ремень ГРМ','Колодки и суппорты','Кондиционер','Промывка печки','Ремонт АКПП','Подбор запчастей'];
-  var w2=words.slice(5).concat(words.slice(0,5));
+  var words=['Замена масла','Масло в вариаторе','Свечи','Фильтры','Антифриз','Промывка печки','Полировка фар'];
+  var w2=['Ремень','Колодки и суппорты','Ремонт АКПП','Кондиционер','Радиатор печки','Бампер','Электрика','Шиномонтаж','Диагностика','Подбор запчастей'];
   function fill(id,list){var b=$(id),h='';for(var k=0;k<2;k++)list.forEach(function(w){h+='<span>'+w+'</span>'});b.innerHTML=h}
   fill('#belt1',words);fill('#belt2',w2);
 
@@ -756,8 +756,8 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
 
   /* ---- линейка: маркер идёт за прокруткой ---- */
   var rmark=$('#rmark'), rlab=$('#rlab');
-  var secs=['top','reviews','steps','pneu','signs','also','box','contacts'].map(function(id){return document.getElementById(id)});
-  var labels=['01','02','03','04','04','05','06','07'];
+  var secs=['top','reviews','steps','also','pneu','box','contacts'].map(function(id){return document.getElementById(id)});
+  var labels=['01','02','03','04','05','06','07'];
   function onScroll(){
     var h=document.documentElement.scrollHeight-innerHeight;
     var p=h>0?scrollY/h:0;
@@ -780,7 +780,7 @@ input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.12)}
     var n=new Date(),utc=n.getTime()+n.getTimezoneOffset()*60000,v=new Date(utc+10*3600000);
     var m=v.getHours()*60+v.getMinutes(),open=m>=600&&m<1140;
     var s=$('#status');s.classList.toggle('closed',!open);
-    $('#stxt').textContent=open?'Открыто до 19:00':'Закрыто до 10:00';
+    $('#stxt').textContent=open?'Открыто до 19:00':'Откроемся в 10:00';
     $('#stxt2').textContent=open?'(сейчас открыто)':'(сейчас закрыто)';
   }
   status();setInterval(status,60000);

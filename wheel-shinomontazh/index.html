@@ -121,7 +121,8 @@ h2{font-size:clamp(32px,4.8vw,72px)}
 .dial-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,72px);align-items:center;margin-top:clamp(28px,4.4vw,64px)}
 .dial{display:flex;justify-content:center}
 .dial .wheel{width:min(100%,60vh,520px)}.dial .glow{inset:-2%}
-.pips{display:flex;gap:8px;flex-wrap:wrap}
+.pips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pips .chip{padding:10px 12px;text-align:center;white-space:nowrap}
+.pips{scroll-margin-top:80px}
 .panel{scroll-margin-top:84px;margin-top:22px}
 .panel.in>*{animation:pin .6s var(--ease) both}
 .panel.in>*:nth-child(2){animation-delay:.05s}.panel.in>*:nth-child(3){animation-delay:.1s}.panel.in>*:nth-child(4){animation-delay:.15s}
@@ -206,9 +207,9 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin
  .hero{grid-template-columns:1fr;padding:6px 0 30px var(--pad);min-height:0;gap:0}
  .hero>div:first-child{padding-right:var(--pad)}
  .hero h1{font-size:clamp(30px,8.2vw,64px)}
- .hero .wheel{order:-1;width:min(72vw,360px);justify-self:end;margin:0 -14vw -6vw 0}
+ .hero .wheel{order:-1;width:min(72vw,360px);justify-self:end;margin:0 -14vw 20px 0}
  .pick-g,.dial-g,.st-g{grid-template-columns:1fr}
- .dial-g{gap:20px}.panel{margin-top:18px}
+ .wheel .lb{font-size:22px}.dial-g{gap:16px}.panel{margin-top:6px}.side{display:contents}.pips{order:-1;display:flex;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--pad)*-1);padding:0 var(--pad)}.pips::-webkit-scrollbar{display:none}.pips .chip{flex:none}.dial .wheel{width:min(100%,300px)}.panel{order:2}
  .search{margin-top:36px}
  .card{position:relative;top:0}
  .info{grid-template-columns:1fr 1fr}
@@ -229,6 +230,7 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin
  .search input{font-size:18px;padding:17px 18px 17px 52px}
  .card .brand{padding-right:84px}.card .mini{width:140px;right:-40px;top:-40px}
  .facts b{font-size:22px}
+ .works{padding-bottom:36px}.wheel .lb{font-size:22px}.dial .wheel{width:min(100%,270px)}
  .hero p.sub{margin:18px 0 22px}.hero .mono .dot{display:none}.hero .mono .br{display:block}.facts{margin-top:24px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -393,19 +395,19 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin
 var BR="Toyota,Nissan,Honda,Mazda,Subaru,Mitsubishi,Suzuki,Lexus,Hyundai,Kia,BMW,Mercedes-Benz,Audi,Volkswagen,Land Rover,Ford,Chevrolet,Haval,Geely,Chery,Lada (ВАЗ),Acura,Alfa Romeo,Bentley,Brilliance,Bugatti,BYD,Cadillac,Changan,Chrysler,Citroen,Dacia,Daewoo,Daihatsu,Datsun,Dodge,Dongfeng,FAW,Ferrari,Fiat,Foton,GMC,Great Wall,Haima,Hawtai,Hummer,Infiniti,Isuzu,JAC,Jaguar,Jeep,Lancia,Lifan,Lincoln,Luxgen,Maserati,Maxus,MINI,Opel,Peugeot,Porsche,Ravon,Renault,Rolls-Royce,Rover,Saab,SEAT,Skoda,Smart,SsangYong,Tesla,Tianye,Volvo,Vortex,Zotye,ГАЗ,ЗАЗ,ТагАЗ,УАЗ,Exeed,GAC,OMODA,Sollers,Москвич,Voyah,Solaris,Lixiang,Zeekr,Lynk & Co".split(",");
 var SV=["Развал-схождение","Шиномонтаж","Наварка шин","Проточка дисков","Колодки","Масло","Что-то другое"];
 var WORKS=[
- {l:"Развал",n:"Развал-схождение 3D",d:"Стенд Hunter: на колёса крепят датчики, на экране видны углы колёс.",img:"10",alt:"Седан на подъёмнике с датчиками на колёсах, стенд развал-схождения",w:"развал-схождение 3D"},
- {l:"Шиномонтаж",n:"Шиномонтаж и балансировка",d:"Приезжали и без записи, один из клиентов сразу на трёх машинах. Если спешите, позвоните и договоритесь о времени.",img:"11",alt:"Белый внедорожник на подъёмнике, колёса сняты и лежат рядом",w:"шиномонтаж и балансировка"},
- {l:"Наварка шин",n:"Наварка шин, ремонт порезов",d:"Цену скажут по телефону.",img:null,w:"наварка шины"},
- {l:"Проточка дисков",n:"Проточка дисков, колодки",d:"Клиент пишет: «Всё сделали на совесть - никаких косяков, посторонних шумов или проблем после работ».",img:"15",alt:"Тормозной диск и инструмент на подъёмнике",pos:"50% 62%",w:"проточка дисков и колодки"},
- {l:"Масло",n:"Замена масла",d:"Давние клиенты ездят сюда годами. Цену скажут по телефону.",img:null,w:"замена масла"},
- {l:"Сварка дисков",n:"Сварка дисков, заправка кондиционера",d:"Цену и сроки скажут по телефону.",img:null,w:"сварка дисков или заправка кондиционера"}
+ {l:"Развал",b:"Развал",n:"Развал-схождение 3D",d:"Стенд Hunter: на колёса крепят датчики, на экране видны углы колёс.",img:"10",alt:"Седан на подъёмнике с датчиками на колёсах, стенд развал-схождения",pos:"0% 50%",w:"развал-схождение 3D"},
+ {l:"Шиномонтаж",b:"Шиномонтаж",n:"Шиномонтаж и балансировка",d:"Приезжали и без записи, один из клиентов сразу на трёх машинах. Если спешите, позвоните и договоритесь о времени.",img:"11",alt:"Белый внедорожник на подъёмнике, колёса сняты и лежат рядом",w:"шиномонтаж и балансировка"},
+ {l:"Наварка шин",b:"Наварка шин",n:"Наварка шин, ремонт порезов",d:"Когда покрышку повредили, её восстанавливают, а не меняют. Подойдёт ли ваша, скажут по телефону вместе с ценой.",img:null,w:"наварка шины"},
+ {l:"Проточка",b:"Проточка дисков",n:"Проточка дисков, колодки",d:"Клиент пишет: «Всё сделали на совесть - никаких косяков, посторонних шумов или проблем после работ».",img:"15",alt:"Тормозной диск и инструмент на подъёмнике",pos:"50% 62%",w:"проточка дисков и колодки"},
+ {l:"Масло",b:"Масло",n:"Замена масла",d:"Давние клиенты ездят сюда годами. Цену скажут по телефону.",img:null,w:"замена масла"},
+ {l:"Сварка",b:"Сварка дисков",n:"Сварка дисков, заправка кондиционера",d:"Цену и сроки скажут по телефону.",img:null,w:"сварка дисков или заправка кондиционера"}
 ];
 var $=function(s,r){return(r||document).querySelector(s)};
 var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
 $("#n").textContent=BR.length;
 
 /* колесо: шина с надписью, обод с фаской и бликами, тень спиц на ступице */
-var SP="M-11 -19C-7.5 -34 -7 -62 -13.5 -94L13.5 -94C7 -62 7.5 -34 11 -19Z",ED="M-11 -19C-7.5 -34 -7 -62 -13.5 -94",ED2="M11 -19C7.5 -34 7 -62 13.5 -94";
+var SP="M-11 -6L-11 -19C-7.5 -34 -7 -62 -13.5 -94L13.5 -94C7 -62 7.5 -34 11 -19L11 -6Z",ED="M-11 -19C-7.5 -34 -7 -62 -13.5 -94",ED2="M11 -19C7.5 -34 7 -62 13.5 -94";
 function wheel(el,id,o){
  var n=o.spokes,sh="",ed="",bo="",tr="",rb="",i,a,c,s;
  for(i=0;i<n;i++){a=i*360/n;sh+='<path transform="rotate('+a+')" d="'+SP+'"/>';ed+='<g transform="rotate('+a+')"><path d="'+ED+'" stroke="rgba(255,255,255,.6)"/><path d="'+ED2+'" stroke="rgba(0,0,0,.5)"/></g>'}
@@ -414,8 +416,9 @@ function wheel(el,id,o){
  for(i=0;i<144;i++){a=i*Math.PI*2/144;rb+='M'+(216*Math.cos(a)).toFixed(1)+' '+(216*Math.sin(a)).toFixed(1)+'L'+(232*Math.cos(a)).toFixed(1)+' '+(232*Math.sin(a)).toFixed(1)}
  var txt="",lab="";
  if(o.labels){
-  lab='<defs><path id="tt'+id+'" d="M-244 0a244 244 0 1 1 488 0a244 244 0 1 1-488 0"/><path id="tb'+id+'" d="M-258 0A258 258 0 0 0 258 0"/></defs>';
-  o.labels.forEach(function(l,k){var th=k*60,bot=th>90&&th<270,f=bot?(270-th)/180*100:((th+90)%360)/360*100;lab+='<text class="lb" data-i="'+k+'" font-size="'+o.fs+'" text-anchor="middle"><textPath href="#'+(bot?'tb':'tt')+id+'" startOffset="'+f.toFixed(2)+'%">'+l+'</textPath></text>'})}
+  txt='<defs><path id="tt'+id+'" d="M-244 0a244 244 0 1 1 488 0a244 244 0 1 1-488 0"/><path id="tb'+id+'" d="M-258 0A258 258 0 1 0 258 0A258 258 0 1 0-258 0"/></defs><g class="tx">';
+  o.labels.forEach(function(l,k){txt+='<text class="lb" data-i="'+k+'" font-size="'+o.fs+'" text-anchor="middle"><textPath href="#tt'+id+'" startOffset="'+(((k*60+90)%360)/360*100).toFixed(2)+'%">'+l+'</textPath></text>'});
+  txt+='</g>'}
  else if(o.text){txt='<g class="tx"><text font-size="'+o.fs+'" textLength="1522" lengthAdjust="spacing"><textPath href="#tp'+id+'">'+o.text+'</textPath></text></g>'}
  el.innerHTML=
  '<svg class="tire" viewBox="-300 -300 600 600"><defs><radialGradient id="tg'+id+'"><stop offset=".66" stop-color="#181a1f"/><stop offset=".8" stop-color="#121418"/><stop offset=".96" stop-color="#0b0c0e"/><stop offset="1" stop-color="#1c1e22"/></radialGradient><path id="tp'+id+'" d="M-244 0a244 244 0 1 1 488 0a244 244 0 1 1-488 0"/></defs>'+
@@ -423,7 +426,7 @@ function wheel(el,id,o){
  '<circle r="270" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle r="266" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="3"/><path d="'+rb+'" stroke="rgba(255,255,255,.07)" stroke-width="1.6" fill="none"/>'+
  '<circle r="212" fill="none" stroke="#22252a" stroke-width="7"/><circle r="207" fill="none" stroke="#050607" stroke-width="3"/>'+txt+'</svg>'+
  '<svg class="lights" viewBox="-300 -300 600 600"><defs><linearGradient id="sg'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".42" stop-color="#fff" stop-opacity="0"/><stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".4"/></linearGradient><linearGradient id="eg'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".12"/></linearGradient></defs>'+
- '<path fill-rule="evenodd" fill="url(#sg'+id+')" d="M-300 0a300 300 0 1 0 600 0a300 300 0 1 0-600 0M-200 0a200 200 0 1 0 400 0a200 200 0 1 0-400 0"/><circle r="299" fill="none" stroke="url(#eg'+id+')" stroke-width="2"/>'+lab+'</svg>'+
+ '<path fill-rule="evenodd" fill="url(#sg'+id+')" d="M-300 0a300 300 0 1 0 600 0a300 300 0 1 0-600 0M-200 0a200 200 0 1 0 400 0a200 200 0 1 0-400 0"/><circle r="299" fill="none" stroke="url(#eg'+id+')" stroke-width="2"/></svg>'+
  '<div class="glow"></div><div class="rim"><svg viewBox="-100 -100 200 200"><defs><clipPath id="cp'+id+'"><circle r="90.5"/></clipPath>'+
  '<linearGradient id="l1'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#a7adb5"/><stop offset=".52" stop-color="#2b2e34"/><stop offset=".75" stop-color="#8e949d"/><stop offset="1" stop-color="#eef0f3"/></linearGradient>'+
  '<linearGradient id="l2'+id+'" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e4e7ea"/><stop offset=".45" stop-color="#6a7078"/><stop offset=".62" stop-color="#1c1f24"/><stop offset="1" stop-color="#b4bac2"/></linearGradient>'+
@@ -436,11 +439,12 @@ function wheel(el,id,o){
  '<circle r="100" fill="url(#l1'+id+')"/><circle r="95" fill="url(#l2'+id+')"/><circle r="90.5" fill="url(#wl'+id+')"/><circle r="30" fill="url(#hb'+id+')"/>'+
  '<g clip-path="url(#cp'+id+')"><g transform="translate(2.4 3.2)"><g class="rot"><use href="#sh'+id+'" fill="#000" opacity=".4"/></g></g>'+
  '<g class="rot"><use href="#sh'+id+'" fill="url(#sp'+id+')"/><g fill="none" stroke-width=".8">'+ed+'</g></g></g>'+
- '<g class="rot"><circle r="16" fill="url(#hb'+id+')" stroke="rgba(0,0,0,.4)" stroke-width=".8"/><g fill="#0a0b0d">'+bo+'</g><circle r="6" fill="#0a0b0d" stroke="#ff4a43" stroke-width="1.6"/></g>'+
+ '<g class="rot"><circle r="20" fill="url(#hb'+id+')" stroke="rgba(0,0,0,.45)" stroke-width=".9"/><g fill="#0a0b0d">'+bo+'</g><circle r="6" fill="#0a0b0d" stroke="#ff4a43" stroke-width="1.6"/></g>'+
  '<circle r="100" fill="url(#lt'+id+')" style="mix-blend-mode:overlay"/><circle r="100" fill="url(#sc'+id+')" style="mix-blend-mode:screen"/></svg></div>';
- return {tire:el.querySelector(".tire"),rots:[].slice.call(el.querySelectorAll(".rot")),last:null};
+ return {id:id,tire:el.querySelector(".tire"),rots:[].slice.call(el.querySelectorAll(".rot")),last:null,lbs:[].slice.call(el.querySelectorAll(".lb")).map(function(e){return{el:e,bot:null}})};
 }
-function turn(w,a){a=Math.round(a*20)/20;if(w.last===a)return;w.last=a;w.tire.style.transform="rotate("+a+"deg)";w.rots.forEach(function(g){g.setAttribute("transform","rotate("+a+")")})}
+function orient(w,a){w.lbs.forEach(function(l,k){var ang=(((k*60+a)%360)+360)%360,bot=ang>90&&ang<270;if(l.bot===bot)return;l.bot=bot;var tp=l.el.firstChild;tp.setAttribute("href","#"+(bot?"tb":"tt")+w.id);tp.setAttribute("startOffset",(bot?(((270-k*60)%360+360)%360)/360*100:((k*60+90)%360)/360*100).toFixed(2)+"%")})}
+function turn(w,a){a=Math.round(a*20)/20;if(w.last===a)return;w.last=a;if(w.lbs.length)orient(w,a);w.tire.style.transform="rotate("+a+"deg)";w.rots.forEach(function(g){g.setAttribute("transform","rotate("+a+")")})}
 var brands=["Toyota","Nissan","Honda","Mazda","Subaru","Mitsubishi","Lexus","Suzuki","BMW","Audi","Hyundai","Kia","Haval","Geely","Land Rover","Ford","Volvo","Porsche","Tesla","Chery"].join("  /  ").toUpperCase()+"  /  ";
 var W1=wheel($("#w1"),"a",{spokes:5,text:brands,fs:15});
 var W2=wheel($("#w2"),"b",{spokes:5});
@@ -493,11 +497,11 @@ var lastW=innerWidth;addEventListener("resize",function(){if((lastW<=640)!==(inn
 /* работы: колесо поворачивается к выбранной услуге */
 var pips=$("#pips"),panel=$("#panel"),labels=[].slice.call(document.querySelectorAll("#w3 .lb")),first=true;
 var pf=$("#pf"),pi=$("#pi"),pc=$("#pc");
-WORKS.forEach(function(w,i){var b=document.createElement("button");b.type="button";b.className="chip pip";b.textContent=w.l;b.onclick=function(){go(i)};pips.appendChild(b);var im=new Image();if(w.img)im.src="img/"+w.img+".jpg"});
+WORKS.forEach(function(w,i){var b=document.createElement("button");b.type="button";b.className="chip pip";b.textContent=w.b;b.onclick=function(){go(i)};pips.appendChild(b);var im=new Image();if(w.img)im.src="img/"+w.img+".jpg"});
 labels.forEach(function(l,i){l.addEventListener("click",function(){go(i)})});
 function go(i){
  var w=WORKS[i];
- var base=i*60,d=((base-dTgt)%360+540)%360-180;dTgt+=d;
+ var base=-i*60,d=((base-dTgt)%360+540)%360-180;dTgt+=d;
  [].forEach.call(pips.children,function(b,j){b.setAttribute("aria-pressed",j===i)});
  labels.forEach(function(l,j){l.classList.toggle("on",j===i)});
  $("#pt").textContent=w.n;$("#pd").textContent=w.d;
@@ -505,7 +509,7 @@ function go(i){
  else{pf.classList.add("hid");pc.classList.remove("hid")}
  $("#pw").href="https://wa.me/79147078152?text="+encodeURIComponent("Здравствуйте! Интересует: "+w.w+". Когда можно подъехать?");
  panel.classList.remove("in");void panel.offsetWidth;panel.classList.add("in");
- if(first){first=false;dCur=dTgt}else if(innerWidth<=1000){setTimeout(function(){panel.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})},350)}
+ if(first){first=false;dCur=dTgt}else if(innerWidth<=1000){setTimeout(function(){pips.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})},350)}
 }
 go(0);
 
