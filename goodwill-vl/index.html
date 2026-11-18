@@ -1,331 +1,132 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Кузовной ремонт</title>
-<meta name="theme-color" content="#0a0a0a">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
-<script src="data.js"></script>
-<script src="common.js"></script>
-<!-- Вариант 8 «Кино»: фото во весь экран, кадры как в фильме, тонкий широкий шрифт -->
-<style>
-  :root { --bg: #0a0a0a; --ink: #f2f0eb; --muted: #8d8a84; --line: rgba(242,240,235,.14); --acc: #f2f0eb; --rec: #ff3b30; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  html, body { overflow-x: clip; }
-  body { background: var(--bg); color: var(--ink); font: 16px/1.6 'Golos Text', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
-  .disp { font-family: Unbounded, system-ui, sans-serif; font-weight: 300; letter-spacing: -.02em; }
-  .tc { font: 500 11.5px/1 Unbounded, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; height: 54px; padding: 0 30px; border-radius: 999px; font: 400 14px/1 Unbounded, sans-serif; letter-spacing: .02em; transition: background .3s, color .3s, border-color .3s; border: 1px solid rgba(242,240,235,.4); }
-  .btn:hover { border-color: var(--ink); }
-  .btn-w { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .btn-w:hover { background: transparent; color: var(--ink); }
+<html lang="ru"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<link rel="preload" href="fonts/dela-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dela-lat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-lat.woff2" as="font" type="font/woff2" crossorigin>
+<script src="js/top.js?v=2"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Гудвил - шины и диски во Владивостоке</title>
+<meta name="description" content="Два магазина шин и дисков: Снеговая, 71 к2 и Борисенко, 33. Новые и б/у, литьё, шиномонтаж, выкуп б/у шин, доставка.">
+<meta name="theme-color" content="#0d0c09">
+<meta property="og:type" content="website"><meta property="og:title" content="Гудвил - шины и диски во Владивостоке"><meta property="og:description" content="Новые и б/у шины, литые диски, шиномонтаж, выкуп б/у шин и доставка. Снеговая, 71 к2 и Борисенко, 33.">
+<meta property="og:image" content="https://levochkacsgo67-arch.github.io/goodwill-vl/img/og.jpg"><meta property="og:url" content="https://levochkacsgo67-arch.github.io/goodwill-vl/">
+<link rel="icon" href="img/icon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="stylesheet" href="css/base.css?v=18">
+</head><body class="demo">
+<div class="demobar" aria-hidden="true">Демо-версия сайта</div>
+<header class="nav" id="nav"><a class="l" href="#top" aria-label="Гудвил, на главный экран"><span class="logo"><b>Гудвил</b><small>шины • диски • сервис</small></span></a>
+<a class="pill sm" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%88%D0%B8%D0%BD%D1%8B%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8." target="_blank" rel="noopener">Написать</a>
+<nav class="m" id="navList" aria-label="Разделы"><a href="#katalog">Каталог</a><a href="#podbor">Подбор</a><a href="#vykup">Выкуп</a><a href="#servis">Сервис</a><a href="#dostavka">Доставка</a><a href="#otzyvy">Отзывы</a><a href="#contact">Контакты</a><a class="m-tg" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%88%D0%B8%D0%BD%D1%8B%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8." target="_blank" rel="noopener">Написать в Telegram</a></nav>
+<button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navList">Меню</button></header>
+<main id="top">
+<section class="hero" data-pause><div class="hbg"><img src="photos/hero.webp" alt="Колёсные диски на стене магазина Гудвил" width="1440" height="958" fetchpriority="low"></div>
+<div class="hin">
+<div class="hcat rv"><img src="photos/cat.webp" alt="Кот-манэки в кепке и очках обнимает диск, рисунок на стене Гудвила" width="857" height="672" fetchpriority="low"></div>
+<div class="htxt"><p class="eyebrow rv"><span>Снеговая 71</span> · <span>Борисенко 33</span></p>
+<h1 class="rv" style="--d:.06s">Шины и диски <em>Подберём и поставим</em></h1>
+<p class="lede rv" style="--d:.12s">Новые и б/у шины, литые диски, легковые и грузовые. Два магазина во&nbsp;Владивостоке.</p>
+<div class="btns rv" style="--d:.18s"><a class="pill solid" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%88%D0%B8%D0%BD%D1%8B%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8.%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0%3A%20" target="_blank" rel="noopener">Написать в Telegram</a><a class="pill dark" href="tel:+79242330705">Позвонить</a></div>
+<ul class="facts rv" style="--d:.24s"><li><b>389</b>&nbsp;отзывов в 2ГИС, оценки 5,0 и 4,9</li><li>Пн-Сб с 10:00, Вс с 11:00</li></ul></div></div></section>
+<div class="bandw" aria-hidden="true"><span class="hz"></span></div>
 
-  header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; transition: background .4s, backdrop-filter .4s; }
-  header.solid { background: rgba(10,10,10,.72); backdrop-filter: blur(16px); }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
-  .logo { font: 400 15px/1 Unbounded, sans-serif; letter-spacing: .06em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
-  .logo img { height: 36px; width: auto; }
-  .nav nav { display: flex; gap: 30px; font-size: 14px; color: rgba(242,240,235,.75); }
-  .nav nav a:hover { color: var(--ink); }
-  .nav .btn { height: 42px; padding: 0 20px; font-size: 12.5px; }
+<section class="sheet first" id="katalog"><div class="wrap">
+<p class="eyebrow rv">Каталог</p><h2 class="rv">Что есть в магазине</h2>
+<p class="lede rv">Нажмите на категорию, и в Telegram откроется готовое сообщение. Допишите размер или машину.</p>
+<div class="cat" data-lazy>
+<a class="tile t1 ph rv" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BB%D0%B8%D1%82%D1%8B%D0%B5%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8.%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0%3A%20" target="_blank" rel="noopener"><img data-s="photos/t-disks.webp" alt="Литые диски на стене магазина" width="900" height="506"><span class="go" aria-hidden="true">→</span><h3>Литые диски</h3><p>Стена дисков в зале. Можно рассмотреть вживую и приложить к машине.</p></a>
+<a class="tile t2 ph rv" style="--d:.06s" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BB%D0%B5%D0%B3%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%88%D0%B8%D0%BD%D1%8B.%20%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%D0%B8%D0%BB%D0%B8%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0%3A%20" target="_blank" rel="noopener"><img data-s="photos/t-cars.webp" alt="Ряд литых дисков на деревянной стене" width="900" height="506"><span class="go" aria-hidden="true">→</span><h3>Легковые шины</h3><p>Новые и б/у.</p></a>
+<a class="tile t3 ye rv" style="--d:.1s" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%88%D0%B8%D0%BD%D1%8B.%20%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%3A%20" target="_blank" rel="noopener"><span class="go" aria-hidden="true">→</span><h3>Грузовые шины</h3><p>Розница и опт.</p></a>
+<a class="tile t4 ye rv" style="--d:.06s" href="#vykup"><span class="go" aria-hidden="true">→</span><h3>Б/у шины</h3><p>Продаём и выкупаем.</p></a>
+<a class="tile t5 ph rv" style="--d:.1s" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BA%D0%BE%D0%BB%D1%91%D1%81%D0%BD%D1%8B%D0%B5%20%D0%B3%D0%B0%D0%B9%D0%BA%D0%B8%20%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B5%D0%BB%D0%BE%D1%87%D0%B8.%20" target="_blank" rel="noopener"><img data-s="photos/t-misc.webp" alt="Стена с автомелочами: инструмент и ароматизаторы" width="800" height="340" style="object-position:88% 50%"><span class="go" aria-hidden="true">→</span><h3>Гайки и мелочи</h3><p>Колёсные гайки, автоинструмент, автоароматизаторы.</p></a>
+</div></div></section>
 
-  /* первый экран — кадр во весь экран */
-  .hero { position: relative; min-height: min(100vh, 1000px); min-height: min(100svh, 1000px); display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
-  .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); animation: push 14s cubic-bezier(.2,.6,.3,1) forwards; }
-  @keyframes push { to { transform: scale(1); } }
-  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,0) 26%, rgba(10,10,10,.35) 55%, rgba(10,10,10,.92) 100%); }
-  .hero .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 54px; }
-  .rec { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; }
-  .rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--rec); animation: blink 1.6s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: .2; } }
-  h1 { font-size: clamp(36px, 6.4vw, 96px); line-height: 1.02; margin: 22px 0 26px; max-width: 15ch; }
-  .h-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
-  .h-row .lead { max-width: 480px; color: rgba(242,240,235,.78); font-size: 17px; }
-  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
-  .h-meta { position: relative; z-index: 2; border-top: 1px solid var(--line); }
-  .h-meta .wrap { display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 18px; padding-bottom: 22px; gap: 20px; }
-  .h-meta b { display: block; font: 300 22px/1.2 Unbounded, sans-serif; letter-spacing: -.02em; margin-top: 8px; color: var(--ink); text-transform: none; }
+<section class="sheet s2" id="podbor"><div class="wrap">
+<p class="eyebrow rv">Подбор</p><h2 class="rv">Как подобрать</h2>
+<div class="pick">
+<ol class="steps">
+<li class="rv"><span class="n">1</span><b>Напишите размер или машину</b><p>Размер шины или диска, например 205/55 R16. Если размера нет, марку, модель и год машины.</p></li>
+<li class="rv" style="--d:.06s"><span class="n">2</span><b>Получите варианты</b><p>Пришлём подходящие шины и диски в Telegram.</p></li>
+<li class="rv" style="--d:.12s"><span class="n">3</span><b>Приезжайте посмотреть</b><p>Диски висят на стене, их можно рассмотреть и приложить к машине.</p></li>
+</ol>
+<div class="pickform rv"><h3>Отправить запрос</h3>
+<form class="lead" id="lead" autocomplete="off">
+<div class="sel" id="svc"><button class="selb" type="button" aria-expanded="false"><span class="selv">Что ищете</span><i aria-hidden="true"></i></button>
+<div class="selm" role="listbox"><button type="button" role="option" data-v="Литые диски">Литые диски</button><button type="button" role="option" data-v="Легковые шины">Легковые шины</button><button type="button" role="option" data-v="Грузовые шины">Грузовые шины</button><button type="button" role="option" data-v="Б/у шины">Б/у шины</button><button type="button" role="option" data-v="Выкуп б/у шин">Выкуп б/у шин</button><button type="button" role="option" data-v="Шиномонтаж">Шиномонтаж</button></div><input type="hidden" name="n"></div>
+<input name="l" maxlength="500" placeholder="Размер или марка и год машины" aria-label="Размер или марка и год машины">
+<button class="pill solid" type="submit">Отправить в Telegram</button></form>
+<p class="alt">Или сразу <a href="tel:+79242330705">позвоните</a>.</p></div>
+</div>
+<div class="wall" data-lazy>
+<figure class="a"><img data-s="photos/w12.webp" alt="Стена из дисков на деревянных рейках" width="860" height="484"><figcaption>Диски на стене</figcaption></figure>
+<figure class="b rv" style="--d:.05s"><img data-s="photos/w19.webp" alt="Диск с тонкими спицами на деревянных рейках" width="860" height="484" style="object-position:30% 50%"></figure>
+<figure class="c rv" style="--d:.1s"><img data-s="photos/w15.webp" alt="Чёрные диски на стене с рейками" width="860" height="484" style="object-position:35% 50%"></figure>
+<figure class="d rv" style="--d:.05s"><img data-s="photos/w10.webp" alt="Литьё с полированным ободом" width="860" height="484" style="object-position:55% 50%"></figure>
+<figure class="e rv" style="--d:.1s"><img data-s="photos/w21.webp" alt="Стена из дисков в зале магазина" width="860" height="484"></figure>
+</div></div></section>
 
-  section { padding: 140px 0; }
-  .s-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 64px; flex-wrap: wrap; }
-  h2 { font-size: clamp(30px, 4.4vw, 64px); line-height: 1.05; max-width: 16ch; margin-top: 18px; }
-  .s-head p { color: var(--muted); max-width: 420px; }
+<section class="sheet ye" id="vykup"><div class="wrap"><div class="buy" data-lazy>
+<div class="ph rv"><img data-s="photos/buy.webp" alt="Светящаяся вывеска Гудвил на фоне колёсных дисков" width="900" height="506"></div>
+<div><p class="eyebrow rv">Выкуп</p><h2 class="rv">Выкупаем <span style="white-space:nowrap">б/у</span> шины</h2>
+<p class="lede rv">Есть комплект, который лежит без дела? Выкупим.</p>
+<a class="pill dark rv" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D1%82%D1%8C%20%D0%B1%2F%D1%83%20%D1%88%D0%B8%D0%BD%D1%8B.%20%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%D0%B8%20%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener">Написать про выкуп</a></div>
+</div></div></section>
 
-  /* манифест */
-  .manifest { font-size: clamp(26px, 3.6vw, 52px); line-height: 1.22; max-width: 22ch; }
-  .manifest span { color: var(--muted); }
-  .adv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 90px; border-top: 1px solid var(--line); padding-top: 30px; }
-  .adv b { display: block; font: 300 clamp(40px, 4.6vw, 68px)/1 Unbounded, sans-serif; letter-spacing: -.04em; margin: 16px 0 10px; }
-  .adv span { color: var(--muted); }
+<section class="sheet" id="servis"><div class="wrap" data-lazy>
+<p class="eyebrow rv">Сервис</p><h2 class="rv">Шиномонтаж и ремонт</h2>
+<div class="srv">
+<div class="ph"><figure class="m1 rv"><img data-s="photos/master.webp" alt="Мастер Гудвил за работой у станка" width="900" height="506"></figure><figure class="m2 rv" style="--d:.06s"><img data-s="photos/master2.webp" alt="Столик из колёсного диска с кофе и конфетами для клиентов" width="900" height="619" style="object-position:50% 70%"></figure></div>
+<div class="rows">
+<div class="rv"><i>01</i><b>Шиномонтаж</b><p>Купленные шины ставим сразу.</p></div>
+<div class="rv" style="--d:.05s"><i>02</i><b>Ремонт порезов</b><p>Поймали шуруп - позвоните, скажем, когда подъехать.</p></div>
+<div class="rv" style="--d:.1s"><i>03</i><b>Наварка шин</b><p>Есть в магазине на Борисенко, 33.</p></div>
+<div class="rv" style="--d:.15s"><i>04</i><b>Хранение резины</b><p>Второй комплект можно оставить на хранение.</p></div>
+<div class="rv" style="--d:.2s"><i>05</i><b>Запись</b><p>Можно записаться: напишите или позвоните.</p></div>
+<div class="rv" style="--d:.25s"><i>06</i><b>Пока ждёте</b><p>Кофе, чай, конфеты и Wi-Fi для клиентов.</p></div>
+</div></div></div></section>
 
-  /* услуги */
-  .svc { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid var(--line); align-items: baseline; transition: opacity .3s; }
-  .svc-list:hover .svc { opacity: .45; }
-  .svc-list .svc:hover { opacity: 1; }
-  .svc h3 { font: 300 clamp(20px, 2.2vw, 30px)/1.15 Unbounded, sans-serif; letter-spacing: -.02em; }
-  .svc p { color: var(--muted); }
+<section class="sheet s2" id="dostavka"><div class="wrap">
+<p class="eyebrow rv">Доставка</p><h2 class="rv">Отправим в другой город</h2>
+<div class="dl" data-lazy>
+<blockquote class="quote rv" style="margin:0"><span class="qm" aria-hidden="true">“</span><p>Выбрал диски «Катана», оплатил и уже через 8 дней получил в Якутске.</p><small>Евгений Федосов, сентябрь 2026, отзыв в 2ГИС</small><figure><img data-s="photos/q06.webp" alt="Чёрный диск с биркой Катана и наклейкой с котом" width="800" height="494" style="object-position:60% 50%"></figure></blockquote>
+<div class="cards3">
+<div class="fact rv"><b>Транспортной компанией</b><p>Колёса упаковывают. Отправляли комплект даже в Башкирию.</p></div>
+<div class="fact rv" style="--d:.06s"><b>Способы оплаты</b><ul class="pay"><li>Карта</li><li>Наличные</li><li>Через банк</li><li>По QR-коду</li></ul></div>
+</div></div></div></section>
 
-  /* работы — кадры с горизонтальной прокруткой */
-  .reel { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 40px 20px; scrollbar-width: none; cursor: grab; }
-  .reel::-webkit-scrollbar { display: none; }
-  .reel figure { flex: 0 0 min(78vw, 620px); scroll-snap-align: center; position: relative; }
-  .reel figure:nth-child(even) { flex-basis: min(60vw, 420px); }
-  .reel img { width: 100%; height: min(70vh, 620px); object-fit: cover; border-radius: 6px; cursor: zoom-in; }
-  .reel figcaption { display: flex; justify-content: space-between; padding-top: 14px; }
-  .reel-nav { display: flex; gap: 10px; }
-  .reel-nav button { width: 54px; height: 54px; border-radius: 50%; border: 1px solid rgba(242,240,235,.4); background: none; color: var(--ink); font-size: 20px; cursor: pointer; transition: background .3s, color .3s; }
-  .reel-nav button:hover { background: var(--ink); color: var(--bg); }
+<section class="sheet" id="otzyvy"><div class="wrap">
+<p class="eyebrow rv">Отзывы</p><h2 class="rv">Что говорят клиенты</h2>
+<div class="rate rv"><span class="num">5,0</span><p>Оценка магазина на Снеговой в 2ГИС, 141 отзыв. На Борисенко 4,9 по 248 отзывам. Ниже отзывы, чуть сокращены.</p></div>
+<div class="revs" data-lazy>
+<figure class="revph rv"><img data-s="photos/seller.webp" alt="Продавец Гудвил улыбается за стойкой, рядом чёрные и жёлтые шары" width="900" height="900"></figure>
+<div class="revcol">
+<blockquote class="rev rv"><p>После дождя поймал шуруп. Пока все говорили «мы только переобуваем», ребята вежливо встретили по телефону, пригласили оперативно и всё сделали в лучшем виде.</p><footer><b>Артём Бабенко</b><span>Август 2026</span></footer></blockquote>
+<blockquote class="rev rv" style="--d:.05s"><p>Ребята молодцы, работают быстро. Был проездом, нужно было оставить колёса на недельку - без проблем сохранили, идут навстречу клиентам. Большой выбор и неплохие цены.</p><footer><b>Виктор Майбах</b><span>Июнь 2026</span></footer></blockquote>
+<blockquote class="rev rv" style="--d:.1s"><p>Купили диски, сами прогадали с вылетом. Парни без проблем предложили другие варианты, не найдя подходящих, предложили сделать возврат.</p><footer><b>Юлия</b><span>Июль 2025</span></footer></blockquote>
+<blockquote class="rev rv" style="--d:.15s"><p>Заехал за дисками, быстро подобрали на SUZUKI SX4 и шины тоже. Качество отличное. Есть свой шиномонтаж. Цены адекватные. Теперь только сюда.</p><footer><b>Сергей Харитонов</b><span>Июль 2026</span></footer></blockquote>
+</div></div>
+<p class="more rv btnrow"><a class="pill dark" href="https://2gis.ru/vladivostok/firm/70000001032389743" target="_blank" rel="noopener">Все отзывы в 2ГИС: Снеговая</a><a class="pill dark" href="https://2gis.ru/vladivostok/firm/3518966489870443" target="_blank" rel="noopener">Борисенко</a></p>
+</div></section>
 
-  /* шаги */
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-  .step { border-top: 1px solid var(--line); padding-top: 24px; }
-  .step h3 { font: 300 22px/1.2 Unbounded, sans-serif; letter-spacing: -.02em; margin: 40px 0 10px; }
-  .step p { color: var(--muted); font-size: 15px; }
-
-  /* отзывы — цитата */
-  .quote { max-width: 1000px; }
-  .quote p { font: 300 clamp(22px, 2.8vw, 40px)/1.32 Unbounded, sans-serif; letter-spacing: -.02em; transition: opacity .5s; min-height: 5.4em; }
-  .quote .who { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .quote .who b { font-weight: 500; }
-  .quote .who small { color: var(--muted); display: block; }
-  .score { display: flex; align-items: baseline; gap: 20px; margin-bottom: 60px; }
-  .score b { font: 300 clamp(80px, 11vw, 170px)/.9 Unbounded, sans-serif; letter-spacing: -.06em; }
-  .score span { color: var(--muted); max-width: 200px; }
-
-  /* вопросы */
-  .faq { max-width: 980px; }
-  details { border-top: 1px solid var(--line); }
-  details:last-child { border-bottom: 1px solid var(--line); }
-  summary { list-style: none; cursor: pointer; padding: 28px 60px 28px 0; font: 300 clamp(18px, 1.8vw, 24px)/1.3 Unbounded, sans-serif; letter-spacing: -.015em; position: relative; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: ''; position: absolute; right: 4px; top: 50%; width: 14px; height: 14px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transform: translateY(-70%) rotate(45deg); transition: transform .35s; }
-  details[open] summary::after { transform: translateY(-20%) rotate(-135deg); }
-  details p { color: var(--muted); padding-bottom: 28px; max-width: 640px; }
-
-  /* финал + контакты */
-  .final { position: relative; min-height: min(86vh, 860px); display: flex; align-items: flex-end; overflow: hidden; padding: 0; }
-  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .final::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.3), rgba(10,10,10,.94)); }
-  .final .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: 70px; }
-  .final .phone { display: block; font: 300 clamp(36px, 6.4vw, 100px)/1 Unbounded, sans-serif; letter-spacing: -.05em; margin: 22px 0 40px; }
-  .c-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; border-top: 1px solid var(--line); padding-top: 24px; }
-  .c-grid div span { display: block; margin-top: 10px; color: rgba(242,240,235,.85); }
-  .map { height: 460px; filter: grayscale(1) invert(.92) contrast(.9); }
-  .map iframe { width: 100%; height: 100%; border: 0; }
-
-  footer { padding: 28px 0 110px; border-top: 1px solid var(--line); }
-  footer .wrap { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-
-  .bar { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 30; display: none; gap: 8px; }
-  .bar .btn { flex: 1; height: 52px; background: rgba(10,10,10,.7); backdrop-filter: blur(14px); }
-  .bar .btn-w { background: var(--ink); }
-
-  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,10,10,.96); display: none; place-items: center; padding: 20px; cursor: zoom-out; }
-  .lightbox.on { display: grid; }
-  .lightbox img { max-height: 90vh; border-radius: 6px; }
-
-  /* доступность: видимый фокус с клавиатуры, курсор на всём кликабельном */
-  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-  summary, button, [data-href], .lightbox { cursor: pointer; }
-  .lightbox { cursor: zoom-out; }
-  .reveal { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity 1.2s cubic-bezier(.2,.7,.2,1), transform 1.2s cubic-bezier(.2,.7,.2,1), filter 1.2s; }
-  .reveal.in { opacity: 1; transform: none; filter: none; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; filter: none; } .hero > img { animation: none; transform: none; } .rec i { animation: none; } }
-
-  @media (max-width: 960px) {
-    .nav nav { display: none; }
-    .h-meta .wrap { grid-template-columns: 1fr 1fr; }
-    .svc { grid-template-columns: 60px 1fr; }
-    .svc p { grid-column: 2; }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .c-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .wrap { padding: 0 18px; }
-    .nav { height: 64px; }
-    .nav .btn { display: none; }
-    section { padding: 96px 0; }
-    .hero .wrap { padding-bottom: 34px; }
-    .hero::after { background: linear-gradient(180deg, rgba(10,10,10,.62) 0%, rgba(10,10,10,.5) 30%, rgba(10,10,10,.68) 60%, rgba(10,10,10,.94) 100%); }  /* на телефоне текст на всём фото - затемняем сильнее */
-    .h-meta b { font-size: 17px; }
-    .h-meta .wrap:has(+ *), .h-meta .wrap { padding-bottom: 96px; }
-    .cta .btn { flex: 1; padding: 0 16px; white-space: nowrap; font-size: 12.5px; }
-    .hero .rec .hc { display: none; }
-    .adv { grid-template-columns: 1fr; gap: 26px; margin-top: 60px; }
-    .svc { grid-template-columns: 1fr; gap: 6px; padding: 24px 0; }
-    .svc p { grid-column: auto; }
-    .reel { padding: 0 18px 20px; }
-    .reel figure, .reel figure:nth-child(even) { flex-basis: 82vw; }
-    .reel img { height: 58vh; }
-    .reel-nav { display: none; }
-    .steps { grid-template-columns: 1fr; }
-    .step h3 { margin-top: 22px; }
-    .quote p { min-height: 8em; }
-    .c-grid { grid-template-columns: 1fr; gap: 20px; }
-    .final .wrap { padding-bottom: 50px; }
-    .map { height: 340px; }
-    .bar { display: flex; }
-  }
-</style>
-</head>
-<body>
-<header id="hdr">
-  <div class="wrap nav">
-    <a href="#" class="logo"><img id="logoI" alt="" hidden><span data-f="name"></span></a>
-    <nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#how">Этапы</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
-    <a class="btn" data-href="tel">Позвонить</a>
-  </div>
-</header>
-
-<section class="hero" style="padding:0">
-  <img id="heroImg" alt="">
-  <div class="wrap">
-    <div class="tc rec"><i></i><span data-f="tagline"></span><span class="hc">· <span data-f="city"></span></span></div>
-    <h1 class="disp" data-f="heroTitle"></h1>
-    <div class="h-row">
-      <p class="lead" data-f="heroText"></p>
-      <div class="cta">
-        <a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">Оценить по фото</a>
-        <a class="btn" data-href="tel">Позвонить</a>
-      </div>
-    </div>
-  </div>
-  <div class="h-meta">
-    <div class="wrap tc">
-      <div id="hRate">Оценка 2ГИС<b id="rt"></b></div>
-      <div>Отзывы<b id="rc"></b></div>
-      <div>Режим<b id="hours1"></b></div>
-      <div>Адрес<b id="addr1"></b></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="tc">Сцена 01</div>
-    <p class="manifest disp reveal" style="margin-top:26px" id="manifest"></p>
-    <div class="adv" id="adv"></div>
-  </div>
-</section>
-
-<section id="services" style="padding-top:0">
-  <div class="wrap">
-    <div class="s-head"><div><div class="tc">Сцена 02 · Услуги</div><h2 class="disp reveal">Что делаем</h2></div><p class="reveal" data-f="servicesText"></p></div>
-    <div class="svc-list" id="svc"></div>
-  </div>
-</section>
-
-<section id="works" style="padding-top:0">
-  <div class="wrap">
-    <div class="s-head"><div><div class="tc">Сцена 03 · Работы</div><h2 class="disp reveal">Кадры из нашего бокса</h2></div>
-      <div class="reel-nav"><button type="button" id="prev" aria-label="Назад">←</button><button type="button" id="next" aria-label="Вперёд">→</button></div></div>
-  </div>
-  <div class="reel" id="grid"></div>
-</section>
-
-<section id="how" style="padding-top:0">
-  <div class="wrap">
-    <div class="s-head"><div><div class="tc">Сцена 04 · Этапы</div><h2 class="disp reveal">Как всё проходит</h2></div></div>
-    <div class="steps" id="steps"></div>
-  </div>
-</section>
-
-<section id="reviews" style="padding-top:0">
-  <div class="wrap">
-    <div class="s-head"><div><div class="tc">Сцена 05 · Отзывы</div></div></div>
-    <div class="score reveal" id="score"><b id="rt2"></b><span id="rc2"></span></div>
-    <div class="quote reveal">
-      <p id="qText"></p>
-      <div class="who"><div><b id="qName"></b><small id="qDate"></small></div>
-        <div class="cta"><div class="reel-nav"><button type="button" id="qPrev" aria-label="Предыдущий отзыв">←</button><button type="button" id="qNext" aria-label="Следующий отзыв">→</button></div>
-        <a class="btn" data-href="gis" target="_blank" rel="noopener">Все отзывы в 2ГИС</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="s-head"><div><div class="tc">Сцена 06 · Вопросы</div><h2 class="disp reveal">Частые вопросы</h2></div></div>
-    <div class="faq" id="faq"></div>
-  </div>
-</section>
-
-<section class="final" id="contacts">
-  <img id="finalImg" alt="" loading="lazy">
-  <div class="wrap">
-    <div class="tc rec"><i></i>Финальная сцена · Ваша машина</div>
-    <a class="phone reveal" data-href="tel" data-phone></a>
-    <div class="cta" style="margin-bottom:56px">
-      <a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn" data-href="route" target="_blank" rel="noopener">Построить маршрут</a>
-    </div>
-    <div class="c-grid tc">
-      <div>Адрес<span id="addr" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
-      <div>Режим работы<span id="hours" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
-      <div>Оплата<span id="pay" style="text-transform:none;letter-spacing:0;font:400 16px/1.5 'Golos Text',sans-serif"></span></div>
-    </div>
-  </div>
-</section>
-<div class="map"><iframe data-map loading="lazy" title="Карта"></iframe></div>
-
-<footer><div class="wrap tc"><span>© <span data-year></span> <span data-f="name"></span></span><span><span data-f="footerText"></span> · <span data-f="city"></span></span></div></footer>
-
-<div class="bar"><a class="btn" data-href="tel">Позвонить</a><a class="btn btn-w" data-href="wa" target="_blank" rel="noopener">WhatsApp</a></div>
-<div class="lightbox" id="lb" role="dialog" aria-label="Фото работы" onclick="this.classList.remove('on')"><img id="lbImg" alt="Фото работы"></div>
-
-<script>
-  const S = SITE, C = S.data, $ = id => document.getElementById(id);
-  S.fill();
-  $('manifest').innerHTML = C.manifest;
-  if (C.logo) { $('logoI').src = C.logo; $('logoI').hidden = false; }
-  $('heroImg').src = C.hero;
-  $('finalImg').src = C.finalPhoto || C.gallery[C.gallery.length > 3 ? 3 : 0] || C.hero;
-  $('hours1').textContent = C.schedule[0] ? C.schedule[0].time : '';
-  $('addr1').textContent = (C.address || '').split(',').slice(0, 2).join(',');
-  if (C.rating) {
-    $('rt').textContent = `${S.rating} из 5`; $('rt2').textContent = S.rating;
-    $('rc').textContent = `${C.reviewsCount}`;
-    $('rc2').textContent = `средняя оценка по ${C.reviewsCount} ${S.reviewsWord(C.reviewsCount)} в 2ГИС`;
-  } else { $('hRate').remove(); $('rc').parentElement.remove(); $('score').remove(); }
-  $('adv').innerHTML = C.advantages.map((a, i) => `<div class="reveal"><span class="tc">0${i + 1}</span><b>${S.esc(a.n)}</b><span>${S.esc(a.t)}</span></div>`).join('');
-  $('svc').innerHTML = C.services.map((s, i) => `<div class="svc reveal"><span class="tc">${String(i + 1).padStart(2, '0')}</span><h3>${S.esc(s.t)}</h3><p>${S.esc(s.d)}</p></div>`).join('');
-  $('steps').innerHTML = C.steps.map((s, i) => `<div class="step reveal"><span class="tc">Шаг ${i + 1}</span><h3>${S.esc(s.t)}</h3><p>${S.esc(s.d)}</p></div>`).join('');
-  const pics = C.gallery.slice(0, C.galleryMax || 12);
-  $('grid').innerHTML = pics.map((src, i) => `<figure><img src="${src}" alt="Работа ${S.esc(C.name)}" loading="lazy"><figcaption class="tc"><span>Кадр ${String(i + 1).padStart(2, '0')}</span><span>${String(i + 1).padStart(2, '0')} / ${String(pics.length).padStart(2, '0')}</span></figcaption></figure>`).join('');
-  $('grid').addEventListener('click', e => { if (e.target.tagName === 'IMG') { $('lbImg').src = e.target.src; $('lb').classList.add('on'); } });
-  const step = () => Math.min(innerWidth * .6, 640);
-  $('prev').onclick = () => $('grid').scrollBy({ left: -step(), behavior: 'smooth' });
-  $('next').onclick = () => $('grid').scrollBy({ left: step(), behavior: 'smooth' });
-
-  // Отзывы — по одному, как титры
-  const R = (C.reviews || []).slice(0, 10); let qi = 0, timer;
-  const showQ = i => {
-    qi = (i + R.length) % R.length; const r = R[qi]; $('qText').style.opacity = 0;
-    setTimeout(() => { $('qText').textContent = `«${r.text.length > 260 ? r.text.slice(0, 257).replace(/\s+\S*$/, '') + '…' : r.text}»`; $('qName').textContent = r.name; $('qDate').textContent = `${S.stars(r.rating)} · ${S.date(r.date)}`; $('qText').style.opacity = 1; }, 300);
-  };
-  if (R.length) {
-    showQ(0);
-    const auto = () => { clearInterval(timer); timer = setInterval(() => showQ(qi + 1), 8000); };
-    $('qPrev').onclick = () => { showQ(qi - 1); auto(); }; $('qNext').onclick = () => { showQ(qi + 1); auto(); }; auto();
-    const q = document.querySelector('.quote'); q.addEventListener('mouseenter', () => clearInterval(timer)); q.addEventListener('mouseleave', auto);
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) clearInterval(timer);
-  }
-  $('faq').innerHTML = C.faq.map(f => `<details><summary>${S.esc(f.q)}</summary><p>${S.esc(f.a)}</p></details>`).join('');
-  $('addr').textContent = C.address + (C.addressNote ? `, ${C.addressNote}` : '');
-  $('hours').innerHTML = C.schedule.map(s => `${S.esc(s.days)}: ${S.esc(s.time)}`).join('<br>');
-  if ((C.payment || []).length) $('pay').textContent = C.payment.join(', '); else $('pay').parentElement.remove();
-  addEventListener('scroll', () => $('hdr').classList.toggle('solid', scrollY > 60), { passive: true });
-  S.prune();
-  (C.hide || []).forEach(id => { const el = $(id); if (el) el.remove(); document.querySelectorAll(`a[href="#${id}"]`).forEach(a => a.remove()); });
-  addEventListener('keydown', e => { if (e.key === 'Escape') $('lb').classList.remove('on'); });
-  S.reveal();
-</script>
-</body>
-</html>
+<section class="sheet s2" id="contact"><div class="wrap">
+<p class="eyebrow rv">Контакты</p><h2 class="rv">Как нас найти</h2>
+<div class="stores">
+<article class="store rv"><p class="addr">Снеговая улица, 71 к2</p><p class="note">Магазин, шиномонтаж. Оценка в 2ГИС 5,0</p>
+<ul class="hours"><li><span>Пн-Сб</span><b>10:00-18:30</b></li><li><span>Вс</span><b>11:00-16:00</b></li></ul>
+<div class="cbtn"><a class="pill solid" href="tel:+79242330705">Позвонить</a><a class="pill dark" href="https://2gis.ru/vladivostok/firm/70000001032389743" target="_blank" rel="noopener">Открыть в 2ГИС</a></div></article>
+<article class="store rv" style="--d:.06s"><p class="addr">Улица Борисенко, 33 ст4</p><p class="note">Магазин, наварка шин. Оценка в 2ГИС 4,9</p>
+<ul class="hours"><li><span>Пн-Сб</span><b>10:00-19:00</b></li><li><span>Вс</span><b>11:00-17:00</b></li></ul>
+<div class="cbtn"><a class="pill solid" href="tel:+79242331108">Позвонить</a><a class="pill dark" href="https://2gis.ru/vladivostok/firm/3518966489870443" target="_blank" rel="noopener">Открыть в 2ГИС</a></div></article>
+</div>
+<div class="ct2">
+<div class="ph rv" data-lazy><img data-s="photos/sign.webp" alt="Вывеска Гудвил с жёлто-чёрными полосами и котом у входа" width="1100" height="619"><span>Снеговая, 71 к2. Ищите вывеску с жёлто-чёрными полосами и котом в кепке.</span></div>
+<div class="wr rv"><h3>Один Telegram на оба магазина</h3><p>Напишите, какой магазин удобнее, и ответим в Telegram или WhatsApp.</p>
+<div class="cbtn"><a class="pill solid" href="https://t.me/+79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%88%D0%B8%D0%BD%D1%8B%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8.%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0%3A%20" target="_blank" rel="noopener">Написать в Telegram</a><a class="pill dark" href="https://wa.me/79147157938?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%88%D0%B8%D0%BD%D1%8B%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B8." target="_blank" rel="noopener">WhatsApp</a></div>
+<div class="links"><a href="https://vk.com/goodwheelvl" target="_blank" rel="noopener">ВКонтакте</a></div></div>
+</div></div></section>
+</main>
+<span class="hz foot-hz" aria-hidden="true"></span>
+<footer class="foot"><span>© 2026 Гудвил. Шины, диски, сервис</span><span class="fa"><span>Снеговая улица, 71 к2</span><span>Улица Борисенко, 33 ст4</span><span>Владивосток</span></span><a href="#top">Наверх</a></footer>
+<script src="js/base.js?v=2"></script>
+</body></html>

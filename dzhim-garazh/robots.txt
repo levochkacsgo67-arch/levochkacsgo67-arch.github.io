@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://levochkacsgo67-arch.github.io/dzhim-garazh/sitemap.xml
