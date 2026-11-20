@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://levochkacsgo67-arch.github.io/wheel-vl/sitemap.xml
